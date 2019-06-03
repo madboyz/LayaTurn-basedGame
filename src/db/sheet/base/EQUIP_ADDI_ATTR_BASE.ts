@@ -1,0 +1,59 @@
+export class EQUIP_ADDI_ATTR_BASE{
+     no : any;
+     max_no : any;
+     talent_str : any;
+     talent_con : any;
+     talent_sta : any;
+     talent_spi : any;
+     talent_agi : any;
+     hp_lim : any;
+     mp_lim : any;
+     phy_att : any;
+     mag_att : any;
+     phy_def : any;
+     mag_def : any;
+     act_speed : any;
+     ret_dam_proba : any;
+     ret_dam_coef : any;
+     seal_hit : any;
+     seal_resis : any;
+     phy_crit : any;
+     phy_ten : any;
+     mag_crit : any;
+     mag_ten : any;
+     phy_crit_coef : any;
+     mag_crit_coef : any;
+     revive_heal_coef : any;
+     heal_value : any;
+     seal_hit_to_partner : any;
+     seal_hit_to_mon : any;
+     phy_dam_to_partner : any;
+     phy_dam_to_mon : any;
+     mag_dam_to_partner : any;
+     mag_dam_to_mon : any;
+     be_chaos_round_repair : any;
+     chaos_round_repair : any;
+     be_froze_round_repair : any;
+     froze_round_repair : any;
+     neglect_phy_def : any;
+     neglect_mag_def : any;
+     neglect_seal_resis : any;
+     phy_dam_to_speed_1 : any;
+     phy_dam_to_speed_2 : any;
+     mag_dam_to_speed_1 : any;
+     mag_dam_to_speed_2 : any;
+     seal_hit_to_speed : any;
+     chance1 : any;
+     chance2 : any;
+     chance3 : any;
+     chance4 : any;
+     chance5 : any;
+     effect_chance : any;
+     effect : any;
+     stunt_chance : any;
+     stunt : any;
+      protected keys():string{
+            return  "no,max_no,talent_str,talent_con,talent_sta,talent_spi,talent_agi,hp_lim,mp_lim,phy_att,mag_att,phy_def,mag_def,act_speed,ret_dam_proba,ret_dam_coef,seal_hit,seal_resis,phy_crit,phy_ten,mag_crit,mag_ten,phy_crit_coef,mag_crit_coef,revive_heal_coef,heal_value,seal_hit_to_partner,seal_hit_to_mon,phy_dam_to_partner,phy_dam_to_mon,mag_dam_to_partner,mag_dam_to_mon,be_chaos_round_repair,chaos_round_repair,be_froze_round_repair,froze_round_repair,neglect_phy_def,neglect_mag_def,neglect_seal_resis,phy_dam_to_speed_1,phy_dam_to_speed_2,mag_dam_to_speed_1,mag_dam_to_speed_2,seal_hit_to_speed,chance1,chance2,chance3,chance4,chance5,effect_chance,effect,stunt_chance,stunt";
+
+        }
+}

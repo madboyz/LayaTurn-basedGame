@@ -1,0 +1,358 @@
+{
+	"name": "vscode-nextgenas",
+	"displayName": "NextGen ActionScript",
+	"description": "ActionScript and MXML language extension for Visual Studio Code",
+	"version": "0.4.3",
+	"publisher": "bowlerhatllc",
+	"homepage": "http://nextgenactionscript.com/vscode/",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/BowlerHatLLC/vscode-nextgenas.git"
+	},
+	"bugs": {
+		"url": "https://github.com/BowlerHatLLC/vscode-nextgenas/issues"
+	},
+	"license": "Apache-2.0",
+	"private": true,
+	"categories": [
+		"Languages",
+		"Debuggers"
+	],
+	"main": "extension",
+	"icon": "nextgenas.svg",
+	"scripts": {
+		"postinstall": "node ./node_modules/vscode/bin/install",
+		"build": "mvn clean package",
+		"build-debug": "mvn package"
+	},
+	"engines": {
+		"vscode": "^1.11.0"
+	},
+	"devDependencies": {
+		"@types/mocha": "^2.2.40",
+		"@types/node": "^6.0.65",
+		"mocha": "^3.2.0",
+		"typescript": "^2.2.1",
+		"vsce": "^1.18.0",
+		"vscode": "^1.1.0"
+	},
+	"dependencies": {
+		"portfinder": "^1.0.12",
+		"vscode-jsonrpc": "^3.1.0",
+		"vscode-languageclient": "^2.6.3"
+	},
+	"activationEvents": [
+		"onLanguage:nextgenas",
+		"onLanguage:mxml",
+		"workspaceContains:asconfig.json",
+		"onCommand:nextgenas.createASConfigTaskRunner",
+		"onCommand:nextgenas.createInitialConfigurationsForSWFDebug",
+		"onCommand:nextgenas.adapterExecutableCommandSWF",
+		"onCommand:nextgenas.organizeImportsInTextEditor",
+		"onCommand:nextgenas.organizeImportsInUri",
+		"onCommand:nextgenas.organizeImportsInDirectory"
+	],
+	"contributes": {
+		"commands": [
+			{
+				"command": "nextgenas.createASConfigTaskRunner",
+				"title": "Tasks: Configure Task Runner (ActionScript - asconfig.json)"
+			},
+			{
+				"command": "nextgenas.organizeImportsInTextEditor",
+				"title": "ActionScript: Organize Imports"
+			},
+			{
+				"command": "nextgenas.organizeImportsInUri",
+				"title": "Organize Imports"
+			},
+			{
+				"command": "nextgenas.organizeImportsInDirectory",
+				"title": "Organize Imports (Recursive)"
+			}
+		],
+		"menus": {
+			"commandPalette": [
+				{
+					"command": "nextgenas.organizeImportsInTextEditor",
+					"when": "editorLangId == nextgenas"
+				},
+				{
+					"command": "nextgenas.organizeImportsInTextEditor",
+					"when": "editorLangId == mxml"
+				},
+				{
+					"command": "nextgenas.organizeImportsInUri",
+					"when": "false"
+				},
+				{
+					"command": "nextgenas.organizeImportsInDirectory",
+					"when": "false"
+				}
+			],
+			"editor/context": [
+				{
+					"command": "nextgenas.organizeImportsInUri",
+					"when": "editorLangId == nextgenas",
+					"group": "1_modification"
+				},
+				{
+					"command": "nextgenas.organizeImportsInUri",
+					"when": "editorLangId == mxml",
+					"group": "1_modification"
+				}
+			],
+			"editor/title/context": [
+				{
+					"command": "nextgenas.organizeImportsInUri",
+					"when": "resourceLangId == nextgenas"
+				},
+				{
+					"command": "nextgenas.organizeImportsInUri",
+					"when": "resourceLangId == mxml"
+				}
+			],
+			"explorer/context": [
+				{
+					"command": "nextgenas.organizeImportsInUri",
+					"when": "resourceLangId == nextgenas"
+				},
+				{
+					"command": "nextgenas.organizeImportsInUri",
+					"when": "resourceLangId == mxml"
+				},
+				{
+					"command": "nextgenas.organizeImportsInDirectory",
+					"when": "explorerResourceIsFolder"
+				}
+			]
+		},
+		"languages": [
+			{
+				"id": "nextgenas",
+				"extensions": [
+					".as"
+				],
+				"aliases": [
+					"NextGen ActionScript",
+					"NextGenAS",
+					"ActionScript",
+					"as"
+				],
+				"configuration": "./nextgenas.configuration.json"
+			},
+			{
+				"id": "mxml",
+				"extensions": [
+					".mxml"
+				],
+				"aliases": [
+					"MXML",
+					"mxml"
+				],
+				"configuration": "./mxml.configuration.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "nextgenas",
+				"scopeName": "source.actionscript.3",
+				"path": "./syntaxes/AS3.tmLanguage"
+			},
+			{
+				"language": "mxml",
+				"scopeName": "text.mxml",
+				"path": "./syntaxes/MXML.tmLanguage",
+				"embeddedLanguages": {
+					"meta.cdata.mxml": "nextgenas"
+				}
+			}
+		],
+		"jsonValidation": [
+			{
+				"fileMatch": "asconfig.json",
+				"url": "./schemas/asconfig.schema.json"
+			}
+		],
+		"configuration": {
+			"type": "object",
+			"description": "NextGen ActionScript configuration",
+			"properties": {
+				"nextgenas.sdk.editor": {
+					"type": [
+						"string",
+						"null"
+					],
+					"default": null,
+					"description": "Specifies the folder path of the Apache FlexJS SDK used for code intelligence. If nextgenas.sdk.framework is not specified, the framework in this SDK will also be loaded."
+				},
+				"nextgenas.sdk.framework": {
+					"type": [
+						"string",
+						"null"
+					],
+					"default": null,
+					"description": "Specifies the folder path of an ActionScript SDK to load a different framework than the one in nextgenas.sdk.editor, such as the Feathers SDK or the classic Flex SDK."
+				},
+				"nextgenas.java": {
+					"type": [
+						"string",
+						"null"
+					],
+					"default": null,
+					"description": "Specifies the path to the java exectuable."
+				}
+			}
+		},
+		"breakpoints": [
+			{
+				"language": "nextgenas"
+			}
+		],
+		"debuggers": [
+			{
+				"type": "swf",
+				"label": "SWF",
+				"adapterExecutableCommand": "nextgenas.adapterExecutableCommandSWF",
+				"configurationAttributes": {
+					"launch": {
+						"required": [
+							"program"
+						],
+						"properties": {
+							"program": {
+								"type": "string",
+								"description": "Absolute path to a SWF or AIR application descriptor XML."
+							},
+							"profile": {
+								"type": [
+									"string",
+									"null"
+								],
+								"description": "The device profile to use in AIR Debug Launcher.",
+								"pattern": "^(desktop|extendedDesktop|mobileDevice)$",
+								"default": null
+							},
+							"screensize": {
+								"type": [
+									"string",
+									"null"
+								],
+								"description": "Defines the screen dimensions when running with the mobileDevice profile in AIR Debug Launcher",
+								"pattern": "^((\\d+x\\d+:\\d+x\\d+)|iPhone|iPhoneRetina|iPhone5Retina|iPhone6|iPhone6Plus|iPod|iPodRetina|iPod5Retina|iPad|iPadRetina|Droid|NexusOne|SamsungGalaxyS|SamsungGalaxyTab|QVGA|WQVGA|FWQVGA|HVGA|WVGA|FWVGA|1080|720|480)$",
+								"default": null
+							},
+							"screenDPI": {
+								"type": "number",
+								"description": "Overrides the value returned by Capabilities.screenDPI in the AIR Debug Launcher.",
+								"multipleOf": 1
+							},
+							"versionPlatform": {
+								"type": [
+									"string",
+									"null"
+								],
+								"description": "Overrides the three characters returned by Capabilities.os in the AIR Debug Launcher.",
+								"pattern": "^[A-Z]{3}$",
+								"default": null
+							},
+							"runtimeExecutable": {
+								"type": [
+									"string",
+									"null"
+								],
+								"description": "Path to runtime executable, such as the standalone version of Adobe Flash Player, a web browser, or AIR Debug Launcher.",
+								"default": null
+							},
+							"runtimeArgs": {
+								"type": "array",
+								"description": "Optional arguments to pass to the runtime executable.",
+								"items": {
+									"type": "string"
+								},
+								"default": []
+							},
+							"extdir": {
+								"type": [
+									"string",
+									"null"
+								],
+								"description": "Path to directory containing unpackaged AIR native extensions for debugging.",
+								"default": null
+							}
+						}
+					}
+				},
+				"initialConfigurations": "nextgenas.createInitialConfigurationsForSWFDebug",
+				"configurationSnippets": [
+					{
+						"label": "SWF: Launch Standalone SWF",
+						"description": "Launch SWF in standalone Adobe Flash Player executable",
+						"body": {
+							"type": "swf",
+							"request": "launch",
+							"name": "${2:Launch SWF}",
+							"program": "^\"\\${workspaceRoot}/${1:app.swf}\""
+						}
+					},
+					{
+						"label": "SWF: Launch SWF embedded in HTML",
+						"description": "Launch SWF embedded in HTML in a web browser",
+						"body": {
+							"type": "swf",
+							"request": "launch",
+							"name": "${2:Launch SWF}",
+							"program": "^\"\\${workspaceRoot}/${1:index.html}\""
+						}
+					},
+					{
+						"label": "SWF: Launch Adobe AIR desktop",
+						"description": "Launch Adobe AIR desktop application using AIR Debug Launcher",
+						"body": {
+							"type": "swf",
+							"request": "launch",
+							"name": "${2:Launch AIR desktop}",
+							"program": "^\"\\${workspaceRoot}/${1:application.xml}\""
+						}
+					},
+					{
+						"label": "SWF: Launch Adobe AIR mobile",
+						"description": "Launch Adobe AIR mobile application using AIR Debug Launcher",
+						"body": {
+							"type": "swf",
+							"request": "launch",
+							"name": "${5:Launch AIR mobile}",
+							"program": "^\"\\${workspaceRoot}/${1:application.xml}\"",
+							"profile": "mobileDevice",
+							"screensize": "${2:iPhoneRetina}",
+							"screenDPI": "^${3:326}",
+							"versionPlatform": "${4:IOS}"
+						}
+					}
+				]
+			},
+			{
+				"type": "nextgenas-node",
+				"label": "NextGenAS Node.js",
+				"enableBreakpointsFor": {
+					"languageIds": [
+						"nextgenas",
+						"mxml"
+					]
+				},
+				"initialConfigurations": [
+					{
+						"name": "NextGenAS Node.js Launch",
+						"type": "node",
+						"request": "launch",
+						"program": "${workspaceRoot}/bin/js-debug/index.js",
+						"cwd": "${workspaceRoot}/bin/js-debug",
+						"sourceMaps": true,
+						"outDir": "${workspaceRoot}/bin/js-debug"
+					}
+				]
+			}
+		]
+	},
+	"__metadata": null
+}

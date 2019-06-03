@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <title>divClass0</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/layaSetup0.css"/>
+    <link rel="stylesheet" type="text/css" href="css/layaSetup.css"/>
+</head>
+
+<body style="background-color: #303030;margin-top: 22px" onload="loadingData()">
+<div class="inputBoxLeft">
+    <div class="title">
+        APP平台
+        <div class="cs">
+            <p class="text">应用程序运行的系统</p>
+        </div>
+    </div>
+    <div class="title">
+        游戏名称
+        <div class="cs">
+            <p class="text">应用程序的游戏名称</p>
+        </div>
+    </div>
+    <div class="title" id="desc_game_url">
+        游戏地址
+
+        <div class="cs">
+            <p class="text">游戏启动地址</p>
+        </div>
+    </div>
+    <div class="title">
+        横竖屏
+    </div>
+    <div class="title">
+        默认包名
+        <div class="cs">
+            <p class="text">不选择渠道时打包的包名</p>
+        </div>
+    </div>
+    <div class="title">
+        输出目录
+
+        <div class="cs">
+            <p class="text">生成apk文件的目录</p>
+        </div>
+    </div>
+    <div class="title">
+        游戏图标
+        <div class="cs">
+            <p class="text" style="margin:-7px 25px 0px;">apk的图标文件</br>(512*512的png文件)</p>
+        </div>
+    </div>
+    <div class="title">
+        资源路径
+        <div class="cs">
+            <p class="text" style="margin:-7px 30px 0px;">将游戏资源打包到</br>客户端以减少网络</br>下载，请选择本地</br>资源目录</p>
+        </div>
+    </div>
+    <div class="title">
+        Keystore文件
+    </div>
+    <div class="title">
+        Keystore密码
+    </div>
+    <div class="title">
+        Alias
+    </div>
+    <div class="title">
+        Alias密码
+    </div>
+</div>
+<div class="inputBoxRight">
+
+    <div style="height:24px ">
+        <div class="necessary">*</div>
+        <select class="configItem" id="x_0_system" style="width:60%;float:left;">
+            <option value="landscape">Android</option>
+            <!--<option value="portrait">IOS</option>-->
+        </select>
+
+        <input type='checkbox' style='float:left;height: 15px;width:15px;margin-top: 9px;margin-left: 20px' onclick='selectSingle(this)'/>
+        <div style="color:#aaaaaa;height:100%; float:left;margin-top:6px;margin-left: 5px">
+            单机版APP
+        </div>
+    </div>
+
+    <div class="necessaryDiv">
+        <div class="necessary">*</div>
+        <input style="float:left" class="configItem" type="text" placeholder="游戏名称" name="" id="x_0_gameName" value=""/>
+    </div>
+
+    <div class="necessaryDiv" style="" >
+        <div id="n_game_start_url" class="necessary">*</div>
+        <input class="configItem" style="float:left;" type="text" name="" id="x_0_gameURL" placeholder="游戏启动地址" value="" />
+    </div>
+
+    <div class="necessaryDiv">
+        <div class="necessary">*</div>
+        <select class="configItem" id="x_0_orientation" style="border:none">
+            <option value="landscape">landscape</option>
+            <option value="portrait">portrait</option>
+        </select>
+    </div>
+
+    <div class="necessaryDiv">
+        <div class="necessary">*</div>
+        <input type="text" style="float:left" name="" id="x_0_defaultPackageName" placeholder="不选择渠道打包时的包名" value="" class="configItem"/>
+    </div>
+
+    <div class="necessaryDiv">
+        <div class="necessary">*</div>
+        <input type="text" style="float:left" name="" id="x_0_outDir" placeholder="apk文件输出目录" value="" class="configItem"/>
+    </div>
+    <div class="buttoninput1" onclick="select_out_dir()">
+        浏览...
+    </div>
+
+
+    <div class="necessaryDiv">
+        <div class="necessary">*</div>
+        <input type="text" style="float:left" name="" id="x_0_gameIcon" value="" placeholder="apk游戏图标" class="configItem"/>
+    </div>
+
+    <div class="buttoninput2" onclick="select_game_icon()">
+        浏览...
+    </div>
+
+    <div class="necessaryDiv">
+        <div id="n_game_res_path" class="necessary" style=" color:#303030;">*</div>
+        <input type="text" name="" id="x_0_resPath" value="" placeholder="游戏资源本地路径（单机版必填）" class="configItem"/>
+    </div>
+    <div class="buttoninput3" onclick="select_game_res()">
+        浏览...
+    </div>
+
+    <div class="necessaryDiv">
+        <div class="necessary" style=" color:#303030;">*</div>
+        <input type="text" name="" id="x_0_keystorefile" value="" placeholder="输入文件地址" class="configItem" style="margin-left: 5px"/>
+    </div>
+    <div class="buttoninput4" onclick="select_keystore_file()">
+        浏览...
+    </div>
+
+    <div class="necessaryDiv">
+        <div class="necessary" style=" color:#303030;">*</div>
+        <input type="text" name="" id="x_0_keystorepassword" value="" class="configItem"/>
+    </div>
+
+    <div class="necessaryDiv">
+        <div class="necessary" style=" color:#303030;">*</div>
+        <input type="text" name="" id="x_0_alias" value="" class="configItem"/>
+    </div>
+
+    <div class="necessaryDiv">
+        <div class="necessary" style=" color:#303030;">*</div>
+        <input type="text" name="" id="x_0_aliaspassword" value="" class="configItem"/>
+    </div>
+
+</div>
+<div class="buttonBox">
+    <div id="btn_save" class="buttonDIV" onclick="packaging()">
+        打包
+    </div>
+</div>
+
+
+</body>
+
+</html>
+<script src="js/jquery-3.0.0.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/divClass0.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+    //	const fs_extra = require('fs-extra');
+    var gameID = 1000;
+    //	var configFilePath = "./data/gameData.json";
+    var dataGame = {};
+    var allGame = {};
+    var genApk;
+    /*遍历方法*/
+    function count(o) {
+        var t = typeof o;
+        if (t == 'string') {
+            return o.length;
+        } else if (t == 'object') {
+            var n = 0;
+            for (var i in o) {
+                n++;
+            }
+            return n;
+        }
+        return false;
+    }
+    /*读取json数据*/
+    function loadingData() {
+        $.getJSON(window.parent.configPath.game_data, function (data) {
+            if (count(data) == 0) {
+                return;
+            }
+            allGame = data;
+            dataGame = allGame;//[gameID];
+            if (dataGame != null) {
+                $('#x_0_gameName')[0].value = dataGame.gameName;
+                $('#x_0_gameURL')[0].value = dataGame.gameURL;
+                $('#x_0_outDir')[0].value = dataGame.outDir;
+                $('#x_0_defaultPackageName')[0].value = dataGame.defaultPackageName;
+                $('#x_0_orientation')[0].value = dataGame.orientation;
+//				$('#x_0_gameType')[0].value = dataGame.gameType;
+                $('#x_0_gameIcon')[0].value = dataGame.gameIcon;
+                $('#x_0_keystorefile')[0].value = dataGame.keystoreFile;
+                $('#x_0_keystorepassword')[0].value = dataGame.keystorePassword;
+                $('#x_0_aliaspassword')[0].value = dataGame.aliasPassword;
+                $('#x_0_resPath')[0].value = dataGame.resPath;
+                $('#x_0_alias')[0].value = dataGame.alias;
+//				$('#x_0_tel')[0].value = dataGame.tel;
+//				$('#x_0_qq')[0].value = dataGame.QQ	;
+//				$('#x_0_wechat')[0].value = dataGame.wechat;
+            }
+//			for(var i = 0; dataGame.length > i; i++) {
+//				for(key in dataGame[i]) {
+//					$(".inputBox").eq(i).children("input").attr("value",dataGame[i][key]);
+//				}
+//			}
+        });
+    }
+    function packaging() {
+        saveSP();
+        var packageData = {};
+        packageData.app_name = $('#x_0_gameName')[0].value;
+        packageData.orientation = $('#x_0_orientation')[0].value;
+        packageData.game_url = $('#x_0_gameURL')[0].value;
+        packageData.spname = "laya";
+        packageData.icon_path = $('#x_0_gameIcon')[0].value;
+        packageData.keystore_path = $('#x_0_keystorefile')[0].value;
+        packageData.keystore_pwd = $('#x_0_keystorepassword')[0].value;
+        packageData.keystore_alias = $('#x_0_alias')[0].value;
+        packageData.keystore_alias_pwd = $('#x_0_aliaspassword')[0].value;
+        packageData.output_path = $('#x_0_outDir')[0].value;
+        packageData.loading_view_show = false;
+        packageData.gen_res_pkg = true;
+        packageData.res_path = $('#x_0_resPath')[0].value;
+//                packageData.iconInfo = iconInfo;
+        packageData.sdk_path = null;
+        packageData.package_name = $('#x_0_defaultPackageName')[0].value;
+        packageData.spInfo = null;
+        if( genApk == null ) {
+            genApk = new window.parent.GenerateAndroidApk.GenerateAndroidApk();
+        }
+        genApk.excute(packageData,function(msg,percent){
+            window.parent.xsdkShowLoading("progress:"+percent+"%");
+        });
+    }
+    function saveSP() {
+        dataGame.gameName = $('#x_0_gameName')[0].value;
+        dataGame.gameURL = $('#x_0_gameURL')[0].value;
+        dataGame.outDir = $('#x_0_outDir')[0].value;
+        dataGame.orientation = $('#x_0_orientation')[0].value;
+//		dataGame.gameType = $('#x_0_gameType')[0].value;
+        dataGame.gameIcon = $('#x_0_gameIcon')[0].value;
+        dataGame.keystoreFile = $('#x_0_keystorefile')[0].value;
+        dataGame.keystorePassword = $('#x_0_keystorepassword')[0].value;
+        dataGame.aliasPassword = $('#x_0_aliaspassword')[0].value;
+        dataGame.defaultPackageName = $('#x_0_defaultPackageName')[0].value;
+        dataGame.resPath = $('#x_0_resPath')[0].value;
+        dataGame.alias = $('#x_0_alias')[0].value;
+
+        var fs_extra = window.parent.xsdk_node_fs_extra;
+        var path = window.parent.xsdk_node_path;
+        var outpath = window.parent.configPath.game_data;
+        var result = JSON.stringify(dataGame);
+        fs_extra.outputFileSync(outpath, result);
+    }
+    function select_out_dir(){
+		var dialog = window.parent.electron.remote.dialog;
+		var fileDic = dialog.showOpenDialog({properties: ['openDirectory']})
+        if(fileDic){
+            $('#x_0_outDir')[0].value = fileDic;
+        }
+    }
+    function select_game_icon(){
+        var dialog = window.parent.electron.remote.dialog;
+        var selectIcon = dialog.showOpenDialog(
+				{
+					filters: [{ name: 'Images', extensions: ['jpg', 'png'] }],
+					properties: ['openFile', 'openFile', 'multiSelections']
+				});
+        if(selectIcon){
+            $('#x_0_gameIcon')[0].value = selectIcon;
+        }
+    }
+    function select_keystore_file(){
+        var dialog = window.parent.electron.remote.dialog;
+        var selectfile = dialog.showOpenDialog({
+            properties: ['openFile', 'openFile', 'multiSelections']
+        });
+        if(selectfile){
+            $('#x_0_keystorefile')[0].value = selectfile;
+        }
+    }
+    function select_game_res(){
+        var dialog = window.parent.electron.remote.dialog;
+        var fileDic = dialog.showOpenDialog({properties: ['openDirectory']})
+        if(fileDic){
+            $('#x_0_resPath')[0].value = fileDic;
+        }
+    }
+    function selectSingle(obj){
+        var operateInput = $('#x_0_gameURL')[0];
+        var operateDesc = $('#desc_game_url')[0];
+        var operateNecessary = $('#n_game_start_url')[0];
+        var operateNecessaryResPath = $('#n_game_res_path')[0];
+        var btnSave = $('#btn_save')[0];
+        var btnNext = $('#btn_next')[0];
+
+        //选中
+        if( obj.checked ){
+            operateInput.disabled=true;
+            operateInput.style.color="#717171"
+            operateDesc.style.color="#717171"
+            operateInput.style.backgroundColor="#2c2c2c"
+            operateNecessary.style.color = "#303030";
+            operateNecessaryResPath.style.color = "#f00";
+            btnSave.innerHTML="打包"
+            btnNext.style.display="none";
+            window.parent.singleapp = true;
+
+        }else{  //取消选中
+            operateInput.disabled=false;
+            operateInput.style.color="#999999"
+            operateDesc.style.color="#999999"
+            operateInput.style.backgroundColor="#282828"
+            operateNecessary.style.color = "#f00";
+            operateNecessaryResPath.style.color = "#303030";
+            btnSave.innerHTML="保存"
+            btnNext.style.display="block";
+            window.parent.singleapp = false;
+        }
+    }
+</script>

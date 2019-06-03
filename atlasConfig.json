@@ -1,0 +1,30 @@
+{
+    "atlas": {
+        "POT": false,
+        "pixelFormat": "ARGB32",
+        "quality": -1,
+        "size": 2048,
+        "textureFormat": "PNG"
+    },
+    "data": {
+        "compact": true,
+        "format": "atlas"
+    },
+    "excludeList": ["laya/assets/bg/"],
+    "extrudeList": [
+    ],
+    "force": true,
+    "includeList": [
+        
+    ],
+    "inputDir": "laya\\assets",
+    "outputDir": "bin\\res\\atlas",
+    "resDir": "bin",
+    "sprite": {
+        "cropAlpha": true,
+        "extrude": 1,
+        "padding": 1,
+        "rotation": false,
+        "size": 512
+    }
+}

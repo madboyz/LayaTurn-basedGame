@@ -1,0 +1,70 @@
+#! /usr/bin/env node
+const path = require('path')
+const sol = require('./index.js')
+
+var projectName = "MyGame"
+const projectDir = "/tmp"
+
+if (process.argv.length > 2) {
+  projectName = process.argv[2]
+}
+
+let p1 = Promise.resolve()
+p1.then(function() {
+  return new Promise(function(resolve, reject) {
+    sol.init(projectName, projectDir, function(err) {
+      if(err) return reject(err)
+      console.log("在目录", projectDir, "创建项目", projectName, "成功")
+      return resolve()
+    }) 
+  })
+}).then(function() {
+  return new Promise(function(resolve, reject) {
+    let opts = sol.compileOpts()
+    opts.contracts_directory = path.join(projectDir, projectName, "contracts")
+    opts.contracts_build_directory = path.join(projectDir, projectName, "build")
+    sol.compile(opts, function (err) {
+      if (err) {
+        console.log("编译出错!", err)
+        reject(err)
+      }
+      console.log("编译成功!")
+      resolve(opts)
+    })
+  })
+}).then(function(compileOpts) {
+  return new Promise(function(resolve, reject) {
+    let opts = sol.deployOpts()
+    opts.contracts_build_directory = path.join(projectDir, projectName, "build")
+    opts.contract_name = projectName
+    let owner = '0x50d3dd0831858a8a5c4802b792fb7cd521e28687'
+    let ownerPrivateKey = '71e1a11975be5315f2a3b2fd63d8092a1f04d946216249377feb85b40e9164ae'
+    sol.deploy(owner, ownerPrivateKey, opts, function(err) {
+      if(err) {
+        console.log("部署失败!", err)
+        return reject(err)
+      }
+      console.log("部署成功")
+      resolve({compileOpts, "deployOpts": opts})
+    })
+ }) 
+}).then(function({compileOpts, deployOpts}) {
+  return new Promise(function(resolve, reject) {
+    let file = path.join(projectDir, projectName, "build", projectName + ".json")
+    let contracts_dir = path.dirname(file)
+    sol.verifyContract(file, contracts_dir, false, true, function(err, result) {
+      if(err) {
+        console.log("生成认证数据失败!", err)
+        return reject(err)
+      }
+      console.log("认证合约所需数据:")
+      Object.keys(result).map((elem) =>
+        console.log("%s :\n%s\n", elem, result[elem])
+      )
+    })
+  })
+}).then(function() {
+  console.log("创建、编译、部署完成!")
+}).catch(function(err){
+  console.log("任务失败!", err)
+})

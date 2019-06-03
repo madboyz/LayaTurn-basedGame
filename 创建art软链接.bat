@@ -1,0 +1,1 @@
+mklink /j "D:\duanshihe.mxxy_client\trunk\bin\art" "D:\duanshihe.mxxy_data\trunk\Client\art" 

@@ -1,0 +1,104 @@
+body {
+	font-family: "微软雅黑";
+}
+
+.buttonBox {
+	width: 800px;
+	height: 30px;
+	line-height: 30px;
+	float: left;
+	margin-top:-18px;
+}
+
+.Divleft {
+	height: 425px;
+	margin: 20px 0;
+}
+
+.Divright {
+	height: 400px;
+	margin: 20px 0;
+}
+
+.DivBox {
+	width: 100%;
+	height: 100%;
+	/*border: 2px solid #E0E0E0;*/
+}
+
+.DivBox .title {
+	width: 100%;
+	height: 35px;
+	line-height: 37px;
+	padding: 0 20px;
+	color: #CCCCCC;
+	font-size: 14px;
+	font-weight:bold;
+	background-color: #4e4e4e
+	/*border-bottom: 2px solid #E0E0E0;*/
+}
+
+.DivBox .title .form-group {
+	margin: 0;
+	line-height: 35px;
+	padding: 0;
+	padding-top: 5px;
+	position: relative;
+	width: 280px;
+	float: right;
+}
+
+.DivBox .title .form-group input {
+	width: 280px;
+	padding-right: 40px;
+	border-radius: 0;
+	border: 2px solid #E0E0E0;
+}
+
+.DivBox .title .form-group span {
+	position: absolute;
+	top: 15px;
+	right: 10px;
+	cursor: pointer;
+}
+
+.DivBox .listSPBox {
+	width: 100%;
+	height: 89%;
+	overflow: auto;
+	color: #A5A5A5;
+}
+
+.DivBox .listSPBox .listSP {
+	width: 100%;
+	height: 35px;
+	line-height: 35px;
+	padding: 0 20px;
+	font-size: 14px;
+	color: #CCCCCC;
+	cursor: pointer;
+}
+
+.DivBox .listSPBox .listSP:hover {
+	background-color: #4e4e4e;
+}
+
+.DivBox .listSPBox .listSPSmall {
+	height: 35px;
+	line-height: 35px;
+	padding-left: 60px;
+	position: relative;
+}
+
+.DivBox .listSPBox .listSPSmall input[type="checkbox"] {
+	background: white;
+	margin: 2px 10px;
+	position: absolute;
+	top: 10px;
+	left: 30px;
+	cursor: pointer;
+}
+
+.checkboxbg{
+	background:#ff0;
+}

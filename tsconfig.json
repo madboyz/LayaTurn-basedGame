@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "module": "amd",
+    "target": "es5",
+    "sourceMap": true,
+    "watch": true,
+    "outFile": "bin/js/game.js",
+    "removeComments": true, 
+    "allowJs": true,
+    "lib": [
+      "es5",
+      "dom",
+      "es2015.promise"
+    ]
+  },
+  //"exclude":[
+  //  "src/game/activity"
+  //],
+  "files": [
+    // "bin/sql.js",
+    "bin/require.js"
+  ],
+  "include": [
+    "libs",
+    "src"
+  ]
+}

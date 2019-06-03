@@ -1,0 +1,39 @@
+{
+	"name": "hello",
+	"displayName": "Hello",
+	"description": "A simple hello world test.",
+	"version": "0.1.1",
+	"publisher": "hypnoes",
+	"engines": {
+		"vscode": "^1.0.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onCommand:extension.startServer"
+	],
+	"main": "./out/src/anywhere/bin/anywhere",
+	"contributes": {
+		"commands": [
+			{
+				"command": "extension.sayHello",
+				"title": "Hello World"
+			}
+		]
+	},
+	"scripts": {
+		"vscode:prepublish": "node ./node_modules/vscode/bin/compile",
+		"compile": "node ./node_modules/vscode/bin/compile -watch -p ./",
+		"postinstall": "node ./node_modules/vscode/bin/install"
+	},
+	"devDependencies": {
+		"typescript": "^1.8.5",
+		"vscode": "^0.11.0"
+	},
+	"__metadata": {
+		"id": "da636519-97ea-4a47-ae07-bb85cc432647",
+		"publisherId": "0e4c9209-b0c2-43ea-8dfc-76da9ed927ce",
+		"publisherDisplayName": "Hypnoes"
+	}
+}

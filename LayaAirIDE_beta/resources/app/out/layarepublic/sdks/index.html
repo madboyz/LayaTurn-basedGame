@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>homepage</title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/layaSetup.css" />
+	</head>
+	<body>
+		<div style="-webkit-app-region: drag;width: 95%;height: 25px;top:0px"></div>
+		<div class="closebtn" onclick="closeWindow()"></div>
+		<div id="xsdk_loading" style="display:none;width: 100%;height:90%;position:absolute;opacity: 1;z-index: 30" disabled="disable">
+			<div  style="width:240px;height:100px;border:0px solid #2e6da4;background-color:#404040;position:absolute;top:200px;left:0;right:0;bottom:0;margin: 0 auto;z-index: 20" >
+				<img src="./img/loading.png" class="musicRotatr" style="width:50px;height:50px;position:absolute;top:-30px;left:0;right:0;bottom:0;margin: auto auto;"/>
+				<div id="xsdk_loading_text" style="color:#fff;top:0px;margin-top: 70px;text-align: center"></div>
+			</div>
+		</div>>
+		<div class="boxSetup" style="background-color: #282828">
+			<div class="boxTitle">
+				<p style="margin: -25px 0 0px;">
+					项目管理
+				</p>
+			</div>
+			<div class="boxClass">
+				<div class="smallClass">
+					<div id="contentDiv0" class="smallDiv orange">
+						配置管理
+					</div>
+					<img class="smallRight" src="img/arrow_normal.png"/>
+					<div id="contentDiv1" class="smallDiv">
+						渠道管理
+					</div>
+					<img class="smallRight" src="img/arrow_normal.png"/>
+					<div id="contentDiv2" class="smallDiv">
+						参数配置
+					</div>
+					<img class="smallRight" src="img/arrow_normal.png"/>
+					<div id="contentDiv3" class="smallDiv">
+						ICON管理
+					</div>
+				</div>
+			</div>
+			<div class="iframeBox" style="border: none;">
+				<iframe src="divClass0.html" id="contentDiv" class="contentDiv" frameborder="no" border="0" marginwidth="0" marginheight="0" scrolling="no" allowtransparency="yes">
+				</iframe>
+
+			</div>
+		</div>
+	</body>
+
+</html>
+<!--<script src="js/jquery-3.0.0.min.js" type="text/javascript" charset="utf-8"></script>-->
+<script>window.$ = window.jQuery = require('./js/jquery-3.0.0.min.js');</script>
+<script>window.xsdk_node_fs_extra = require('fs-extra');</script>
+<script>window.xsdk_node_fs = require('fs');</script>
+<script>window.xsdk_node_path = require('path');</script>
+<script>window.electron = require('electron');</script>
+
+<script type="text/javascript">
+	window.GenerateAndroidApk = require("./js/packaging/GenerateAndroidApk.js");
+	window.cachePath = localStorage.getItem("layapublishworkspace")||window.xsdk_node_path.join(__dirname,"appCache/config");
+	window.configPath = {
+		"all_sp_data":window.cachePath+"/allSPData.json",
+		"all_sp_attribute":window.cachePath+"/attributeSP.json",
+		"choice_sp_data":window.cachePath+"/choiceSPData.json",
+		"game_data":window.cachePath+"/gameData.json"
+	};
+
+	window.textConfig = {
+		"api_getOpenedAccess":"http://api.devopen.layabox.com/xsdk/getOpenedAccess",
+		"api_getSpAttributeURL":"http://api.devopen.layabox.com/xsdk/getSDKAttribute?spid=",
+		"net_wait":"正在加载数据，请稍后...",
+		"download_sdk":"正在准备sdk资源包:",
+		"download_tool":"下载工具包，请稍后...",
+		"enter_res_path":"请输入资源路径"
+	}
+	var fs_extra = window.xsdk_node_fs_extra;
+	var fs = window.xsdk_node_fs;
+	if( !fs.existsSync(window.configPath.all_sp_data) ){
+		fs_extra.outputFileSync(window.configPath.all_sp_data, '{}');
+	}
+	if( !fs.existsSync(window.configPath.all_sp_attribute) ){
+		fs_extra.outputFileSync(window.configPath.all_sp_attribute, '{}');
+	}
+	if( !fs.existsSync(window.configPath.choice_sp_data) ){
+		fs_extra.outputFileSync(window.configPath.choice_sp_data, '{}');
+	}
+	if( !fs.existsSync(window.configPath.game_data) ){
+		fs_extra.outputFileSync(window.configPath.game_data, '{}');
+	}
+	var genApk;
+	/*遍历方法*/
+	function count(o) {
+		var t = typeof o;
+		if(t == 'string') {
+			return o.length;
+		} else if(t == 'object') {
+			var n = 0;
+			for(var i in o) {
+				n++;
+			}
+			return n;
+		}
+		return false;
+	}
+	function xsdkShowLoading(message){
+		$("#xsdk_loading")[0].style.display = '';
+		$("#xsdk_loading_text")[0].innerHTML=message;
+
+	}
+	function xsdkHideLoading(){
+		$("#xsdk_loading")[0].style.display = 'none';
+
+	}
+	function xsdkMessageBox(desc,showOption,firstCallback,secondCallback){
+		var dialog = window.electron.remote.dialog;
+		dialog.showMessageBox({
+			title: "提示",
+			type: "none",
+			buttons: showOption,//["确定", "取消"],
+//			message: message,
+			detail: desc,
+			cancelId:1,
+			noLink: true
+		}, function(t)
+		{
+			if( t == 0 ){
+				if(firstCallback) {
+					firstCallback();
+				}
+			}else if( t == 1){
+				if(secondCallback) {
+					secondCallback();
+				}
+			}
+		});
+	}
+	/*单击导航事件*/
+	$(".smallDiv").click(function() {
+		if( window.singleapp && window.singleapp ){
+			return;
+		}
+		var classDivID = $(this).attr("id");
+		var enterPageIndex = parseInt(classDivID.substr(classDivID.length-1,classDivID.length));
+		//判断是否可以进入对应的标签
+		canInPage(enterPageIndex,function(res) {
+			if( !res ){
+				return;
+			}
+			if (window.leavePage) {
+				window.leavePage(enterPageIndex);
+				window.leavePage = null;
+			}
+			if (classDivID == "contentDiv0") {
+				$("#contentDiv").attr("src", "divClass0.html");
+				chgBtnState($(this));
+			} else if (classDivID == "contentDiv1") {
+				$("#contentDiv").attr("src", "divClass1.html");
+				chgBtnState($(this));
+			} else if (classDivID == "contentDiv2") {
+				//			var dataSProot = "./data/choiceSPData.json";
+				$.getJSON(window.parent.configPath.choice_sp_data, function (data) {
+					if (count(data) == 0) {
+						alert("该游戏未选择任何渠道");
+						return;
+					}
+					$("#contentDiv").attr("src", "divClass2.html");
+					chgBtnState($(this));
+				});
+			} else if (classDivID == "contentDiv3") {
+				//			var dataSProot = "./data/choiceSPData.json";
+				$.getJSON(window.parent.configPath.choice_sp_data, function (data) {
+					if (count(data) == 0) {
+						alert("该游戏未选择任何渠道");
+						return;
+					}
+					$("#contentDiv").attr("src", "divClass3.html");
+					chgBtnState($(this));
+				});
+			}
+		});
+	});
+
+	function chgBtnState(select){
+		$(".smallDiv").removeClass("orange");
+		var rightArray = $(".smallRight");
+		for(var i=0;i<rightArray.length;++i){
+			rightArray[i].src = "./img/arrow_normal.png";
+		}
+		select.addClass("orange");
+		if( select.prev() && select.prev()[0] ) {
+			select.prev()[0].src = "./img/arrow_selected.png";
+		}
+	}
+	function canInPage3Param(callback){
+		$.getJSON(window.parent.configPath.choice_sp_data, function (choiceData) {
+			$.getJSON(window.parent.configPath.all_sp_attribute, function (attData) {
+				for(key in choiceData){
+					var selectAtt = attData[key];
+					for(attKey in selectAtt){
+						if(selectAtt[attKey].necessary && !selectAtt[attKey].value){
+							callback(false,choiceData[key].name,selectAtt[attKey].name);
+							return;
+						}
+					}
+				}
+				callback(true);
+			});
+		});
+	}
+	function canInPage(enterIndex,callback){
+		//进入打包环节
+		if(enterIndex == 3){
+			if( !genApk ){
+				genApk = new window.GenerateAndroidApk.GenerateAndroidApk();
+			}
+			canInPage3Param(function(status,sp,key){
+				if( !status ){
+					alert("请填写渠道:"+sp+" 中的必填信息:"+key);
+					callback(false);
+					return;
+				}
+				$.getJSON(window.parent.configPath.all_sp_data, function (allspData) {
+					genApk.download_sdk_file(window.configPath.all_sp_data,window.configPath.choice_sp_data,function(spid,sdkpath,result){
+						if(spid != -1){
+							allspData[spid].sdk_path = sdkpath;
+							allspData[spid].needUpdate = false;
+							if( allspData[spid].nextVersion ) {
+								allspData[spid].version = allspData[spid].nextVersion;
+								allspData[spid].nextVersion = "";
+							}
+							var fs_extra = window.xsdk_node_fs_extra;
+							fs_extra.outputFileSync(window.configPath.all_sp_data, JSON.stringify(allspData));
+						}
+						if( result == 0 ) {
+							callback(true);
+						}
+					});
+
+				});
+			});
+		}else {
+			callback(true);
+		}
+	}
+	function closeWindow(){
+		if (window.leavePage) {
+			window.leavePage(0);
+			window.leavePage = null;
+		}
+		var curWindow = window.electron.remote.getCurrentWindow();
+		curWindow.close();
+	}
+</script>

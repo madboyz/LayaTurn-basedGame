@@ -1,0 +1,33 @@
+.layanativecloseBar{
+	position: absolute;
+    z-index: 999999;
+    right: 0px;
+    top: 0px;
+    width: 100px;
+    height: 100px;
+    /*background-color: aquamarine;*/
+    display: inline;
+}
+.layanativecloseBar>div{
+    float: right;
+    cursor: pointer;
+    color: white;
+    font-size: 16px;
+    width: 30px;
+    height: 24px;
+    text-align: center;
+}
+.layanativecloseBar>div:hover{
+   background-color: #aa0000;
+}
+.layanativetopbar{
+	position: absolute;
+    width: 100%;
+    height: 24px;
+    top: 0px;
+    left: 0px;
+    color: #c5c5c5;
+    font-size: 14px;
+    text-align: center;
+    background-color: #303030;
+}

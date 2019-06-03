@@ -1,0 +1,2694 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif
+    /*font-family: "-apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif";*/
+}
+
+.layaLayerPop {
+    position: absolute;
+    z-index: 9999;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    user-select: none;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif
+    /*font-family: "-apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif";*/
+}
+.arrowright{  
+    border-width: 10px;
+    border-color: #fafafa;
+    border-left-width: 0;
+    border-style: dashed;
+    border-right-style: solid;
+    border-top-color: transparent;
+    border-bottom-color: transparent;
+    width: 0px;
+    position: absolute;
+    bottom: 20px;
+    left: -10px;
+} 
+.layaLayerPop .layerBackground {
+    width: 840px;
+    height: 520px;
+    background-color: #252526;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    /*border-radius: 4px;*/
+    box-shadow: 0px 0px 10px #000;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif
+
+    /*font-family: "-apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif";*/
+}
+
+.qcodeImg {
+    position: absolute;
+    top: 51px;
+    right: 45px;
+    z-index: 99999;
+    background-color: #ffffff;
+}
+
+.qcodeImg > img {
+    position: relative;
+    margin: 20px;
+}
+
+.layaLayerPop .layerBackground2 {
+    width: 600px;
+    height: 300px;
+    background-color: #303030;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    /*border-radius: 4px;*/
+    box-shadow: 0px 0px 10px #000;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif
+
+    /*font-family: "-apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif";*/
+}
+
+.layerBackground {
+    width: 840px;
+    height: 520px;
+    background-color: #252526;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    /*border-radius: 4px;*/
+    box-shadow: 0px 0px 10px #000;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif
+    /*font-family: "-apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif";*/
+}
+
+.layaLayerPop .layerBackground > .closeBtn {
+    float: inherit;
+    position: absolute;
+    -webkit-app-region: no-drag;
+    top: 0px;
+    right: 1px;
+    color: #fcfcfc;
+    list-style-type: none;
+    width: 26px;
+    vertical-align: middle;
+    cursor: pointer;
+    text-align: center;
+    font-size: 24px;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif
+    /*font-family: "-apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif";*/
+}
+
+.layaLayerPop .layerBackground .closeBtn:hover {
+    /*background-color: #3f3d3c;*/
+    /*color: #00B4FF;;*/
+}
+
+.layaLayerPop .layerBackgroundleftPanel {
+    width: 220px;
+    height: 520px;
+    background-color: #404040;
+    position: relative;
+    left: 0;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif
+    /*font-family: "-apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif";*/
+}
+
+.layaLayerPop .layerBackgroundleftPanel > a {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 12px;
+    color: #c5c5c5;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif
+    /*font-family: "-apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif";*/
+}
+
+.layaLayerPop .layerBackground .layerBackgroundleftPanel .listPro {
+    float: inherit;
+    position: relative;
+    -webkit-app-region: no-drag;
+    height: 30px;
+    top: 70px;
+    left: 30px;
+    color: #fcfcfc;
+    list-style-type: none;
+    width: 190px;
+    vertical-align: middle;
+    cursor: pointer
+}
+
+.layaLayerPop .layerBackground .layerBackgroundleftPanel .listPro:hover {
+    background-color: #3f3d3c;
+}
+
+.layaLayerPop .layerBackground .layerBackgroundleftPanel .listPro > img {
+    vertical-align: middle;
+    width: 16px
+}
+
+.layaLayerPop .layerBackground .layerBackgroundleftPanel .listPro a {
+    font-size: 12px;
+    position: relative;
+    -webkit-app-region: no-drag;
+    text-align: center;
+    line-height: 30px;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif
+    /*font-family: "-apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif";*/
+    color: #c5c5c5;
+}
+
+.layaLayerPop .layerBackgroundrightPanel {
+    width: 620px;
+    height: 520px;
+    float: right;
+    position: absolute;
+    top: 0px;
+    left: 220px;
+    background-color: #303030;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif
+    /*font-family: "-apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif";*/
+}
+
+.layerBackgroundrightPanel2 {
+    width: 600px;
+    height: 300px;
+    float: right;
+    position: absolute;
+    top: 0px;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif
+    /*font-family: "-apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif";*/
+}
+
+.layaLayerPop .layerBackgroundrightPanel > img {
+    float: right;
+    position: absolute;
+    top: 60px;
+    left: 228px;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif
+    /*font-family: "-apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif";*/
+}
+
+.layaLayerPop .layerBackgroundrightPanel > a {
+    float: right;
+    position: absolute;
+    top: 163px;
+    left: 209px;
+    color: #c5c5c5;
+    /*font-family: "-apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif";*/
+    text-align: center;
+    width: 152px;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif
+    /*font-family: "-apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif";*/
+}
+
+.layaLayerPop .layerBackgroundrightPanel .layaNewProInput {
+    position: absolute;
+    bottom: 200px;
+    left: 10px;
+    width: 600px;
+    height: 100px;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif
+    /*font-family: "-apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif";*/
+}
+
+.layaLayerPop .layerBackgroundrightPanel .layaNewProInput > input {
+    padding: 7px;
+    margin-left: 62px;
+    width: 400px;
+    font-size: 14px;
+    /* border-radius: 4px; */
+    /* outline: medium; */
+    line-height: 6px;
+    -webkit-font-smoothing: antialiased;
+    background-color: #282828;
+    border: 0px;
+    color: #c5c5c5;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif
+    /*font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif;*/
+    font-size: 14px;
+    /*font-family: "-apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif";*/
+}
+
+.layaLayerPop .layerBackgroundrightPanel .layaNewProInput > span {
+    color: #c5c5c5;
+    position: relative;
+    left: 60px;
+    font-size: 12px;
+    width: 50px;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif
+    /*font-family: "-apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif";*/
+}
+
+.layaLayerPop .layerBackgroundrightPanel .layaNewProInput > select {
+    color: #c8c8c8;
+    width: 416px;
+    height: 34px;
+    position: relative;
+    left: 62px;
+    background-color: #282828;
+    /*border-radius: 4px;*/
+    border: 0px;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif;
+    font-size: 14px;
+    -webkit-font-smoothing: antialiased;
+    background-color: #212121;
+    border-color: #212121;
+    color: #c5c5c5;
+    /*font-family: "-apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif";*/
+}
+
+.layaLayerPop .layerBackgroundrightPanel .layaNewProInput > button {
+    /* border-radius: 4px; */
+    background-color: #494949;
+    border: none;
+    cursor: pointer;
+    -webkit-font-smoothing: antialiased;
+    height: 32px;
+    width: 54px;
+    position: relative;
+    right: -1px;
+    top: -2px;
+    font-size: 14px;
+    color: #c8c8c8;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif
+    /*font-family: "-apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif";*/
+}
+
+.layaSkipButton {
+    background-color: #494949;
+    border: none;
+    cursor: pointer;
+    -webkit-font-smoothing: antialiased;
+    height: 31px;
+    width: 54px;
+    position: absolute;
+    font-size: 14px;
+    right: -55px;
+    color: #c8c8c8;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif
+    /*font-family: "-apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif";*/
+}
+
+.layaLayerPop .layerBackgroundrightPanel .layaNewProInput .createLayaBtn {
+    border-radius: 4px;
+    background-color: #1e7ac3;
+    border: none;
+    cursor: pointer;
+    -webkit-font-smoothing: antialiased;
+    height: 32px;
+    width: 100px;
+    position: relative;
+    right: -241px;
+    top: -32px;
+    font-size: 16px;
+    color: #ffffff;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif
+    /*font-family: "-apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif";*/
+}
+
+.layawelcomePage {
+    position: absolute;
+    z-index: 99999999;
+    display: block;
+    top: -5px;
+    left: 0;
+    width: 100%;
+    height: 120%;
+    user-select: none;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif
+    /*font-family: "-apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif";*/
+}
+
+#workbench .parts .sidebar {
+    top: 100px !important
+}
+
+.layawelcomePage .welcomePageBackground0 {
+    background-color: #252527;
+    position: absolute;
+    margin: auto;
+    top: 33px;
+    right: 0;
+    bottom: 0;
+    left: 51px;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif
+    /*font-family: "-apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif";*/
+}
+
+.layawelcomePage .welcomePageBackground {
+    position: absolute;
+    margin: auto;
+    top: 33px;
+    right: 0;
+    bottom: 0;
+    left: 51px;
+    max-width: 50px;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif
+    /*font-family: "-apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif";*/
+}
+
+.layawelcomePage .bottompanel {
+    position: absolute;
+    bottom: 160px;
+    left: 51px;
+    width: 100%;
+    height: 100px;
+    background-color: #252527;
+    border-top-color: #403E3C;
+    /* border-style: solid; */
+    border-top: solid 1px #696868;
+    text-align: -webkit-center;
+    /* padding-bottom: 100px; */
+    line-height: 100px;
+    color: #c9caca;
+    font-size: 12px;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif
+    /*font-family: "-apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif";*/
+}
+
+.layawelcomePage .welcomePageBackground .content {
+    width: 116px;
+    height: 106px;
+    background-color: rgba(37, 37, 38, 0.08);
+    position: absolute;
+    margin: auto;
+    top: 150px;
+    bottom: 300px;
+    list-style-type: none;
+    vertical-align: middle;
+    cursor: pointer;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif
+    /*font-family: "-apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif";*/
+    background-repeat: no-repeat;
+}
+
+.layawelcomePage .welcomePageBackground .content > span {
+    /*font-family: "-apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif";*/
+    font-size: 20px;
+    color: azure;
+    width: 100px;
+    text-align: center;
+    position: absolute;
+    bottom: -30px;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif
+    /*font-family: "-apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif";*/
+}
+
+.popContributionPanel {
+    position: absolute;
+    z-index: 9999999999999999;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    user-select: none;
+    z-index: 999999;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif
+    /*font-family: "-apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif";*/
+}
+
+.popContributionPanel.viewPanel {
+    width: 512px;
+    height: 298px;
+    background-color: #303030;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    /* border-radius: 4px; */
+    box-shadow: 0px 0px 10px #000;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif
+    /*font-family: "-apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif";*/
+}
+
+.ideConfigPanel {
+    position: absolute;
+    z-index: 9999999999999999;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    user-select: none;
+    z-index: 999999;
+    font-family: "-apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif";
+}
+
+.ideConfigPanel .viewPanel {
+    width: 512px;
+    height: 298px;
+    background-color: #303030;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    /* border-radius: 4px; */
+    box-shadow: 0px 0px 10px #000;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif
+    /*font-family: "-apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif";*/
+}
+
+.ideConfigPanel .viewPanel .titleBackground {
+    background-color: #404040;
+    position: absolute;
+    /* margin: 1px; */
+    top: 0;
+    height: 38px;
+    width: 496px;
+    padding-left: 15px;
+    padding-top: -19px;
+    vertical-align: middle;
+    /* border-radius: 4px; */
+    /* box-shadow: 0px 0px 10px #000; */
+    /* text-align: center; */
+    /*font-family: "-apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif";*/
+    font-size: 14px;
+    color: #c5c5c5;
+    line-height: 36px;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif
+}
+
+.ideConfigPanel .viewPanel .closeBtn {
+    position: absolute;
+    right: 12px;
+    top: 4px;
+    color: #c5c5c5;
+    /*font-family: "-apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif";*/
+    font-size: 20px;
+    cursor: pointer;
+    -webkit-app-region: no-drag;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif
+    /*font-family: "-apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif";*/
+}
+
+.ideConfigPanel .ideConfigPanelBg .browseBtn {
+    /* border-radius: 4px; */
+    background-color: #494949;
+    border: none;
+    cursor: pointer;
+    -webkit-font-smoothing: antialiased;
+    height: 29px;
+    width: 54px;
+    position: absolute;
+    right: 32px;
+    top: 86px;
+    font-size: 14px;
+    color: #c5c5c5;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif
+    /*font-family: "-apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif";*/
+}
+
+.compressJSFile {
+    position: absolute;
+    z-index: 9999999999999999;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    user-select: none;
+    z-index: 999999;
+    font-family: "-apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif";
+}
+
+.compressJSFile .viewPanel {
+    width: 512px;
+    height: 298px;
+    background-color: #303030;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    /* border-radius: 4px; */
+    box-shadow: 0px 0px 10px #000;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif
+    /*font-family: "-apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif";*/
+}
+
+.compressJSFile .viewPanel > canvas {
+    position: absolute;
+    left: 100px;
+    top: 60px;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif
+    /*font-family: "-apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif";*/
+}
+
+.compressJSFile .viewPanel .closeBtn {
+    position: absolute;
+    right: 12px;
+    top: 4px;
+    color: #c5c5c5;
+    /*font-family: "-apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif";*/
+    font-size: 20px;
+    cursor: pointer;
+    -webkit-app-region: no-drag;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif
+    /*font-family: "-apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif";*/
+}
+
+.compressJSFile .compressJSFilePanelBackground {
+    width: 513px;
+    height: 260px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    cursor: auto;
+}
+
+.compressJSFile .compressJSFilePanelBackground .ListContributePanel {
+    position: absolute;
+    top: 58px;
+    width: 511px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 215px;
+    /* left: 50px; */
+}
+
+.compressJSFile .compressJSFilePanelBackground .ListContributePanel .ListItem {
+    position: absolute;
+    width: 100px;
+    height: 30px;
+}
+
+.compressJSFile .compressJSFilePanelBackground .compressJSFilePaneTipup {
+    position: absolute;
+    color: #646464;
+    font-size: 12px;
+    top: 127px;
+    left: 33px;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif
+    /*font-family: "-apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif";*/
+}
+
+.compressJSFile .compressJSFilePanelBackground .compressJSFilePaneTipdown {
+    position: absolute;
+    color: #646464;
+    font-size: 12px;
+    top: 190px;
+    left: 33px;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif
+    /*font-family: "-apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif";*/
+}
+
+.compressJSFile .viewPanel .titleBackground {
+    background-color: #404040;
+    position: absolute;
+    /* margin: 1px; */
+    top: 0;
+    height: 38px;
+    width: 496px;
+    padding-left: 15px;
+    padding-top: -19px;
+    vertical-align: middle;
+    /* border-radius: 4px; */
+    /* box-shadow: 0px 0px 10px #000; */
+    /* text-align: center; */
+    /*font-family: "-apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif";*/
+    font-size: 14px;
+    color: #c5c5c5;
+    line-height: 36px;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif
+}
+
+.titleBackground {
+    background-color: #404040;
+    position: absolute;
+    /* margin: 1px; */
+    height: 38px;
+    width: 586px;
+    padding-left: 14px;
+    padding-top: -19px;
+    vertical-align: middle;
+    /*font-family: "-apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif";*/
+    font-size: 12px;
+    color: #c5c5c5;
+    line-height: 36px;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif
+}
+
+.inputSmallinput {
+    padding: 8px;
+    width: 378px;
+    position: absolute;
+    /* border-radius: 4px; */
+    /* outline: medium; */
+    line-height: 12px;
+    -webkit-font-smoothing: antialiased;
+    background-color: #282828;
+    border: 0px;
+    color: #c5c5c5;
+    /*font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif;*/
+    font-size: 14px;
+    top: 86px;
+    left: 32px;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif
+}
+
+.inputSmallDown {
+    padding: 8px;
+    position: absolute;
+    /*border-radius: 4px;*/
+    /*outline: medium;*/
+    line-height: 15px;
+    -webkit-font-smoothing: antialiased;
+    background-color: #282828;
+    border: 0px;
+    color: #c5c5c5;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif;
+    font-size: 14px;
+    top: 187px;
+    left: 20px;
+    width: 18px;
+    height: 10px;
+    left: 122px;
+    width: 40px;
+}
+
+.titleH {
+    position: absolute;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif;
+    font-size: 12px;
+    color: #c5c5c5;
+    left: 199px;
+    top: 154px;
+}
+
+.titleTitp {
+    position: relative;
+    top: 10px;
+    left: -152px;
+    font-size: 12px;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif
+    /*font-family: "-apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif";*/
+}
+
+.titleHH {
+    position: absolute;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif;
+    font-size: 12px;
+    color: #c5c5c5;
+    left: 199px;
+    top: 190px;
+}
+
+.compressJSFile .compressJSFilePanelBackground .compressBtn {
+    /* border-radius: 4px; */
+    background-color: #494949;
+    border: none;
+    cursor: pointer;
+    -webkit-font-smoothing: antialiased;
+    height: 29px;
+    width: 54px;
+    position: absolute;
+    right: 32px;
+    top: 86px;
+    font-size: 14px;
+    color: #c5c5c5;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif
+    /*font-family: "-apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif";*/
+}
+
+.layaBtnCustum2 {
+    border-radius: 4px;
+    background-color: #1e7ac3;
+    border: none;
+    cursor: pointer;
+    -webkit-font-smoothing: antialiased;
+    height: 32px;
+    width: 100px;
+    position: absolute;
+    font-size: 16px;
+    color: azure;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif;
+    position: absolute;
+    bottom: 20px;
+    left: 250px;
+}
+
+.layaBtnCustum {
+    border-radius: 4px;
+    background-color: #1e7ac3;
+    border: none;
+    cursor: pointer;
+    -webkit-font-smoothing: antialiased;
+    height: 32px;
+    width: 100px;
+    position: absolute;
+    font-size: 16px;
+    color: azure;
+    text-align: center;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif;
+}
+
+.refreshBtnLeft {
+    border-radius: 4px;
+    background-color: #1e7ac3;
+    border: none;
+    cursor: pointer;
+    -webkit-font-smoothing: antialiased;
+    height: 30px;
+    width: 100px;
+    position: absolute;
+    font-size: 16px;
+    color: azure;
+    text-align: center;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif;
+    top: 8px;
+    left: 10px;
+}
+
+.refreshBtnRight {
+    border-radius: 4px;
+    background-color: #1e7ac3;
+    border: none;
+    cursor: pointer;
+    -webkit-font-smoothing: antialiased;
+    height: 30px;
+    width: 100px;
+    position: absolute;
+    font-size: 16px;
+    color: azure;
+    text-align: center;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif;
+    left: 139px;
+    top: 8px;
+}
+
+.compressJSFile .compressJSFilePanelBackground .titleTemp {
+    position: absolute;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif;
+    font-size: 12px;
+    color: #c5c5c5;
+    left: 32px;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif
+    /*font-family: "-apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif";*/
+}
+
+.compressJSFile .compressJSFilePanelBackground .titleScale {
+    position: absolute;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif;
+    font-size: 12px;
+    color: #c5c5c5;
+    left: 32px;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif
+    /*font-family: "-apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif";*/
+}
+
+
+.inputSmall {
+    width: 18px;
+    height: 10px;
+    left: 89px;
+    top: 149px;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif
+    /*font-family: "-apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif";*/
+}
+
+.checkBoxLaya {
+    position: absolute;
+    right: 138px;
+    bottom: 90px;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif
+    /*font-family: "-apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif";*/
+}
+
+.checkBoxLaya0 {
+    position: absolute;
+    right: 138px;
+    bottom: 90px;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif
+    /*font-family: "-apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif";*/
+}
+
+.titleLayaChek {
+    position: absolute;
+    right: 80px;
+    bottom: 90px;
+    position: absolute;
+    font-size: 12px;
+    font-size: 14px;
+    font-size: 12px;
+    color: #c5c5c5;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif
+    /*font-family: "-apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif";*/
+}
+
+.titleLayaChek0 {
+    position: absolute;
+    right: 86px;
+    bottom: 90px;
+    position: absolute;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif;
+    font-size: 12px;
+    color: #c5c5c5;
+    font-size: 14px;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif;
+    font-size: 12px;
+}
+
+.divLayaContentDiv {
+    position: relative;
+    /* top: 138px; */
+    /* bottom: -37px; */
+    top: 297px;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif;
+}
+
+.LayaInputSelect {
+    padding: 8px;
+    margin-left: 10px;
+    width: 400px;
+    /*border-radius: 4px;*/
+    /*outline: medium;*/
+    line-height: 15px;
+    -webkit-font-smoothing: antialiased;
+    background-color: #282828;
+    border: 0px;
+    color: #c5c5c5;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif;
+    font-size: 14px;
+}
+
+.layaspan {
+    color: #c5c5c5;
+    font-size: 12px;
+}
+
+.libPanel {
+    position: absolute;
+    left: 30px;
+    top: 66px;
+    vertical-align: middle;
+    color: #c5c5c5;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif;
+}
+
+.LibsPath {
+    position: absolute;
+    float: left;
+    width: 472px;
+    height: 131px;
+    left: 91px;
+    top: 116px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    border: rgba(237, 27, 38, 0.47);
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif;
+}
+
+::-webkit-scrollbar {
+    background-image: initial;
+    background-position-x: initial;
+    background-position-y: initial;
+    background-size: initial;
+    background-repeat-x: initial;
+    background-repeat-y: initial;
+    background-attachment: initial;
+    background-origin: initial;
+    background-clip: initial;
+    width: 8px;
+    background-color: rgba(99, 99, 99, 0.4);
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif;
+
+}
+
+
+/* Track */
+
+::-webkit-scrollbar-track {
+    /*-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);*/
+    /*-webkit-border-radius: 10px;*/
+    /*border-radius: 10px;*/
+}
+
+
+/* Handle */
+
+::-webkit-scrollbar-thumb {
+    /*-webkit-border-radius: 10px;*/
+    /*border-radius: 10px;*/
+    background-color: #505050;
+}
+
+.libsPathList {
+    float: inherit;
+    position: absolute;
+    -webkit-app-region: no-drag;
+    height: 30px;
+    color: #fcfcfc;
+    list-style-type: none;
+    width: 464px;
+    vertical-align: middle;
+    cursor: pointer;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif;
+
+    /*font-family: "-apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif";*/
+}
+.libsPathList >img{
+    width: 16px;
+}
+
+.libsPathList:hover {
+    background-color: #3f3d3c;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif;
+
+    /*font-family: "-apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif";*/
+}
+
+.contributeList {
+    float: inherit;
+    position: absolute;
+    -webkit-app-region: no-drag;
+    height: 16px;
+    color: #fcfcfc;
+    list-style-type: none;
+    width: 515px;
+    vertical-align: middle;
+    cursor: pointer;
+    background-color: #2d2d2d;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif;
+
+    /*font-family: "-apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif";*/
+}
+
+.contributeList .Item {
+    position: absolute;
+    top: 0px;
+    font-size: 12px;
+    color: #c5c5c5;
+}
+
+.contributeList:hover {
+    background-color: rgb(9, 71, 113);
+}
+
+.conAtitle {
+    font-size: 12px;
+    position: relative;
+    -webkit-app-region: no-drag;
+    text-align: center;
+    line-height: 30px;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif;
+    color: #fcfcfc;
+}
+
+.imgV {
+    vertical-align: middle;
+}
+
+.layasmallBtn {
+    background-color: #494949;
+    border: none;
+    cursor: pointer;
+    -webkit-font-smoothing: antialiased;
+    height: 30px;
+    width: 67px;
+    position: absolute;
+    font-size: 14px;
+    right: 0px;
+    color: #c8c8c8;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif;
+
+}
+
+.layaradio {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif;
+
+}
+
+.layaLayerPop2 {}
+
+.closeBtnLi {
+    float: inherit;
+    position: absolute;
+    -webkit-app-region: no-drag;
+    top: 3px;
+    right: 10px;
+    color: #c5c5c5;
+    list-style-type: none;
+    width: 20px;
+    vertical-align: middle;
+    cursor: pointer;
+    text-align: center;
+    font-size: 20px;
+    -webkit-app-region: no-drag;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif;
+
+}
+
+.layaAnimationLayaer {
+    width: 100%;
+    height: 50px;
+    font-size: 18px;
+    display: none;
+    /* background: red; */
+    position: absolute;
+    text-align: center;
+    z-index: 99999999999;
+    /* animation: mymove 1000.5s; */
+    text-align: center;
+    vertical-align: middle;
+    top: 48px;
+    color: #00B9F3;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif;
+
+}
+
+.layaFocusinput {
+    outline: 1px solid rgba(14, 99, 156, .6);
+    outline-offset: 0px;
+    opacity: 1 !important;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif;
+
+}
+
+.layapopBackground {
+    position: absolute;
+    z-index: 9999999999999999;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    user-select: none;
+    z-index: 999999;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif;
+
+}
+
+.layapopBackground .viewPanel {
+    width: 400px;
+    height: 298px;
+    background-color: #303030;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    box-shadow: 0px 0px 10px #000;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif;
+
+}
+
+.layapopBackground .viewPanel .titleBackground {
+    background-color: #404040;
+    position: absolute;
+    top: 0;
+    height: 38px;
+    width: 385px;
+    padding-left: 15px;
+    padding-top: -19px;
+    vertical-align: middle;
+    font-size: 12px;
+    color: #c5c5c5;
+    line-height: 36px;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif;
+
+}
+
+.layapopBackground .viewPanel .container {
+    position: absolute;
+    width: 400px;
+    height: 259px;
+    top: 38px;
+    float: left;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif;
+
+}
+
+.layapopBackground .viewPanel .container .selectcontainer {
+    /*position: absolute;*/
+    width: 400px;
+    top: 38px;
+    height: 50px;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif;
+
+}
+
+.layaPackage .viewPanel .container .selectcontainer > img {
+    position: relative;
+    margin: 10px;
+}
+
+.layaPackage .viewPanel .container .selectcontainer > span {}
+
+.layapopBackground .viewPanel .container .selectcontainer .selectPla {
+    position: relative;
+    width: 120px;
+    left: 120px;
+    top: 48px;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif;
+
+}
+
+.layapopBackground .viewPanel .container .selectcontainer .textInput {
+    padding: 7px;
+    /* margin-left: 62px; */
+    left: 100px;
+    width: 193px;
+    line-height: 17px;
+    -webkit-font-smoothing: antialiased;
+    background-color: #282828;
+    border: 0px;
+    color: #c5c5c5;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif;
+    font-size: 14px;
+    position: relative;
+    top: 50px;
+    left: 33px;
+}
+
+.layapopBackground .viewPanel .container .selectcontainer .cusBtn {
+    background-color: #494949;
+    border: none;
+    cursor: pointer;
+    -webkit-font-smoothing: antialiased;
+    height: 32px;
+    width: 54px;
+    position: relative;
+    right: -34px;
+    top: 48px;
+    font-size: 12px;
+    color: #c8c8c8;
+}
+
+.layapopBackground .viewPanel .container .selectcontainer .cusBtnOK {
+    background-color: #494949;
+    border: none;
+    cursor: pointer;
+    -webkit-font-smoothing: antialiased;
+    height: 32px;
+    width: 54px;
+    position: relative;
+    left: 166px;
+    top: 56px;
+    font-size: 12px;
+    color: #c8c8c8;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif;
+
+}
+
+.layapopBackground .viewPanel .container .selectcontainer .progressTitle {
+    position: relative;
+    left: 173px;
+    top: 50px;
+    text-align: center;
+    width: 0px;
+    /* height: 50px; */
+    color: #c5c5c5;
+    font-size: 16px;
+    /* text-align: center; */
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif;
+
+}
+
+.layapopBackground .viewPanel .container .selectcontainer .title {
+    position: relative;
+    left: 24px;
+    top: 50px;
+    text-align: center;
+    width: 100px;
+    height: 50px;
+    color: #c5c5c5;
+    font-size: 16px;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif;
+
+}
+
+.layapopBackground .closeBtn {
+    position: absolute;
+    right: 12px;
+    top: 4px;
+    color: #c5c5c5;
+    font-size: 20px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    z-index: 999999999;
+    -webkit-app-region: no-drag;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif;
+
+}
+
+.layaPackage {
+    position: absolute;
+    z-index: 9999999999999999;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    user-select: none;
+    z-index: 999999;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif;
+
+}
+
+.maskLaya {
+    position: absolute;
+    z-index: 9999999999999999;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    user-select: none;
+    z-index: 999999;
+    /*opacity: 0.5;*/
+    background-color: rgba(65, 65, 68, 1);
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif;
+
+}
+
+.maskLaya .loading {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif;
+
+}
+
+.layaPackage .closeBtn {
+    position: absolute;
+    right: 12px;
+    top: 4px;
+    color: #c5c5c5;
+    font-size: 20px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    z-index: 999999999;
+    -webkit-app-region: no-drag;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif;
+
+}
+
+.layaPackage .titleBackground {
+    background-color: #404040;
+    position: relative;
+    height: 38px;
+    width: 486px;
+    padding-left: 14px;
+    padding-top: -19px;
+    font-size: 12px;
+    color: #c5c5c5;
+    line-height: 36px;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif;
+
+}
+
+.layaPackage .viewPanel {
+    width: 500px;
+    height: 688px;
+    background-color: #303030;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    box-shadow: 0px 0px 10px #000;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif;
+
+}
+
+.layaPackage .viewPanel .container {
+    position: absolute;
+    width: 500px;
+    height: 400px;
+    top: 38px;
+    float: left;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif;
+
+}
+
+.layaPackage .viewPanel .container .titltip {
+    position: absolute;
+    left: 234px;
+    top: 10px;
+    font-size: 14px;
+    color: red;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif;
+
+}
+
+.layaPackage .viewPanel .container .selectcontainer {
+    width: 480px;
+    top: 38px;
+    left: 25px;
+    height: 50px;
+    position: relative;
+    float: left;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif;
+
+}
+
+.layaPackage .viewPanel .container .selectcontainer > a {
+    color: #757575;
+    font-size: 12px;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif;
+
+}
+
+.layaPackage .viewPanel .container .selectcontainer > span {
+    width: 82px;
+    top: 38px;
+    text-align: left;
+    vertical-align: middle;
+    height: 50px;
+    float: left;
+    color: #c5c5c5;
+    line-height: 30px;
+    font-size: 12px;
+    word-break: break-all;
+    word-wrap: break-word;
+    position: relative;
+    line-height: 15px;
+    top: 10px;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif;
+    
+}
+
+.layaPackage .viewPanel .container .selectcontainer .titleAlert {
+    width: 400px;
+    color: #c5c5c5;
+    line-height: 24px;
+    font-size: 12px;
+    word-break: break-all;
+}
+
+.layaPackage .viewPanel .container .selectcontainer .packagetext {
+    padding: 7px;
+    width: 193px;
+    line-height: 17px;
+    -webkit-font-smoothing: antialiased;
+    background-color: #282828;
+    border: 0px;
+    color: #c5c5c5;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif;
+    font-size: 14px;
+    left: 33px;
+}
+
+.layaPackage .viewPanel .container .selectcontainer select {
+    outline-color: #595757;
+    font-size: 14px;
+    height: 21px;
+    background: #212121 0px 0px;
+    color: #9fa0a0;
+    outline: medium;
+    width: 130px;
+    position: relative;
+    text-align: center;
+    height: 24px;
+    background-color: #212121;
+    border-color: #212121;
+    color: #9fa0a0;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif;
+
+}
+
+.layaPackage .viewPanel .container .selectcontainer .copy-btn {
+    border-radius: 4px;
+    background-color: #1e7ac3;
+    border: none;
+    cursor: pointer;
+    -webkit-font-smoothing: antialiased;
+    height: 30px;
+    line-height: 28px;
+    width: 100px;
+    position: relative;
+    font-size: 16px;
+    color: azure;
+    text-align: center;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif;
+    top: 8px;
+    display: inline-block;
+}
+
+.layaPackage .viewPanel .container .selectcontainer .copy-btn:active {
+    background-color: #068af3;
+}
+
+.layaPackage .viewPanel .container .selectcontainer .cusBtn {
+    background-color: #494949;
+    border: none;
+    cursor: pointer;
+    -webkit-font-smoothing: antialiased;
+    height: 33px;
+    width: 54px;
+    position: relative;
+    font-size: 12px;
+    color: #c5c5c5;
+    right: -1px;
+    top: -1px;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif;
+
+}
+
+.layapublishversion {
+    position: absolute;
+    z-index: 9999999999999999;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    user-select: none;
+    z-index: 999999;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif;
+
+}
+
+.layapublishversion .viewPanel {
+    width: 462px;
+    height: 220px;
+    background-color: #303030;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    /* border-radius: 4px; */
+    box-shadow: 0px 0px 10px #000;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif;
+
+}
+
+.layapublishversion .viewPanel .compressJSFilePanelBackground {
+    width: 513px;
+    height: 260px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.layapublishversion .viewPanel .titleBackground {
+    background-color: #404040;
+    position: absolute;
+    /* margin: 1px; */
+    height: 38px;
+    width: 448px;
+    padding-left: 14px;
+    padding-top: -19px;
+    vertical-align: middle;
+    font-size: 12px;
+    color: #c5c5c5;
+    line-height: 36px;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif;
+
+}
+
+.layapublishversion .viewPanel .content {
+    /*background-color: #404040;*/
+    position: absolute;
+    top: 60px;
+    height: 206px;
+    width: 460px;
+    font-size: 12px;
+    color: #c5c5c5;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif;
+
+}
+
+.layapublishversion .viewPanel .content .contentCheck {
+    position: relative;
+    left: 24px;
+    float: left;
+    cursor: pointer;
+}
+
+.layapublishversion .viewPanel .content .contentCheck > span {
+    position: relative;
+    top: 10px;
+}
+
+.layapublishversion .viewPanel .content .contentCheck > input {
+    position: inherit;
+    top: 12px;
+}
+
+.layapublishversion .viewPanel .closeBtn {
+    position: absolute;
+    right: 12px;
+    top: 4px;
+    color: #c5c5c5;
+    font-size: 20px;
+    cursor: pointer;
+    -webkit-app-region: no-drag;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif;
+
+}
+
+.versionInput {
+    padding: 8px;
+    width: 200px;
+    position: absolute;
+    /* border-radius: 4px; */
+    /* outline: medium; */
+    line-height: 15px;
+    -webkit-font-smoothing: antialiased;
+    background-color: #282828;
+    border: 0px;
+    color: #c5c5c5;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif;
+    font-size: 14px;
+    top: 86px;
+    /* left: 32px; */
+}
+
+.toolMenuBar {
+    position: absolute;
+    top: -22px;
+    width: 100%;
+    height: 35px;
+    background: hsla(0, 0%, 50%, .2);
+    /* z-index: 99; */
+}
+
+.menutool {
+    float: left;
+    width: 32px;
+    height: 20px;
+    opacity: 0.5;
+    cursor: pointer;
+    margin-left: 10px;
+    margin-top: 5px;
+    list-style-type: none;
+}
+
+.menutoolFocus {
+    float: left;
+    width: 32px;
+    height: 20px;
+    opacity: 1;
+    cursor: pointer;
+    margin-left: 10px;
+    margin-top: 5px;
+    list-style-type: none;
+}
+
+.menutoolFocus .imageIcon {
+    /*width: 20px;*/
+    height: 25px;
+    background-size: 12px;
+}
+
+.menutool .imageIcon {
+    /*width: 20px;*/
+    height: 25px;
+    background-size: 12px;
+}
+
+.leftBoxBar {
+    position: absolute;
+    top: 60px;
+    width: 50px;
+    height: calc(100% - 60px);
+    z-index: 9998999;
+    line-height: 50px;
+    background-color: #333;
+}
+
+.leftBoxBar .item {
+    list-style-type: none;
+    opacity: 0.5;
+    cursor: pointer;
+    height: 70px;
+}
+
+.leftBoxBar .itemFocus {
+    list-style-type: none;
+    opacity: 1;
+    cursor: pointer;
+    background-image: url("../res/toolbar/line.png");
+    /* background-position: -14px -19px; */
+    background-repeat: no-repeat;
+    background-position-x: 2px;
+    background-position-y: -4px;
+    height: 70px;
+}
+
+.leftBoxBar .itemFocus .icon {
+    position: relative;
+    left: 12px;
+}
+
+.leftBoxBar .item .icon {
+    position: relative;
+    left: 12px;
+}
+
+.layastoreBox {
+    position: absolute;
+    top: 38px;
+    left: 52px;
+    z-index: 99;
+}
+
+.layastoreBox .content {
+    width: 100%;
+    height: 50px;
+    margin: 0;
+    padding: 0;
+    float: left;
+    overflow: hidden;
+    border-bottom: solid 1px #484444;
+    background-color: #333333;
+}
+
+.loadingBackground {
+    position: absolute;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-image: url(loading.svg);
+    width: 100%;
+    height: 100%;
+}
+
+.layastoreBox .content .box {
+    position: relative;
+    left: 20px;
+}
+
+.layastoreBox .content .box .btncusbackout {
+    width: 50px;
+    height: 30px;
+    float: left;
+    margin-left: 10px;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 8px;
+    font-size: 12px;
+    border-radius: 4px;
+    color: #c5c5c5;
+    margin-top: 10px;
+    background-color: #494949;
+    border: none;
+    cursor: pointer;
+    -webkit-font-smoothing: antialiased;
+    outline: medium;
+    background: url(../res/icons/backout.png) no-repeat center center;
+}
+
+.layastoreBox .content .box .btncusbackover {
+    width: 50px;
+    height: 30px;
+    float: left;
+    margin-left: 10px;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 8px;
+    font-size: 12px;
+    border-radius: 4px;
+    color: #c5c5c5;
+    margin-top: 10px;
+    background-color: #494949;
+    border: none;
+    cursor: pointer;
+    -webkit-font-smoothing: antialiased;
+    outline: medium;
+    background: url(../res/icons/backover.png) no-repeat center center;
+}
+
+.layastoreBox .content .box .btncusbackdown {
+    width: 50px;
+    height: 30px;
+    float: left;
+    margin-left: 10px;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 8px;
+    font-size: 12px;
+    border-radius: 4px;
+    color: #c5c5c5;
+    margin-top: 10px;
+    background-color: #494949;
+    border: none;
+    cursor: pointer;
+    -webkit-font-smoothing: antialiased;
+    outline: medium;
+    background: url(../res/icons/backdown.png) no-repeat center center;
+}
+
+.layastoreBox .content .box .btncusnextout {
+    width: 50px;
+    height: 30px;
+    float: left;
+    margin-left: 10px;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 8px;
+    font-size: 12px;
+    border-radius: 4px;
+    color: #c5c5c5;
+    margin-top: 10px;
+    background-color: #494949;
+    border: none;
+    cursor: pointer;
+    -webkit-font-smoothing: antialiased;
+    outline: medium;
+    background: url(../res/icons/nextout.png) no-repeat center center;
+}
+
+.layastoreBox .content .box .btncusnextover {
+    width: 50px;
+    height: 30px;
+    float: left;
+    margin-left: 10px;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 8px;
+    font-size: 12px;
+    border-radius: 4px;
+    color: #c5c5c5;
+    margin-top: 10px;
+    background-color: #494949;
+    border: none;
+    cursor: pointer;
+    -webkit-font-smoothing: antialiased;
+    outline: medium;
+    background: url(../res/icons/nextdown.png) no-repeat center center;
+}
+
+.layastoreBox .content .box .btncusnextdown {
+    width: 50px;
+    height: 30px;
+    float: left;
+    margin-left: 10px;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 8px;
+    font-size: 12px;
+    border-radius: 4px;
+    color: #c5c5c5;
+    margin-top: 10px;
+    background-color: #494949;
+    border: none;
+    cursor: pointer;
+    -webkit-font-smoothing: antialiased;
+    outline: medium;
+    background: url(../res/icons/nextdown.png) no-repeat center center;
+}
+
+.layastoreBox .content .box .btncusfreshout {
+    width: 50px;
+    height: 30px;
+    float: left;
+    margin-left: 10px;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 8px;
+    font-size: 12px;
+    border-radius: 4px;
+    color: #c5c5c5;
+    margin-top: 10px;
+    background-color: #494949;
+    border: none;
+    cursor: pointer;
+    -webkit-font-smoothing: antialiased;
+    outline: medium;
+    background: url(../res/icons/freshout.png) no-repeat center center;
+}
+
+.layastoreBox .content .box .btncusfreshover {
+    width: 50px;
+    height: 30px;
+    float: left;
+    margin-left: 10px;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 8px;
+    font-size: 12px;
+    border-radius: 4px;
+    color: #c5c5c5;
+    margin-top: 10px;
+    background-color: #494949;
+    border: none;
+    cursor: pointer;
+    -webkit-font-smoothing: antialiased;
+    outline: medium;
+    background: url(../res/icons/freshover.png) no-repeat center center;
+}
+
+.layastoreBox .content .box .btncusfreshdown {
+    width: 50px;
+    height: 30px;
+    float: left;
+    margin-left: 10px;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 8px;
+    font-size: 12px;
+    border-radius: 4px;
+    color: #c5c5c5;
+    margin-top: 10px;
+    background-color: #494949;
+    border: none;
+    cursor: pointer;
+    -webkit-font-smoothing: antialiased;
+    outline: medium;
+    background: url(../res/icons/freshdown.png) no-repeat center center;
+}
+
+.layastoreBox .content .box .btncusindexhover {
+    width: 50px;
+    height: 30px;
+    float: left;
+    margin-left: 10px;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 8px;
+    font-size: 12px;
+    border-radius: 4px;
+    color: #c5c5c5;
+    margin-top: 10px;
+    background-color: #494949;
+    border: none;
+    cursor: pointer;
+    -webkit-font-smoothing: antialiased;
+    outline: medium;
+    background: url(../res/icons/index.png) no-repeat center center;
+}
+.layastoreBox .content .box .btncusindexhdown {
+    width: 50px;
+    height: 30px;
+    float: left;
+    margin-left: 10px;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 8px;
+    font-size: 12px;
+    border-radius: 4px;
+    color: #c5c5c5;
+    margin-top: 10px;
+    background-color: #494949;
+    border: none;
+    cursor: pointer;
+    -webkit-font-smoothing: antialiased;
+    outline: medium;
+    background: url(../res/icons/index.png) no-repeat center center;
+}
+.layastoreBox .content .box .inputSerch {
+    padding: 8px;
+    width: 100%;
+    float: left;
+    margin-left: 244px;
+    line-height: 12px;
+    margin-top: -33px;
+    -webkit-font-smoothing: antialiased;
+    background-color: #282828;
+    border: 0px;
+    color: #c5c5c5;
+    font-size: 14px;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif;
+
+}
+
+.layastoreBox .content .box .inputSerchFocus {
+    padding: 8px;
+    width: 100%;
+    float: left;
+    margin-left: 244px;
+    line-height: 12px;
+    margin-top: -33px;
+    -webkit-font-smoothing: antialiased;
+    background-color: #282828;
+    border: 0px;
+    color: #c5c5c5;
+    font-size: 14px;
+    outline: 1px solid rgba(14, 99, 156, .6);
+    outline-offset: 0px;
+    opacity: 1 !important;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif;
+
+}
+
+.bottomIde {
+    box-sizing: border-box;
+    z-index: 0;
+    width: 100%;
+    height: 22px;
+    background: #007acc;
+    color: #fff;
+    font-size: 12px;
+    padding: 0 10px;
+    position: absolute;
+    bottom: 0px;
+    left: 50px;
+    display: none;
+}
+
+.popPanel {
+    position: absolute;
+    height: 38px;
+    left: 280px;
+    right: 200px;
+    top: 30px;
+    background-color: #333;
+    z-index: 99999999;
+    box-shadow: 0px 1px 6px #000;
+}
+
+.popPanel .info {
+    color: #ffffff;
+    line-height: 38px;
+    background-color: #007acc;
+    font-weight: 700;
+    font-size: 11px;
+    padding: 2px 4px;
+    margin-right: 10px;
+    -webkit-user-select: none;
+}
+
+.popPanel .message {
+    color: #ffffff;
+    line-height: 38px;
+    /*font-weight: 700;*/
+    font-size: 12px;
+    padding: 2px 4px;
+    margin-right: 10px;
+    color: white;
+    -webkit-user-select: none;
+}
+
+.popPanel .btncontent {
+    right: 1px;
+    height: 36px;
+    width: 500px;
+    position: absolute;
+    top: 1px;
+    float: left;
+}
+
+.popPanel .btncontent .content {
+    background-color: #0e639c;
+    float: right;
+    height: 36px;
+    right: 10px;
+    margin-left: 10px;
+}
+
+.popPanel .btncontent .content > a {
+    text-align: center;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+    color: white;
+    font-size: 12px;
+    text-align: -webkit-center;
+}
+
+.itemdesc {
+    color: #757575;
+}
+
+.inputerror {
+    animation-name: blink1;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: 2;
+    animation-iteration-count: infinite;
+}
+
+@keyframes blink1 {
+    0% {
+        outline: 1px solid rgba(155, 77, 77, 0.1);
+    }
+    35% {
+        outline: 1px solid rgba(255, 255, 255, 1);
+    }
+    40% {
+        outline: 1px solid rgba(155, 77, 77, .6);
+        1
+    }
+    100% {
+        outline: 1px solid rgba(255, 255, 255, .1);
+    }
+}
+
+.menuPanel {
+    position: absolute;
+    z-index: 9999999999999999;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    user-select: none;
+    z-index: 999999;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif;
+
+}
+
+.menuPanel .viewPanel {
+    width: 404px;
+    height: 220px;
+    background-color: #303030;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    /* border-radius: 4px; */
+    box-shadow: 0px 0px 10px #000;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif;
+
+}
+
+.menuPanel .viewPanel .titleBackground {
+    background-color: #404040;
+    position: absolute;
+    /* margin: 1px; */
+    height: 38px;
+    width: 389px;
+    padding-left: 14px;
+    padding-top: -19px;
+    vertical-align: middle;
+    font-size: 12px;
+    color: #c5c5c5;
+    line-height: 36px;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif;
+
+}
+
+.menuPanel .viewPanel .content {
+    position: absolute;
+    top: 38px;
+    height: 180px;
+    width: 460px;
+    font-size: 12px;
+    color: #c5c5c5;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif;
+
+}
+
+.menuPanel .viewPanel .content .item {
+    position: relative;
+    float: left;
+    width: 300px;
+    height: 66px;
+    cursor: pointer;
+    margin-left: 50px;
+}
+
+.menuPanel .viewPanel .content .item .itemButton {
+    background-color: #494949;
+    border: none;
+    cursor: pointer;
+    -webkit-font-smoothing: antialiased;
+    height: 30px;
+    width: 67px;
+    font-size: 14px;
+    left: 88px;
+    top: 17px;
+    color: #c8c8c8;
+    position: relative;
+    top: 23px;
+    display: inline-table;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif;
+
+}
+
+.menuPanel .viewPanel .content .item >span {
+    position: relative;
+    top: 27px;
+    width: 50px;
+    left: -10px;
+    display: inline-table;
+    text-align: -webkit-left;
+}
+
+.menuPanel .viewPanel .content .item >select {
+    position: relative;
+    top: 27px;
+    width: 110px;
+    display: inline-table;
+    left: 41px;
+}
+
+.menuPanel .viewPanel .content .item .classInput {
+    padding: 8px;
+    width: 200px;
+    position: absolute;
+    line-height: 15px;
+    -webkit-font-smoothing: antialiased;
+    background-color: #282828;
+    border: 0px;
+    color: #c5c5c5;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif;
+    font-size: 14px;
+    top: 20px;
+    left: 43px;
+}
+
+.versionInput {
+    padding: 8px;
+    width: 200px;
+    position: absolute;
+    /* border-radius: 4px; */
+    /* outline: medium; */
+    line-height: 15px;
+    -webkit-font-smoothing: antialiased;
+    background-color: #282828;
+    border: 0px;
+    color: #c5c5c5;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif;
+    font-size: 14px;
+    top: 86px;
+    /* left: 32px; */
+}
+
+.menuPanel .viewPanel .closeBtn {
+    position: absolute;
+    right: 12px;
+    top: 4px;
+    color: #c5c5c5;
+    font-size: 20px;
+    cursor: pointer;
+    -webkit-app-region: no-drag;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif;
+
+}
+
+.menuBtn {
+    border-radius: 4px;
+    background-color: #1e7ac3;
+    border: none;
+    cursor: pointer;
+    -webkit-font-smoothing: antialiased;
+    height: 32px;
+    width: 100px;
+    left: 95px;
+    position: absolute;
+    font-size: 16px;
+    color: azure;
+    text-align: center;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif;
+}
+
+.debugpanelbar {
+    position: absolute;
+    top: 3px;
+    width: 300px;
+    height: 29px;
+    background: hsla(0, 0%, 50%, .2);
+    /* z-index: 99; */
+}
+
+.debugpanel {
+    float: left;
+    width: 46px;
+    height: 20px;
+    opacity: 0.5;
+    cursor: pointer;
+    margin-left: 10px;
+    margin-top: 5px;
+    list-style-type: none;
+}
+
+.debugpanelFocus {
+    float: left;
+    width: 46px;
+    height: 20px;
+    opacity: 1;
+    cursor: pointer;
+    margin-left: 10px;
+    margin-top: 5px;
+    list-style-type: none;
+}
+
+.debugpanelFocus .imageIcon {
+    width: 12px;
+    height: 12px;
+    background-size: 12px;
+}
+
+.debugpanel .imageIcon {
+    width: 12px;
+    height: 12px;
+    background-size: 12px;
+}
+
+.debugpanelFocus >span {
+    position: relative;
+    width: 12px;
+    height: 12px;
+    top: 0px;
+    left: 2px;
+    background-size: 12px;
+}
+
+.debugpanel >span {
+    position: relative;
+    width: 12px;
+    height: 12px;
+    top: 0px;
+    left: 2px;
+    background-size: 12px;
+}
+
+.layapopcontaner {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 800px;
+    height: 500px;
+    z-index: 1950;
+    background-color: #f6f6f6;
+    overflow: hidden;
+}
+
+.layapopcontaner .titlebar {
+    background-color: #404040;
+    position: absolute;
+    height: 38px;
+    width: 100%;
+    vertical-align: middle;
+    font-size: 12px;
+    color: #c5c5c5;
+    line-height: 36px;
+    cursor: move;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif;
+
+}
+
+.layapopcontaner .titlebar >span {
+    position: absolute;
+    left: 10px;
+    font-size: 14px;
+}
+
+.layapopcontaner .titlebar .closeBtn {
+    background-color: #404040;
+    position: absolute;
+    /* margin: 1px; */
+    /* height: 38px; */
+    width: 24px;
+    right: 0px;
+    /* padding-right: 20px; */
+    vertical-align: middle;
+    font-size: 20px;
+    color: #c5c5c5;
+    line-height: 36px;
+    cursor: pointer;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif;
+
+}
+
+.layapopcontaner >webview {
+    position: relative;
+    height: 180px;
+    width: 402px;
+    top: 38px;
+    font-size: 12px;
+    color: #c5c5c5;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif;
+
+}
+
+.layaBlockchain {
+    position: absolute;
+    z-index: 9999;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    user-select: none;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif
+ }
+
+ .layaBlockchain .layerBackground {
+    width: 840px;
+    height: 520px;
+    display: flex;
+    background-color: #252526;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    /* border-radius: 4px; */
+    box-shadow: 0px 0px 10px #000;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif
+}
+
+.layaBlockchain .closeBtn {
+    float: inherit;
+    position: absolute;
+    -webkit-app-region: no-drag;
+    top: 0px;
+    right: 1px;
+    color: #fcfcfc;
+    list-style-type: none;
+    width: 26px;
+    vertical-align: middle;
+    cursor: pointer;
+    text-align: center;
+    font-size: 24px;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif
+}
+
+.layaBlockchain .aside {
+    width: 130px;
+    height: 100%;
+    background-color: #404040;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.layaBlockchain .aside-item {
+    font-size: 15px;
+    color: #585150;
+    cursor: pointer;
+}
+
+.layaBlockchain .aside-item:first-child {
+    margin-top: 20px;
+}
+
+.layaBlockchain .aside-item.selected {
+    font-size: 15px;
+    color: #fff;
+    transition: color 2s;
+}
+
+.layaBlockchain .aside-divide-line {
+    height: 100px;
+    width: 1px;
+    border: 1px;
+    background-color: #656565;
+    margin: 20px 0;
+}
+
+.layaBlockchain .main {
+    width: 710px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #303030;
+}
+
+.layaBlockchain .main-content {
+    width: 100%;
+    height: 460px;
+}
+
+.layaBlockchain .main-content .contracts-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 14px;
+}
+
+.layaBlockchain .main-content .main-content-name {
+    width: 580px;
+    height: 90px;
+    line-height: 90px;
+    font-size: 15px;
+    color: #fff;
+}
+
+.layaBlockchain .main-content .main-content-info {
+    width: 580px;
+    height: 210px;
+    background-color: #2c2525;
+    padding: 30px 25px;
+    overflow-y: auto;
+    word-wrap: break-word;
+}
+
+.layaBlockchain .main-content .signature-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.layaBlockchain .signature-content .signature-error {
+    width: 240px;
+    line-height: 30px;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    background-color: #3a2d2c;
+    font-size: 14px;
+    color: #fff;
+    position: absolute;
+    padding-left: 50px;
+    top: 20px;
+    left: 235px;
+    display: none;
+}
+
+.layaBlockchain .signature-content .signature-error .circle {
+    background-color: #91352e;
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    position: absolute;
+    left: 20px;
+    top: 7.5px;
+}
+
+.layaBlockchain .signature-content label { 
+    font-size: 15px;
+    color: #fff;
+    width: 160px;
+    text-align: right;
+    margin-right: 40px;
+    display: inline-block;
+}
+
+.layaBlockchain .signature-content input[type=text] { 
+    width: 340px;
+    height: 25px;
+    border-width: 1px;
+    background-color: #212121;
+}
+
+.layaBlockchain .signature-content .testrpc-check {
+    position: absolute;
+    top: 360px;
+    left: 150px;
+    display: flex;
+}
+
+.layaBlockchain .signature-content .save-check {
+    position: absolute;
+    top: 320px;
+    left: 150px;
+    display: flex;
+}
+
+.layaBlockchain .signature-content .testrpc-check label,
+.layaBlockchain .signature-content .save-check label {
+    margin-left: 15px;
+    font-size: 14px;
+    margin-top: -3px;
+    margin-right: 0;
+    width: auto;
+
+}
+
+.layaBlockchain .deployment-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    font-size: 14px;
+    color: #fff;
+}
+
+.layaBlockchain .deployment-content .signature-error {
+    width: 440px;
+    line-height: 30px;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    background-color: #3a2d2c;
+    font-size: 14px;
+    color: #fff;
+    position: absolute;
+    padding-left: 50px;
+    top: 20px;
+    left: 235px;
+    display: none;
+}
+
+.layaBlockchain .deployment-content .signature-error .circle {
+    background-color: #91352e;
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    position: absolute;
+    left: 20px;
+    top: 7.5px;
+}
+
+.layaBlockchain .deployment-content.neo-content .deployment-item {
+    width: 530px;
+    margin-bottom: 30px;
+}
+
+.layaBlockchain .deployment-content.neo-content .contract-file {
+    width: 360px;
+}
+
+.layaBlockchain .deployment-content.neo-content label {
+    width: auto;
+}
+
+.layaBlockchain .deployment-content.neo-content .select-avm-btn {
+    width: 50px;
+    margin-left: 30px;
+    margin-top: -5px;
+    height: 30px;
+    font-size: 14px;
+    color: #fff;
+    background-color: #4172cd;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.layaBlockchain .deployment-content .deployment-item {
+    display: flex;
+    width: 480px;
+    height: 20px;
+    margin-bottom: 15px;
+    line-height: 20px;
+}
+
+.layaBlockchain .deployment-content .deployment-item .deploy-address {
+    margin-left: -100px;
+    width: 680px;
+    text-align: center;
+    border: 0;
+    background-color: transparent;
+}
+
+.layaBlockchain .deployment-content select {
+    width: 220px;
+}
+
+.layaBlockchain .deployment-content label {
+    width: 90px;
+}
+
+.layaBlockchain .deployment-content input {
+    width: 40px;
+    height: 17px;
+    background-color: #212121;
+    border-width: 1px;
+    text-align: right;
+}
+
+.layaBlockchain .main-content .neo-content input {
+    text-align: left;
+}
+
+.layaBlockchain .deployment-content .deployment-unit {
+    margin-left: 8px;
+}
+
+.layaBlockchain .deployment-content .deployment-des {
+    color: #847878;
+    margin-left: 10px;
+}
+
+.layaBlockchain .deployment-content .deployment-eth {
+    color: #2ca02d;
+}
+
+.layaBlockchain .button-ok {
+    width: 100px;
+    height: 30px;
+    font-size: 14px;
+    color: #fff;
+    background-color: #4172cd;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.layaBlockchain .button-select-cs {
+    width: 120px;
+    height: 30px;
+    font-size: 14px;
+    color: #fff;
+    background-color: #4172cd;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+    right: 220px;
+    top: -30px;
+    display: none;
+}
+
+.layaBlockchain .button-neo-trialRun {
+    width: 100px;
+    height: 30px;
+    font-size: 14px;
+    color: #fff;
+    background-color: #4172cd;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+    right: 220px;
+    top: -30px;
+    display: none;
+}
+
+.layaBlockchain .button-ok[data-can-click=false] {
+    opacity: 0.7;
+}
+
+#codeMenuList {
+    width: 450px;
+}

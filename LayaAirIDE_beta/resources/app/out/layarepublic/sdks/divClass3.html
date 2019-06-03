@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>divClass3</title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/layaSetup3.css" />
+		<link rel="stylesheet" type="text/css" href="css/layaSetup.css"/>
+	</head>
+
+	<body style="background-color: #303030;" onload="loadingData()">
+		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 Divleft">
+			<div class="DivBox" style="border-right: 2px solid #282828;">
+				<div class="title">
+					已选择渠道列表
+				</div>
+				<div id="alreadyChoiceSP" class="listSPBox"></div>
+			</div>
+		</div>
+		<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 Divright">
+			<div class="imgDivBox" style="text-align: center">
+				<div class="imgBox">
+					<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 imgdiv" attri="lefttop" onclick="imgclick(this);">
+						<img id="x_3_lefttop" src="" class="imgdivInner"/>
+						<img id="x_3_lefttopcorner" name="corner" src="" class="imgdivInner"/>
+					</div>
+					<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 imgdiv" attri="leftbottom" onclick="imgclick(this);">
+						<img id="x_3_leftbottom" src="" class="imgdivInner"/>
+						<img id="x_3_leftbottomcorner" name="corner" src="" class="imgdivInner"/>
+					</div>
+					<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 imgdiv" attri="righttop" onclick="imgclick(this);">
+						<img id="x_3_righttop" src="" class="imgdivInner"/>
+						<img id="x_3_righttopcorner" name="corner" src="" class="imgdivInner"/>
+					</div>
+					<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 imgdiv" attri="rightbottom" onclick="imgclick(this);">
+						<img id="x_3_rightbottom" src="" class="imgdivInner"/>
+						<img id="x_3_rightbottomcorner" name="corner" src="" class="imgdivInner"/>
+					</div>
+				</div>
+				<div id="gameBigIconDiv" class="ui-widget-content" style="position:absolute;width:215px;height:215px;left:50px;border:none;">
+					<img id="gameBigIcon" src="" style="position:absolute;width:215px;height:215px;left:0;top:0;border:none;"/>
+					<img id="gameBigIconCorner" name="corner" src="" style="position:absolute;width:215px;height:215px;left:0;top:0;draggable:false;border:none;"/>
+				</div>
+				<div id="gameBigIconDesc" class="ui-widget-content" style="position:absolute;width:245px;height:100px;left:280px;margin-top:70px;">
+					<p style="color:#d5d5d5">按住鼠标左键，可以拖动角标。</br>
+						调整角标位置(方向键可以进行微调)。
+					</p>
+				</div>
+				<!--<canvas id="iconCanvas" style="border:2px solid #E0E0E0;margin-top: 30px"/>-->
+
+			</div>
+
+		</div>
+		<div class="buttonBox">
+			<div class="buttonDIV" onclick="createPackage()" >
+				打包
+			</div>
+			<!--<div class="buttonDIV" onclick="sign()" >-->
+				<!--签名-->
+			<!--</div>-->
+		</div>
+	</body>
+
+</html>
+<script src="js/jquery-3.0.0.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+//	var commonConfigFilePath = "./data/gameData.json";
+//	var cornerDir = "C:/work/XSDK/for_xsdk/qihoo/sdk_icon/";
+//	var allDataConfigPath = "./data/allSPData.json";
+//	var dataChoiceConfigFilePath = "./data/choiceSPData.json";
+	var cornerAtt = "";
+	var cornerImg = "";
+	var gameID = 1000;
+	var iconPath = "";
+	var dataChoiceSP = {};
+	var currentSelectSPId;
+	var genApk = null;
+	$(document).ready(function ()
+	{
+		var mousex = 0, mousey = 0;
+		var divLeft, divTop;
+		var divOffsetLeft,divOffsetTop;
+//		$("#testdraggable").draggable();
+		var offset = $('#gameBigIconCorner').offset();
+		divLeft = parseInt(offset.left,10);
+		divTop = parseInt(offset.top,10);
+		$('#gameBigIconCorner').mousedown(function(e)
+		{
+			mousey = e.pageY;
+			mousex = e.pageX;
+			var offset = $(this).offset();
+			var currDivLeft = parseInt(offset.left,10);
+			var currDivTop = parseInt(offset.top,10);
+			divOffsetLeft = currDivLeft - divLeft;
+			divOffsetTop = currDivTop - divTop;
+
+			$(this).bind('mousemove',dragElement);
+		});
+		function dragElement(event)
+		{
+			var left = divOffsetLeft+(event.pageX - mousex);
+			var top = divOffsetTop+(event.pageY - mousey);
+			$(this).css(
+					{
+						'top' :  top + 'px',
+						'left' : left + 'px',
+						'position' : 'absolute'
+					});
+			return false;
+		}
+		$(document).mouseup(function()
+		{
+			$('#gameBigIconCorner').unbind('mousemove');
+		});
+	});
+	$(document).keydown(function(event){
+		var corner = $('#gameBigIconCorner');
+		var offset = corner.offset();
+		var divLeft = parseInt(offset.left,10);
+		var divTop = parseInt(offset.top,10);
+		offset = $('#gameBigIconDiv').offset();
+		divLeft -= parseInt(offset.left,10);
+		divTop -= parseInt(offset.top,10);
+
+		switch(event.keyCode){
+			//上
+			case 38:divTop-=1;break;
+			//下
+			case 40:divTop+=1;break;
+			//左
+			case 37:divLeft-=1;break;
+			//右
+			case 39:divLeft+=1;break;
+		}
+		corner.css({
+					'top': divTop + 'px',
+					'left': divLeft+'px',
+					'position': 'absolute',
+				});
+	});
+	function savePosInfo(){
+		if(cornerImg == null || currentSelectSPId == null){
+			return;
+		}
+		var data = dataChoiceSP[currentSelectSPId];
+		data.corner = cornerImg;
+
+		var bigImgCorner = $("#gameBigIconCorner");
+		data.posinfo = {"ox":bigImgCorner[0].style.left,"oy":bigImgCorner[0].style.top};
+		data.relative = {"ox":parseInt(bigImgCorner[0].style.left)*(512/215),"oy":parseInt(bigImgCorner[0].style.top)*(512/215)};
+		var fs_extra = window.parent.xsdk_node_fs_extra;
+		var path = window.parent.xsdk_node_path;
+		//fs_extra.outputFileSync(path.join(window.parent.__dirname, dataChoiceSProot), JSON.stringify(choicespData));
+		fs_extra.outputFileSync(window.parent.configPath.choice_sp_data, JSON.stringify(dataChoiceSP));
+	}
+	/*遍历方法*/
+	function count(o) {
+		var t = typeof o;
+		if(t == 'string') {
+			return o.length;
+		} else if(t == 'object') {
+			var n = 0;
+			for(var i in o) {
+				n++;
+			}
+			return n;
+		}
+		return false;
+	}
+	/*读取json数据*/
+	function loadingData() {
+		$.getJSON(window.parent.configPath.choice_sp_data, function(data) {
+			if(count(data) == 0) {
+				alert("该游戏未选择任何渠道");
+				$(window.parent.document).find("#contentDiv").attr("src", "divClass1.html");
+				return;
+			}
+			dataChoiceSP = data;
+			for(key in dataChoiceSP) {
+				var divSP = "<div class='listSP' idSP=" + key + " onclick='clickSP(this)'>" + dataChoiceSP[key].name + "</div>";
+				$("#alreadyChoiceSP").html($("#alreadyChoiceSP").html() + divSP);
+			}
+			clickSP($("#alreadyChoiceSP").children(".listSP").eq(0));
+			$("#alreadyChoiceSP").children(".listSP").eq(0).addClass("listSPSelected");
+		});
+	}
+	/*单击SP列表*/
+	function clickSP(thisdiv) {
+		savePosInfo();
+		var bigImg = $("#gameBigIcon");
+
+		$(".listSP").removeClass("listSPSelected");
+		$(thisdiv).addClass("listSPSelected");
+		currentSelectSPId = $(thisdiv).attr("idSP");
+
+		$.getJSON(window.parent.configPath.all_sp_data, function(allDataData) {
+			var spInfo = allDataData[currentSelectSPId];
+			var sdkCornerPath = spInfo.sdk_path+"/sdk_icon/";
+			$.getJSON(window.parent.configPath.game_data, function(data) {
+				var configData = data;//[gameID];
+				iconPath = configData.gameIcon;
+				if(!iconPath){
+					iconPath = "./img/defaultIcon.png";
+				}
+				$('#x_3_lefttop')[0].src = iconPath;
+				$('#x_3_lefttopcorner')[0].src = sdkCornerPath+"left-top.png";
+
+				$('#x_3_leftbottom')[0].src = iconPath;
+				$('#x_3_leftbottomcorner')[0].src = sdkCornerPath+"left-bottom.png";
+
+				$('#x_3_righttop')[0].src = iconPath;
+				$('#x_3_righttopcorner')[0].src = sdkCornerPath+"right-top.png";
+
+				$('#x_3_rightbottom')[0].src = iconPath;
+				$('#x_3_rightbottomcorner')[0].src = sdkCornerPath+"right-bottom.png";
+
+				var img = $('#x_3_lefttop')[0];
+				bigImg[0].src = iconPath;
+
+				var data = dataChoiceSP[currentSelectSPId];
+				var bigImgCorner = $("#gameBigIconCorner");
+				if( data.corner && data.posinfo ){
+					bigImgCorner[0].src = data.corner;
+					bigImgCorner.css({
+						'top': data.posinfo.oy,
+						'left': data.posinfo.ox,
+						'position': 'absolute',
+						'border':'none'
+					});
+					cornerImg = data.corner;
+				}else{
+					bigImgCorner[0].src = "";
+					bigImgCorner.css({
+						'top': '0px',
+						'left': '0px',
+						'position': 'absolute',
+						'border':'none'
+					});
+					cornerImg = "";
+				}
+//				if( mycanvas != null ){
+//					mycanvas[0].width = canvasWidth;
+//					mycanvas[0].height = canvasHeight;
+//					var ctx = mycanvas[0].getContext('2d');
+//					var img = new Image();
+//					img.src = iconPath;
+//					img.onload = function () {
+//						ctx.drawImage(img, 0, 0, this.width, this.height, 0, 0, canvasWidth, canvasHeight);
+//					};
+//					img.onerror = function () {
+//
+//					};
+//
+//				}
+			});
+		});
+	}
+	function createPackage(){
+		if( genApk == null ) {
+			genApk = new window.parent.GenerateAndroidApk.GenerateAndroidApk();
+		}
+		var path = window.parent.xsdk_node_path;
+		var gameDataPath = window.parent.configPath.game_data;
+		var choicePath = window.parent.configPath.choice_sp_data;
+		var attriPath = window.parent.configPath.all_sp_attribute;
+		var allDataPath = window.parent.configPath.all_sp_data;
+
+
+		savePosInfo();
+		var iconInfo = {};
+//		iconInfo.corner = cornerAtt;
+//		iconInfo.filePath = cornerImg;
+//
+//		var offset = $('#gameBigIconCorner').offset();
+//		var divLeft = parseInt(offset.left,10);
+//		var divTop = parseInt(offset.top,10);
+//		offset = $('#gameBigIconDiv').offset();
+//		divLeft -= parseInt(offset.left,10);
+//		divTop -= parseInt(offset.top,10);
+//
+//		iconInfo.ox = divLeft*(512/215);
+//		iconInfo.oy = divTop*(512/215);
+		genApk.excuteByConfigFile(allDataPath,gameDataPath,choicePath,attriPath,function(msg,percent){
+			window.parent.xsdkShowLoading("process:"+percent);
+		});
+	}
+//	function drawBackground(){
+//		drawCorner(iconPath,200,200);
+//	}
+//	function drawCorner(path,w,h){
+//		var mycanvas = $("#iconCanvas");
+//		var ctx = mycanvas[0].getContext('2d');
+//		var img = new Image();
+//		img.src = path;
+//		img.onload = function () {
+//			ctx.drawImage(img, 0, 0, this.width, this.height, 0, 0, w, h);
+//		};
+//		img.onerror = function () {
+//
+//		};
+//	}
+
+	function imgclick(thisdiv){
+		cornerAtt = $(thisdiv).attr("attri");
+		cornerImg = $(thisdiv).children("img[name='corner']").attr("src");
+
+		var bigImgCorner = $("#gameBigIconCorner");
+		bigImgCorner[0].src = cornerImg;
+		bigImgCorner.css({
+			'top': '0px',
+			'left': '0px',
+			'position': 'absolute'
+		});
+//		drawBackground();
+//		drawCorner(cornerImg,200,200);
+	}
+
+	function saveSP(){
+		savePosInfo();
+	}
+	function sign(){
+		if( genApk == null ) {
+			genApk = new window.parent.GenerateAndroidApk.GenerateAndroidApk();
+		}
+		var path = window.parent.xsdk_node_path;
+		genApk.signByDefaultKeystore(path.join(window.parent.__dirname, "./nhzf_360.encrypted.apk"));
+	}
+	window.parent.leavePage = function(enterDiv){
+		saveSP();
+	};
+</script>

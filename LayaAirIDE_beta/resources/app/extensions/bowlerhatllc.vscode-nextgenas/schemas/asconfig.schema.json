@@ -1,0 +1,326 @@
+{
+	"title": "JSON schema for the ActionScript configuration file",
+	"type": "object",
+	"properties":
+	{
+		"type":
+		{
+			"type": "string",
+			"description": "Indicates if the project is an application or library. Supported values include \"app\" and \"lib\". Then default value is \"app\".",
+			"pattern": "^(app|lib)$"
+		},
+		"config":
+		{
+			"type": "string",
+			"description": "The default configuration file to use from the SDK. Supported values include \"js\", \"node\", \"flex\", \"air\", and \"airmobile\". The default value is \"flex\".",
+			"pattern": "^(flex|air|airmobile|js|node)$"
+		},
+		"files":
+		{
+			"type": "array",
+			"description": "The specified files will be included by the compiler, including all of their dependencies. For an application, this field will typically contain one main class only.",
+			"items":
+			{
+				"type": "string"
+			},
+			"minItems": 1
+		},
+		"compilerOptions":
+		{
+			"type": "object",
+			"description": "Instructs the ActionScript and MXML compiler how to build the project.",
+			"properties":
+			{
+				"accessible":
+				{
+					"type": "boolean",
+					"description": "In a SWF project, enables accessibility features. The default value is false."
+				},
+				"debug":
+				{
+					"type": "boolean",
+					"description": "The generated output of the build will contain extra debug data."
+				},
+				"debug-password":
+				{
+					"type": "string",
+					"description": "In a SWF project, an optional password for remote debugging."
+				},
+				"default-frame-rate":
+				{
+					"type": "number",
+					"description": "In a SWF project, sets the application's frame rate. The default value is 24.",
+					"multipleOf": 1
+				},
+				"default-size":
+				{
+					"type": "object",
+					"description": "In a SWF project, defines the default application size, in pixels.",
+					"properties":
+					{
+						"width":
+						{
+							"type": "number",
+							"description": "Defines the default SWF application width, in pixels.",
+							"multipleOf": 1
+						},
+						"height":
+						{
+							"type": "number",
+							"description": "Defines the default SWF application height, in pixels.",
+							"multipleOf": 1
+						}
+					},
+					"required":
+					[
+						"width",
+						"height"
+					]
+				},
+				"define":
+				{
+					"type": "array",
+					"description": "Defines a global constant at compile time.",
+					"items":
+					{
+						"type": "object",
+						"properties":
+						{
+							"name":
+							{
+								"type": "string",
+								"description": "The name of the constant."
+							},
+							"value":
+							{
+								"type": [
+									"string",
+									"boolean",
+									"number"
+								],
+								"description": "The value of the constant."
+							}
+						},
+						"required":
+						[
+							"name",
+							"value"
+						]
+					}
+				},
+				"dump-config":
+				{
+					"type": "string",
+					"description": "Combines all configuration options and saves them to the specified file."
+				},
+				"external-library-path":
+				{
+					"type": "array",
+					"description": "Specifies a list of SWC files, or directories containing SWC files, to exclude from linking in the generated output. This option provides compile-time link checking for external components that are dynamically linked.",
+					"items":
+					{
+						"type": "string"
+					}
+				},
+				"include-classes":
+				{
+					"type": "array",
+					"description": "(Library projects only) Specifies classes to include in the SWC file. You provide the class name (for instance, com.example.MyClass) rather than the file name (for instance, com/example/MyClass.as) to the file for this option.",
+					"items":
+					{
+						"type": "string"
+					}
+				},
+				"include-namespaces":
+				{
+					"type": "array",
+					"description": "(Library projects only) Specifies namespace-style components in the SWC file. You specify a list of URIs to include in the SWC file. The uri argument must already be defined with the namespace option.",
+					"items":
+					{
+						"type": "string"
+					}
+				},
+				"include-sources":
+				{
+					"type": "array",
+					"description": "(Library projects only) Specifies classes or directories to add to the SWC file. When specifying classes, you specify the path to the class file (for instance, com/example/MyClass.as) rather than the class name itself (for instance, com.example.MyClass).",
+					"items":
+					{
+						"type": "string"
+					}
+				},
+				"keep-as3-metadata":
+				{
+					"type": "array",
+					"description": "Specifies custom metadata that you want to keep.",
+					"items":
+					{
+						"type": "string"
+					}
+				},
+				"library-path":
+				{
+					"type": "array",
+					"description": "Links SWC libraries to the generated output of the build. The compiler only links in those classes for the SWC file that are required. You can specify a directory or individual SWC files.",
+					"items":
+					{
+						"type": "string"
+					}
+				},
+				"link-report":
+				{
+					"type": "string",
+					"description": "Generates linking information and saves it to the specified output file."
+				},
+				"load-config":
+				{
+					"type": "array",
+					"description": "Specifies the locations of XML configuration files that define extra compiler options.",
+					"items":
+					{
+						"type": "string"
+					}
+				},
+				"locale":
+				{
+					"type": "array",
+					"description": "Specifies one or more locales to be compiled into the application.",
+					"items":
+					{
+						"type": "string",
+						"pattern": "^[a-z]{2}([-_][A-Z]{2}){0,1}$"
+					}
+				},
+				"namespace":
+				{
+					"type": "array",
+					"description": "Specifies MXML namespaces. Each namespace must include a URI and the location of the manifest file that defines the contents of the namespace.",
+					"items":
+					{
+						"type": "object",
+						"properties":
+						{
+							"uri":
+							{
+								"type": "string",
+								"description": "The namespace URI."
+							},
+							"manifest":
+							{
+								"type": "string",
+								"description": "The location of the manifest file."
+							}
+						},
+						"required":
+						[
+							"uri",
+							"manifest"
+						]
+					}
+				},
+				"omit-trace-statements":
+				{
+					"type": "boolean",
+					"description": "Omits trace() statements. The default value is false."
+				},
+				"optimize":
+				{
+					"type": "boolean",
+					"description": "In a SWF project, enables the ActionScript optimizer to reduce file size and increases performance by optimizing the SWF file's bytecode. The default value is true."
+				},
+				"output":
+				{
+					"type": "string",
+					"description": "The path where the generated output should be saved."
+				},
+				"strict":
+				{
+					"type": "boolean",
+					"description": "Performs compile-time type checking on assignments and options supplied to method calls. The default value is true."
+				},
+				"source-map":
+				{
+					"type": "boolean",
+					"description": "In an Apache FlexJS project, emits source maps in the debug build for each ActionScript and MXML file. The default value is false."
+				},
+				"source-path":
+				{
+					"type": "array",
+					"description": "Adds directories or files to the source path. The compiler searches directories in the source path for MXML, AS, or CSS source files that are used in your applications and includes those that are required at compile time.",
+					"items":
+					{
+						"type": "string"
+					}
+				},
+				"swf-version":
+				{
+					"type": "number",
+					"description": "In a SWF project, specifies the SWF file format version. Features requiring a later version of the SWF file format are not compiled into the application. This is different from the target-player version in that it refers to the SWF specification versioning scheme.",
+					"minimum": 9,
+					"multipleOf": 1
+				},
+				"targets":
+				{
+					"type": "array",
+					"description": "In an Apache FlexJS project, specifies one or more output targets. Supported values include \"JSFlex\", \"JS\", \"JSNode\", and \"SWF\".",
+					"items":
+					{
+						"type": "string"
+					}
+				},
+				"target-player":
+				{
+					"type": "string",
+					"description": "In a SWF project, specifies the runtime version. Features requiring a later version of the runtime are not compiled into the application.",
+					"pattern": "^[0-9]+(\\.[0-9]+){0,1}$"
+				},
+				"tools-locale":
+				{
+					"type": "string",
+					"description": "Specifies the locale to use when reporting compiler errors and warnings.",
+					"pattern": "^[a-z]{2}([-_][A-Z]{2}){0,1}$"
+				},
+				"use-direct-blit":
+				{
+					"type": "boolean",
+					"description": "In a SWF project, equivalent to wmode=\"direct\" when running in a standalone SWF runtime instead of a browser plug-in. The default value is false." 
+				},
+				"use-gpu":
+				{
+					"type": "boolean",
+					"description": "In a SWF project, equivalent to wmode=\"gpu\" when running in a standalone SWF runtime instead of a browser plug-in. The default value is false." 
+				},
+				"use-network":
+				{
+					"type": "boolean",
+					"description": "In a SWF project, specifies that the current application uses network services or can access the local file system. The default value is true." 
+				},
+				"use-resource-bundle-metadata":
+				{
+					"type": "boolean",
+					"description": "Enables resource bundles, and instructs the compiler to process the contents of the [ResourceBundle] metadata tag. The default value is true." 
+				},
+				"verbose-stacktraces":
+				{
+					"type": "boolean",
+					"description": "In a SWF project, includes line numbers in the generated output, but results in a larger SWF file. When a run-time error occurs, the stacktrace shows line numbers. The default value is false." 
+				}
+			}
+		},
+		"additionalOptions":
+		{
+			"type": "string",
+			"description": "Additional options to send to the compiler, formatted as command line arguments. Useful for testing new options that are not yet supported by the compilerOptions field of asconfig.json."
+		},
+		"application":
+		{
+			"type": "string",
+			"description": "Optional path to Adobe AIR application descriptor. The descriptor's <content> element will be populated, and the file will be copied into the output directory."
+		},
+		"copySourcePathAssets":
+		{
+			"type": "boolean",
+			"description": "Optionally copies any files in the source path that don't have .as or .mxml extensions to the output directory."
+		}
+	}
+}

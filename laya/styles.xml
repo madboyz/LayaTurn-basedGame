@@ -1,0 +1,85 @@
+<res>
+   <item name="comp/textinput.png" type="TextInput" compress="0" pack="0" quality="80" props="sizeGrid=9,21,7,20" picType="0"/>
+   <item name="comp/button.png" type="Button" compress="0" pack="0" quality="80" props="sizeGrid=8,15,10,9" picType="0"/>
+   <item name="comp/progress.png" type="ProgressBar" compress="0" pack="0" quality="80" props="sizeGrid=6,11,9,12" picType="0" scale="0"/>
+   <item name="comp/bg.png" type="Image" compress="0" pack="0" quality="80" props="sizeGrid=36,26,29,24" picType="0" scale="0"/>
+   <item name="unpack" type="" compress="0" pack="2" quality="80" props="" picType="0"/>
+   <item name="main/progress.png" type="ProgressBar" compress="0" pack="0" quality="80" props="sizeGrid=2,10,4,6" picType="0"/>
+   <item name="main/img_topBg.png" type="Image" compress="0" pack="0" quality="80" props="sizeGrid=11,10,9,10" picType="0"/>
+   <item name="comp/btn_add.png" type="Button" compress="0" pack="0" quality="80" props="stateNum=1@@!@@runtime=component.ScaleButton@@!@@pivotX=10@@!@@pivotY=9.5" picType="0"/>
+   <item name="main/img_panelBg.png" type="Image" compress="0" pack="0" quality="80" props="sizeGrid=27,23,26,21" picType="0"/>
+   <item name="main/img_nameBg.png" type="Image" compress="0" pack="0" quality="80" props="sizeGrid=0,75,0,5" picType="0" scale="0"/>
+   <item name="main/img_moneyBg.png" type="Image" compress="0" pack="0" quality="80" props="sizeGrid=8,14,9,10" picType="0"/>
+   <item name="main/img_combatBg.png" type="Image" compress="0" pack="0" quality="80" props="sizeGrid=0,35,0,4" picType="0"/>
+   <item name="main/img_buttomBg.png" type="Image" compress="0" pack="0" quality="80" props="sizeGrid=31,6,30,6" picType="0"/>
+   <item name="task/img_txtBg.png" type="Image" compress="0" pack="0" quality="80" props="sizeGrid=11,137,12,29" picType="0"/>
+   <item name="main/img_inputBg.png" type="Image" compress="0" pack="0" quality="80" props="sizeGrid=13,15,12,12" picType="0"/>
+   <item name="main/img_winBg.png" type="Image" compress="0" pack="0" quality="80" props="sizeGrid=17,16,12,15" picType="0"/>
+   <item name="main/img_autoFightBg.png" type="Image" compress="0" pack="0" quality="80" props="sizeGrid=9,7,12,9" picType="0"/>
+   <item name="comp/img_bg.png" type="Image" compress="0" pack="0" quality="80" props="sizeGrid=122,112,125,107" picType="0"/>
+   <item name="comp/img_titleBg.png" type="Image" compress="0" pack="0" quality="80" props="sizeGrid=0,42,0,42" picType="0"/>
+   <item name="comp/btn_tab.png" type="Button" compress="0" pack="0" quality="80" props="stateNum=3@@!@@runtime=component.ScaleButton@@!@@pivotX=52@@!@@pivotY=27.5@@!@@labelSize=25@@!@@labelColors=#8d8071,#b2660d,#8d8071@@!@@sizeGrid=15,40,35,40" picType="0" scale="0"/>
+   <item name="comp/img_kuang0.png" type="Image" compress="0" pack="0" quality="80" props="sizeGrid=14,14,16,14" picType="0"/>
+   <item name="comp/img_kuang1.png" type="Image" compress="0" pack="0" quality="80" props="sizeGrid=8,9,7,7" picType="0"/>
+   <item name="comp/progress_1.png" type="ProgressBar" compress="0" pack="0" quality="80" props="sizeGrid=23,8,41,8" picType="0"/>
+   <item name="comp/progress_2.png" type="ProgressBar" compress="0" pack="0" quality="80" props="sizeGrid=15,9,22,9" picType="0"/>
+   <item name="comp/progress_3.png" type="ProgressBar" compress="0" pack="0" quality="80" props="sizeGrid=21,9,22,10" picType="0"/>
+   <item name="comp/btn_common.png" type="Button" compress="0" pack="0" quality="80" props="stateNum=3@@!@@runtime=component.ScaleButton@@!@@pivotX=42@@!@@pivotY=22@@!@@labelSize=25@@!@@labelColors=#b2660d,#04681c,#8d8071@@!@@sizeGrid=13,38,24,36@@!@@labelPadding=-3,0,0,0" picType="0" scale="0"/>
+   <item name="bg" type="" compress="0" pack="2" quality="80" props="" picType="0"/>
+   <item name="comp/img_kuang5.png" type="Image" compress="0" pack="0" quality="80" props="sizeGrid=8,9,8,8" picType="0"/>
+   <item name="comp/img_kuang3.png" type="Image" compress="0" pack="0" quality="80" props="sizeGrid=14,15,13,15" picType="0"/>
+   <item name="comp/progressBg.png" type="Image" compress="0" pack="0" quality="80" props="sizeGrid=8,9,11,9" picType="0"/>
+   <item name="comp/img_yellowBar.png" type="Image" compress="0" pack="0" quality="80" props="sizeGrid=8,13,9,13" picType="0"/>
+   <item name="comp/img_greenBar.png" type="Image" compress="0" pack="0" quality="80" props="sizeGrid=8,10,11,13" picType="0"/>
+   <item name="comp/img_greenBar_1.png" type="Image" compress="0" pack="0" quality="80" props="sizeGrid=10,10,10,10" picType="0"/>
+   <item name="comp/img_blue.png" type="Image" compress="0" pack="0" quality="80" props="sizeGrid=9,11,11,12" picType="0"/>
+   <item name="comp/img_combatBg.png" type="Image" compress="0" pack="0" quality="80" props="sizeGrid=6,9,8,10" picType="0"/>
+   <item name="comp/img_tipsBg.png" type="Image" compress="0" pack="0" quality="80" props="sizeGrid=30,30,30,30" picType="0"/>
+   <item name="comp/wp_0.png" type="Image" compress="0" pack="0" quality="80" props="sizeGrid=16,16,16,16" picType="0"/>
+   <item name="comp/img_di.png" type="Image" compress="0" pack="0" quality="80" props="sizeGrid=8,14,8,15" picType="0"/>
+   <item name="comp/img_di1.png" type="Image" compress="0" pack="0" quality="80" props="sizeGrid=3,56,3,52" picType="0"/>
+   <item name="comp/btn_bigAdd.png" type="Button" compress="0" pack="0" quality="80" props="stateNum=1@@!@@runtime=component.ScaleButton@@!@@pivotX=19.5@@!@@pivotY=19.5" picType="0"/>
+   <item name="itemBase/equipBg_1.png" type="Image" compress="0" pack="0" quality="80" props="sizeGrid=34,40,28,34" picType="0"/>
+   <item name="comp/img_di2.png" type="Image" compress="0" pack="0" quality="80" props="sizeGrid=6,12,7,10" picType="0"/>
+   <item name="comp/img_di3.png" type="Image" compress="0" pack="0" quality="80" props="sizeGrid=16,22,21,20" picType="0"/>
+   <item name="comp/img_di4.png" type="Image" compress="0" pack="0" quality="80" props="sizeGrid=11,31,16,30" picType="0"/>
+   <item name="comp/btn_bg.png" type="Button" compress="0" pack="0" quality="80" props="sizeGrid=11,31,13,27@@!@@stateNum=2@@!@@runtime=component.ScaleButton@@!@@pivotX=35@@!@@pivotY=24@@!@@labelSize=24@@!@@labelColors=#8e5213,#8e5213" picType="0"/>
+   <item name="comp/btn_bg1.png" type="Button" compress="0" pack="0" quality="80" props="sizeGrid=19,49,12,47@@!@@stateNum=2@@!@@runtime=component.ScaleButton@@!@@pivotX=58@@!@@pivotY=28@@!@@labelSize=25@@!@@labelColors=#b2660d,#bd6f1b" picType="0" scale="0"/>
+   <item name="comp/btn_bg2.png" type="Button" compress="0" pack="0" quality="80" props="sizeGrid=13,39,24,39@@!@@stateNum=1@@!@@runtime=component.ScaleButton@@!@@pivotX=42@@!@@pivotY=22@@!@@labelSize=25@@!@@labelColors=#007c5a@@!@@labelPadding=-3,0,0,0" picType="0" scale="0"/>
+   <item name="comp/btn_bg3.png" type="Button" compress="0" pack="0" quality="80" props="sizeGrid=13,39,24,39@@!@@stateNum=1@@!@@runtime=component.ScaleButton@@!@@pivotX=42@@!@@pivotY=22@@!@@labelSize=25@@!@@labelColors=#b2660d@@!@@labelPadding=-3,0,0,0" picType="0" scale="0"/>
+   <item name="comp/img_di6.png" type="Image" compress="0" pack="0" quality="80" props="sizeGrid=5,5,4,4" picType="0"/>
+   <item name="comp/img_di7.png" type="Image" compress="0" pack="0" quality="80" props="sizeGrid=17,17,16,16" picType="0"/>
+   <item name="comp/img_getTitleBg.png" type="Image" compress="0" pack="0" quality="80" props="sizeGrid=18,92,24,74" picType="0"/>
+   <item name="comp/img_circle.png" type="Image" compress="0" pack="0" quality="80" props="sizeGrid=14,19,16,16" picType="0"/>
+   <item name="itemBase/img_select.png" type="Image" compress="0" pack="0" quality="80" props="sizeGrid=35,35,35,35" picType="0"/>
+   <item name="comp/img_skillItem.png" type="Image" compress="0" pack="0" quality="80" props="sizeGrid=25,38,25,37" picType="0" scale="0"/>
+   <item name="comp/img_skillItem_select.png" type="Image" compress="0" pack="0" quality="80" props="sizeGrid=19,38,33,37" picType="0"/>
+   <item name="comp/img_bgBar.png" type="Image" compress="0" pack="0" quality="80" props="sizeGrid=19,49,21,48" picType="0" scale="0"/>
+   <item name="comp/img_bar1.png" type="Image" compress="0" pack="0" quality="80" props="sizeGrid=8,17,11,21" picType="0" scale="0"/>
+   <item name="createRole1/bg.png" type="Image" compress="0" pack="1" quality="80" props="" picType="0" scale="0"/>
+   <item name="friend/img_findBg.png" type="Image" compress="0" pack="0" quality="80" props="sizeGrid=21,199,26,35" picType="0"/>
+   <item name="copy/itemBg.png" type="Image" compress="0" pack="0" quality="80" props="sizeGrid=21,23,24,21" picType="0"/>
+   <item name="comp/bg_33.png" type="Image" compress="0" pack="0" quality="80" props="sizeGrid=20,105,33,60" picType="0"/>
+   <item name="copy/img_iconSelect.png" type="Image" compress="0" pack="0" quality="80" props="sizeGrid=33,39,37,33" picType="0"/>
+   <item name="comp/img_kuang4.png" type="Image" compress="0" pack="0" quality="80" props="sizeGrid=15,18,16,12" picType="0"/>
+   <item name="copy/img_select.png" type="Image" compress="0" pack="0" quality="80" props="sizeGrid=7,9,9,7" picType="0"/>
+   <item name="comp/barbg.png" type="Image" compress="0" pack="0" quality="80" props="sizeGrid=8,16,12,14" picType="0" scale="0"/>
+   <item name="comp/bar.png" type="Image" compress="0" pack="0" quality="80" props="sizeGrid=7,10,4,9" picType="0" scale="0"/>
+   <item name="comp/itemBg.png" type="Image" compress="0" pack="0" quality="80" props="sizeGrid=19,20,24,19" picType="0" scale="0"/>
+   <item name="comp/img_barbg11.png" type="Image" compress="0" pack="0" quality="80" props="sizeGrid=10,15,10,15" picType="0" scale="0"/>
+   <item name="comp/img_bar11.png" type="Image" compress="0" pack="0" quality="80" props="sizeGrid=5,8,5,8" picType="0" scale="0"/>
+   <item name="comp/img_bg_31.png" type="Image" compress="0" pack="0" quality="80" props="sizeGrid=20,72,58,43" picType="0" scale="0"/>
+   <item name="comp/bar14.png" type="Image" compress="0" pack="0" quality="80" props="sizeGrid=11,24,8,26" picType="0" scale="0"/>
+   <item name="comp/barbg14.png" type="Image" compress="0" pack="0" quality="80" props="sizeGrid=0,97,0,96" picType="0" scale="0"/>
+   <item name="comp/img_tipsBg1.png" type="Image" compress="0" pack="0" quality="80" props="sizeGrid=25,25,25,25" picType="0" scale="0"/>
+   <item name="comp/img_di39.png" type="Image" compress="0" pack="0" quality="80" props="sizeGrid=10,145,10,145" picType="0" scale="0"/>
+   <item name="comp/img_di20.png" type="Image" compress="0" pack="0" quality="80" props="sizeGrid=0,60,0,60" picType="0" scale="0"/>
+   <item name="comp/img_di5.png" type="Image" compress="0" pack="0" quality="80" props="sizeGrid=5,5,4,4" picType="0" scale="0"/>
+   <item name="comp/img_tipsBg2.png" type="Image" compress="0" pack="0" quality="80" props="sizeGrid=25,25,25,25" picType="0" scale="0"/>
+   <item name="comp/btn_bg5.png" type="Button" compress="0" pack="0" quality="80" props="sizeGrid=19,49,12,47@@!@@stateNum=1@@!@@runtime=component.ScaleButton@@!@@pivotX=58@@!@@pivotY=28@@!@@labelSize=25@@!@@labelColors=#b2660d,#bd6f1b" picType="0" scale="0"/>
+   <item name="comp/img_kuang6.png" type="Image" compress="0" pack="0" quality="80" props="sizeGrid=14,14,16,14" picType="0" scale="0"/>
+   <item name="comp/img_di9_2.png" type="Image" compress="0" pack="0" quality="80" props="sizeGrid=0,15,0,15@@!@@" picType="0" scale="0"/>
+   <item name="comp/img_kuang7.png" type="Image" compress="0" pack="0" quality="80" props="sizeGrid=10,10,10,10@@!@@" picType="0" scale="0"/>
+   <item name="comp/img_kuang8.png" type="Image" compress="0" pack="0" quality="80" props="sizeGrid=10,10,10,10@@!@@" picType="0" scale="0"/>
+   <item name="comp/btn_tab2.png" type="Button" compress="0" pack="0" quality="80" props="stateNum=2@@!@@runtime=component.ScaleButton@@!@@anchorX=0.5@@!@@anchorY=0.5@@!@@labelSize=25@@!@@labelColors=#427d74,#b2532d,#427d74@@!@@sizeGrid=20,55,42,55@@!@@labelPadding=-6,0,0,0@@!@@" picType="0" scale="0"/>
+</res>

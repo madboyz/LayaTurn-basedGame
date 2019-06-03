@@ -1,0 +1,13 @@
+module {!pack!} {
+    export class {!className!} extends {!classType!} {
+{!vars!}
+        constructor(){ super()}
+        createChildren():void {
+        {!viewClassMap!}
+            super.createChildren();
+            this.loadUI("{!uiPath!}");
+{!dataBinds!}
+        }
+{!addCodes!}
+    }
+}

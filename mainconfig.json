@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "module": "amd",
+    "target": "es5",
+    "sourceMap": false,
+    "watch": true,
+    "outFile": "bin/js/game.js",
+    "allowJs":true,
+    "lib": [
+      "es5",
+      "dom",
+      "es2015.promise"
+    ]
+  },
+  "files":[
+    "bin/require.js"
+  ],
+  "include": [
+    "libs",
+    "src/view/layaUI.max.all.ts",
+    "src"
+  ]
+ 
+}

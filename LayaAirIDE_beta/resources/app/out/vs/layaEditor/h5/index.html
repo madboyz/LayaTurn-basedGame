@@ -1,0 +1,103 @@
+<!-- Copyright (C) Microsoft Corporation. All rights reserved. -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <link href="css/ouibounce.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/layout.css" rel="stylesheet" type="text/css" />
+    <link href="css/menu.css" rel="stylesheet" type="text/css" />
+    <link href="css/bottombanner.css" rel="stylesheet" type="text/css" />
+    <link href="css/idecss.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="codebase/fonts/font_roboto/roboto.css" />
+    <link rel="stylesheet" type="text/css" href="codebase/dhtmlx.css" />
+    <script src="codebase/dhtmlx.js"></script>
+    <style type="text/css">
+    body {
+        background: #333
+    }
+    #menuAdvertising {
+        z-index: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        font-size: 14px;
+        color: aqua;
+        white-space: nowrap;
+        text-decoration: underline;
+    }
+    </style>
+    <script type="text/javascript">
+
+        var searchURL = window.location.search;
+        searchURL = searchURL.substring(1, searchURL.length);
+        var InnerVer = searchURL.split("&")[1].split("=")[1];
+    </script>
+</head>
+
+<body class="monaco-shell vs-dark" aria-label="">
+    <div style="position: absolute;right: 0px;;top:-5px;z-index: 9999999999999999">
+        <ul class="nav">
+            <li style="float: right;" onclick='codeMain.menuclickHandler("workbench.action.closeWindow")'>
+                <a href="#" style="width: 20px"><img style="position: absolute;top: 2px;left: 9px;width: 19px;height: 31px;" src="res/img/1.png"></a>
+            </li>
+            <li style="float: right;" onclick='codeMain.menuclickHandler("restore")'>
+                <a href="#" style="width: 20px"><img id ="laya_restore_btn" style="position: absolute;top: 0px;left: 9px;width: 19px;height: 31px" src="res/img/2.png"></a>
+            </li>
+            <li style="float: right;" onclick='codeMain.menuclickHandler("minimize")'>
+                <a href="#" style="width: 20px"><img style="position: absolute;top: 2px;left: 9px;width: 19px;height: 34px" src="res/img/3.png"></a>
+            </li>
+        </ul>
+    </div>
+    <div id="rewardWrapper">
+        <div class="reward-btn" data-info="reward" style="cursor: pointer;z-index: 9999999999999999;">
+            <img class="reward-icon-btn" src="./res/ide/reward-default.png" />
+        </div>
+    </div>
+    <div class="reward-show-area" style="display: none;"></div>
+    <div id="_dragBar" style="display: flex; position: absolute; left: 500px; right: 170px;">
+        <div style="flex: 1;-webkit-app-region: drag; height: 30px; top: 0px; z-index: 9999999;"></div>
+        <div id="menuAdvertising" style="display: none;"></div>
+    </div>
+    <div style="position:absolute;height: 100px;width: 50px;background-color: #333;z-index:800">
+        <img id="autoAdapt1" style="position: relative;left: 12px;top: 10px" src="res/icons/32.png">
+    </div>
+    <script type="text/javascript">
+        var autoAdapt1 = document.getElementById('autoAdapt1');
+        if ("auto" === InnerVer) {
+            autoAdapt1.src = 'res/icons/32_auto.png';
+            autoAdapt1.style.left = '8px';
+        } else if ("release" === InnerVer) {
+            autoAdapt1.src = 'res/icons/32.png';
+            autoAdapt1.style.left = '12px';
+        } else {
+            console.log("Unknown InnerVer: " + InnerVer + "!");
+        }
+    </script>
+    <div id ="code_panel" style="position: absolute;z-index: 100;left: 50px;width: 500px;display: none;">
+    </div>
+    <div id="listMenu_con" style="position: absolute;left: 50px;z-index: 900;">
+        <div id="uicodeMenuList"></div>
+        <div id="layaaskMenuList"></div>
+    </div>
+    <script src="js/handlerHtml.js"></script>
+    <script src="js/newPro.js"></script>
+    <script src='laya.js' loader='laya'></script>
+    <script loader='laya' src="jslib/png/zlib.js"></script>
+    <script loader='laya' src="jslib/png/png.js"></script>
+    <script loader='laya' src="jslib/jpg/jpg.js"></script>
+    <script loader='laya' src="js/xlsx.full.min.js"></script>
+    <script id="layaUIView"></script>
+    <script id="layaCodeView"></script>
+    <script src='index.js' loader='laya'></script>
+    <!-- <script src="js/asCompileModule.js"></script> -->
+    <script src="js/laya.LayaAnimationTool.js"></script>
+    <script src="js/qrcode.js"></script>
+    <script type="text/javascript" src="js/menu.js"></script>
+    <div id="_dragBar"></div>
+</body>
+<!-- Startup via index.js -->
+<!-- <script src="index.js"></script> -->
+
+</html>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <title>divClass1</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/layaSetup1.css"/>
+    <link rel="stylesheet" type="text/css" href="css/layaSetup.css"/>
+</head>
+
+<body style="background-color: #303030;" onload="loadingData()">
+<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 Divleft">
+    <div class="DivBox" style="border-right: 2px solid #282828;">
+        <div class="title">
+            已选择渠道列表
+        </div>
+        <div id="alreadyChoiceSP" class="listSPBox"></div>
+    </div>
+</div>
+<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 Divright">
+    <div class="DivBox">
+        <div class="title">
+            渠道列表
+            <div class="form-group">
+                <input type="text" class="form-control" style="display:none" placeholder="搜索">
+                <span class="glyphicon glyphicon-search" style="display:none" ></span>
+            </div>
+        </div>
+        <div id="ChoiceSP" class="listSPBox"></div>
+    </div>
+</div>
+<div class="buttonBox">
+    <div id="button_save_package" class="buttonDIV" onclick="save_package()">
+        保存
+    </div>
+    <div class="buttonDIV" onclick="nextDIV()">
+        下一步
+    </div>
+</div>
+</body>
+
+</html>
+<script src="js/jquery-3.0.0.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/FileSaver.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+//    var dataChoicesSProot = "./data/choiceSPData.json";
+//    var allSPdataSProot = "./data/allSPData.json";
+    var allSpData = {}
+    var dataChoiceData = {}
+    var save_package_type = 0;//0:保存  1:打包
+    var genApk = null;
+    /*读取json数据*/
+    function loadingData() {
+        window.dataSP = {};
+
+//        $.get("http://api.devopen.layabox.com/xsdk/getOpenedAccess",function(data,status){
+//            if(status == "success"){
+//
+//            }
+//        });
+        $.getJSON(window.parent.configPath.all_sp_data, function (data) {
+            allSpData = data;
+            window.parent.xsdkShowLoading(window.parent.textConfig.net_wait);
+            $.getJSON(window.parent.textConfig.api_getOpenedAccess, function (data,status) {
+                window.parent.xsdkHideLoading();
+                if(status != "success" || data.ret !=0){
+                    return;
+                }
+                var fs_extra = window.parent.xsdk_node_fs_extra;
+                var path = window.parent.xsdk_node_path;
+                dataSP = data.data;
+                for(key in dataSP){
+                    if( !allSpData[key] ) {
+                        allSpData[key] = {"name": dataSP[key]};
+                    }
+                }
+                fs_extra.outputFileSync(window.parent.configPath.all_sp_data, JSON.stringify(allSpData));
+
+
+                $.getJSON(window.parent.configPath.choice_sp_data, function (data) {
+                    dataChoiceData = data;
+                    for (key in dataSP) {
+//					var divSP = "<div class='col-lg-4 col-md-4 col-sm-4 col-xs-4 listSPSmall'><input type='checkbox' spId=" + key + " spname=" + dataSP[key] + " onclick='createSP(this)'/>" + dataSP[key] + "</div>";
+//					$("#ChoiceSP").html($("#ChoiceSP").html() + divSP);
+                        var divSP = null;
+                        if (data[key] != null) {
+                            divSP = "<div class='col-lg-4 col-md-4 col-sm-4 col-xs-4 listSPSmall'><input checked='checked' type='checkbox' class='checkboxbg' spId=" + key + " spname=" + dataSP[key] + " onclick='createSP(this)'/>" + dataSP[key] + "</div>";
+                        } else {
+                            divSP = "<div class='col-lg-4 col-md-4 col-sm-4 col-xs-4 listSPSmall'><input type='checkbox' class='checkboxbg' spId=" + key + " spname=" + dataSP[key] + " onclick='createSP(this)'/>" + dataSP[key] + "</div>";
+                        }
+                        $("#ChoiceSP").html($("#ChoiceSP").html() + divSP);
+                        if (data[key] != null) {
+                            createDivSP(key, dataSP[key]);
+                        }
+                    }
+                    checkSPButton();
+                });
+            });
+        });
+    }
+    function checkSPButton(){
+        var hasChecked = false;
+        $("#alreadyChoiceSP").children().each(function () {
+            var idSP = $(this).attr("ChoiceSPId");
+            hasChecked = true;
+        });
+
+        if( !hasChecked ) {
+            save_package_type = 1;
+            $('#button_save_package').text("打包");
+        }else{
+            save_package_type = 0;
+            $('#button_save_package').text("保存");
+        }
+
+    }
+    /*勾选后创建列表*/
+    function createSP(thisdiv) {
+        var idSP = $(thisdiv).attr("spId");
+        var nameSP = $(thisdiv).attr("spname");
+        var swich = 0;
+        $("#alreadyChoiceSP").children().each(function () {
+            if ($(this).attr("ChoiceSPId") == idSP) {
+                swich = 1;
+            }
+        });
+        if (swich == 0) {
+            var divSP = "<div class='listSP' ChoiceSPId=" + idSP + ">" + nameSP + "</div>";
+            $("#alreadyChoiceSP").html($("#alreadyChoiceSP").html() + divSP);
+        } else if (swich == 1) {
+            $("#alreadyChoiceSP").children("div[ChoiceSPId=" + idSP + "]").remove();
+        }
+        checkSPButton();
+        saveSP();
+    }
+    function createDivSP(idSP, nameSP) {
+        var swich = 0;
+        $("#alreadyChoiceSP").children().each(function () {
+            if ($(this).attr("ChoiceSPId") == idSP) {
+                swich = 1;
+            }
+        });
+        if (swich == 0) {
+            var divSP = "<div class='listSP' ChoiceSPId=" + idSP + ">" + nameSP + "</div>";
+            $("#alreadyChoiceSP").html($("#alreadyChoiceSP").html() + divSP);
+        } else if (swich == 1) {
+            $("#alreadyChoiceSP").children("div[ChoiceSPId=" + idSP + "]").remove();
+        }
+    } 
+    /*保存已选SP*/
+    function saveSP() {
+        var ChoiceSP = {};
+        var SP = {};
+        $("#alreadyChoiceSP").children().each(function () {
+            var idSP = $(this).attr("ChoiceSPId");
+            var nameSP = $(this).html();
+            SP["'" + idSP + "'"] = nameSP;
+            if( dataChoiceData[idSP] ){
+                ChoiceSP[idSP] = dataChoiceData[idSP];
+            }else {
+                ChoiceSP[idSP] = {"name": nameSP};
+            }
+        });
+        var fs_extra = window.parent.xsdk_node_fs_extra;
+        var path = window.parent.xsdk_node_path;
+        var result = JSON.stringify(ChoiceSP);
+        var outpath = window.parent.configPath.choice_sp_data;
+        fs_extra.outputFileSync(outpath, result);
+    }
+
+    //打包、保存
+    function save_package(){
+        if( save_package_type == 0 ){
+            saveSP();
+        }else if( save_package_type == 1 ){
+            if( genApk == null ) {
+                genApk = new window.parent.GenerateAndroidApk.GenerateAndroidApk();
+            }
+
+            $.getJSON(window.parent.configPath.game_data, function (data) {
+                var packageData = {};
+                var gameData = data;
+//                gameData = gameData[1000];
+                packageData.app_name = gameData.gameName;
+                packageData.orientation = gameData.orientation;
+                packageData.game_url = gameData.gameURL;
+                packageData.spname = "laya";
+                packageData.icon_path = gameData.gameIcon;
+                packageData.keystore_path = gameData.keystoreFile;
+                packageData.keystore_pwd = gameData.keystorePassword;
+                packageData.keystore_alias_pwd = gameData.aliasPassword;
+                packageData.output_path = gameData.outDir;
+                packageData.loading_view_show = false;
+                packageData.gen_res_pkg = true;
+                packageData.res_path = gameData.resPath;
+                packageData.keystore_alias = gameData.alias;
+//                packageData.iconInfo = iconInfo;
+                packageData.sdk_path = null;
+                packageData.package_name = gameData.defaultPackageName;
+                packageData.spInfo = null;
+
+                genApk.excute(packageData,function(msg,percent){
+                    window.parent.xsdkShowLoading("progress:"+percent+"%");
+                });
+            });
+
+        }
+    }
+    /*下一步*/
+    function nextDIV() {
+        saveSP();
+        $(window.parent.document).find(".smallDiv").removeClass("orange");
+        $(window.parent.document).find(".smallRight").removeClass("orange");
+        $(window.parent.document).find(".smallDiv").eq(2).addClass("orange");
+        $(window.parent.document).find(".smallDiv").eq(2).prev().addClass("orange");
+        $(window.parent.document).find("#contentDiv").attr("src", "divClass2.html");
+    }
+    window.parent.leavePage = function(enterDiv){
+        saveSP();
+    };
+
+</script>

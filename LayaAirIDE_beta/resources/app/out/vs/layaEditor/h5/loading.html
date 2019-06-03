@@ -1,0 +1,211 @@
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+    <meta charset=utf-8>
+    <style type="text/css">
+    *{margin:0;padding: 0}
+    body
+    {
+        font-family: Microsoft YaHei;
+        -webkit-app-region:drag;
+        overflow: hidden;
+        background-color    : #212121;
+    }
+
+    /*@-webkit-keyframes rotateAndScale*/
+    /*{*/
+        /*from*/
+        /*{*/
+            /*transform : rotateY(180deg) scale(0,1);*/
+        /*};*/
+        /*to*/
+        /*{*/
+            /*transform : rotateY(0deg) scale(1,1);*/
+        /*}*/
+    /*}*/
+
+
+    #container
+    {
+        position: absolute;
+        left: 0px;
+        top:0px;
+        width: 396px;
+        height: 245px;
+        /*border:1px solid #545454;*/
+    }
+
+    #logo
+    {
+        position : absolute;
+
+        animation: rotateAndScale 0.5s;
+    }
+
+    #console
+    {
+        color     : #ffffff;
+        overflow  : hidden;
+        width     : 400px;
+        position  : absolute;
+        top       : 280px;
+        font-size : 14px;
+        text-align: center;
+        left: 30px;
+    }
+    #progressInfo
+    {
+        position    : absolute;
+        width       : 100%;
+        color       : #FFF;
+        top         : 79%;
+        text-align  : center;
+        font-size   : 12px;
+        font-weight : bold;
+    }
+    #closeBtn{
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        -webkit-app-region: no-drag;
+        cursor:pointer
+    }
+      #title{
+          position: absolute;
+          top: 219px;
+          left: 30px;
+          width: 400px;
+          text-align: center;
+          font-size: 24px;
+          color: #ffffff;
+          font-family: "微软雅黑";
+
+      }
+       #back{
+           background: #66D2FF;
+           width: 455px;
+           height: 3px;
+           top: 295px;
+           left: 6px;
+           position: absolute;
+           display: none;
+       }
+       #upback{
+           display: none;
+           background: rgba(255,255,255, 0.8);
+           width: 100px;
+           height: 3px;
+           top: 295px;
+           left: 6px;
+           max-width: 455px;
+           position: absolute;
+
+       }
+   </style>
+
+</head>
+<body>
+    <div id="container">
+        <img id = "logo" src="res/logo/logo_gray_transparent.png">
+        <div id = "title">全新体验</div>
+        <div id = "console">初始化..</div>
+        <div id = "progressInfo"></div>
+        <div id = "back"></div>
+        <div id = "upback"></div>
+    </div>
+    <!--<img  id="closeBtn" src="res/img/btn.png" onclick="closeWindow()">-->
+</body>
+
+<script type="text/javascript">
+    var searchURL = window.location.search;
+    searchURL = searchURL.substring(1, searchURL.length);
+    var langIndex = searchURL.split("&")[0].split("=")[1];
+    console.log("lang:" + this.lang);
+    var InnerVer = searchURL.split("&")[1].split("=")[1];
+    langIndex || (langIndex = 0);
+
+    var langConfig = require("./../../../layarepublic/lang/extension.js").Lang.panel;
+
+    //面板的语言包
+    function getPanelLang(index) {
+        return langConfig[index][langIndex];
+    }
+
+    var logo = document.getElementById('logo');
+    var title = document.getElementById('title');
+    var c = document.getElementById('console');
+
+    if ("auto" === InnerVer) {
+        logo.src = 'res/logo/logo_gray_transparent_auto.png';
+        title.innerHTML = '';
+        c.style.top = '280px';
+    } else if ("release" === InnerVer) {
+        logo.src = 'res/logo/logo_gray_transparent.png';
+        title.innerHTML = getPanelLang(231);
+        c.style.top = '256px';
+    } else {
+        console.log("Unknown InnerVer: " + InnerVer + "!");
+    }
+
+    var upback = document.getElementById("upback");
+    var back = document.getElementById("back");
+    var canvas = document.getElementById('canvas');
+    var timeOutId = setInterval(delayHandler,500);
+    var count = 0;
+
+    var initStr = getPanelLang(232);
+
+    log(initStr + ".");
+
+    function delayHandler()
+    {
+        count++;
+        if(flag)
+        {
+            clearInterval(timeOutId)
+        }
+        if(count%5==0)
+        {
+            log(initStr + ".")
+        }else if(count%5==1){
+            log(initStr + "..")
+        }else if(count%5==2) {
+            log(initStr + "...")
+        }else if(count%5==3){
+            log(initStr + "....")
+        }else if(count%5==4){
+            log(initStr + ".....")
+        }
+    }
+    var msg;
+    function log(message)
+    {
+        console.log(message);
+        msg = message;
+        c.innerHTML = message;
+    }
+    var flag = false;
+    function startDownLoad(max)
+    {
+        flag = true;
+        clearInterval(timeOutId)
+        back.style.display = "block"
+        upback.style.display = "block";
+        upback.style.width = 0+"px"
+    }
+
+    // function progress(loaded)
+    // {
+    //  c.innerHTML = '正在下载...';
+    //    console.log(loaded+"==========")
+    //    upback.style.width= (455*loaded)+"px";
+    // }
+
+    // var ipc = require('ipc');
+    // function closeWindow()
+    // {
+    //    clearInterval(timeOutId);
+    //  ipc.sendSync('user-determinate-loading');
+    // }
+</script>
+
+</html>

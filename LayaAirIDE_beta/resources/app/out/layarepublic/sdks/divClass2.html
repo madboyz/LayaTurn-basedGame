@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>divClass2</title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/layaSetup2.css" />
+		<link rel="stylesheet" type="text/css" href="css/layaSetup.css"/>
+	</head>
+
+	<body style="background-color: #303030;" onload="loadingData()">
+		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 Divleft">
+			<div class="DivBox" style="border-right: 2px solid #282828;">
+				<div class="title">
+					已选择渠道列表
+				</div>
+				<div id="alreadyChoiceSP" class="listSPBox"></div>
+			</div>
+		</div>
+		<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 Divright">
+			<div class="DivBox">
+				<div class="title">
+					SDK参数
+					<div class="form-group">
+						<input type="text" class="form-control" style="display:none" placeholder="搜索">
+						<span class="glyphicon glyphicon-search" style="display:none" ></span>
+					</div>
+				</div>
+				<div class="listSPBox">
+					<div id="listSPBoxLeft" class="listSPBoxLeft"></div>
+					<div id="listSPBoxRight" class="listSPBoxRight"></div>
+				</div>
+			</div>
+		</div>
+		<div class="buttonBox">
+			<div class="buttonDIV" onclick="saveSP()">
+				保存
+			</div>
+			<div class="buttonDIV" onclick="nextDIV()">
+				下一步
+			</div>
+		</div>
+	</body>
+
+</html>
+<script src="js/jquery-3.0.0.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+//	var dataAttributeSGroot = "./data/attributeSP.json";
+//	var dataChoiceSProot = "./data/choiceSPData.json";
+//	var allSProot = "./data/allSPData.json";
+//	var getSpAttributeURL = "";
+	var currentSelect = -1;
+	var genApk;
+	var choicespData = {};
+	var allspData = {};
+	var attributeObj = {};//所有属性的集合
+	/*遍历方法*/
+	function count(o) {
+		var t = typeof o;
+		if(t == 'string') {
+			return o.length;
+		} else if(t == 'object') {
+			var n = 0;
+			for(var i in o) {
+				n++;
+			}
+			return n;
+		}
+		return false;
+	}
+	/*读取json数据*/
+	function loadingData() {
+		//获得所有数据
+		$.getJSON(window.parent.configPath.all_sp_data, function(allData) {
+			allspData = allData;
+			//加载本地所有渠道的属性配置文件，并且设置相关属性
+			window.parent.xsdkShowLoading(window.parent.textConfig.net_wait);
+			$.getJSON(window.parent.configPath.all_sp_attribute, function(attrData) {
+				window.parent.xsdkHideLoading();
+				attributeObj = attrData;
+				//获得选择的数据
+				$.getJSON(window.parent.configPath.choice_sp_data, function (data) {
+					if (count(data) == 0) {
+						alert("该游戏未选择任何渠道");
+						$(window.parent.document).find("#contentDiv").attr("src", "divClass1.html");
+						return;
+					}
+					choicespData = data;
+
+					var choiceCount = 0;
+					for (key in choicespData) {
+						choiceCount++;
+						var divSP = "<div class='listSP' idSP=" + key + " onclick='clickSP(this)'>" + choicespData[key].name + "</div>";
+						$("#alreadyChoiceSP").html($("#alreadyChoiceSP").html() + divSP);
+						getConfig(key,function(data){
+							if( --choiceCount == 0 ){
+								clickSP($("#alreadyChoiceSP").children(".listSP").eq(0));
+								$("#alreadyChoiceSP").children(".listSP").eq(0).addClass("listSPSelected");
+							}
+						});
+
+					}
+				});
+			});
+		});
+	}
+	function getConfig(spid,callback){
+		if( !choicespData[spid] ){
+			return;
+		}
+		if(attributeObj[spid] && choicespData[spid].checkedover){
+			callback(attributeObj[spid]);
+		}else{
+			window.parent.xsdkShowLoading(window.parent.textConfig.net_wait);
+			//先从网络获取当前的版本号，如果和本地相同则不进行更新。否则标记为需要下载。
+			$.getJSON(window.parent.textConfig.api_getSpAttributeURL+spid, function(data,status) {
+				window.parent.xsdkHideLoading();
+				if(status != "success" || data.ret !=0){
+					return;
+				}
+				var localhave = true;//本地有配置信息
+				if(!attributeObj[spid]) {
+					localhave = false;
+				}
+
+				allspData[spid].needUpdate = false;
+				//本地sdk的版本和网上的不同，需要更新
+				//版本号规则:	大版本		配置版本		下载地址版本
+				//			1.			0.			0
+				if( !localhave || allspData[spid].version != data.data.version){
+					if( localhave && (allspData[spid].version != null && allspData[spid].version.length>1 )){
+						var rva = data.data.version.split(".");
+						var lva = allspData[spid].version.split(".");
+						//配置需要更新
+						if(rva[1]!=lva[1]){
+							var webAtt = JSON.parse(data.data.attribute);
+							var curAtt = attributeObj[spid];
+							for(var key in webAtt){
+								if( curAtt[key] ){
+									webAtt[key].value = curAtt[key].value;
+								}
+							}
+							attributeObj[spid] = webAtt;
+						}
+
+						//zip需要更新
+						if(rva[2]!=lva[2]){
+							allspData[spid].download_url = data.data.download_url;
+							allspData[spid].needUpdate = true;
+						}
+					}else{
+						// 标记为需要下载新的sdk
+						allspData[spid].needUpdate = true;
+						allspData[spid].download_url = data.data.download_url;
+						attributeObj[spid] = JSON.parse(data.data.attribute);
+					}
+					allspData[spid].nextVersion = data.data.version;
+					allspData[spid].version = data.data.version;
+				}
+				choicespData[spid].checkedover = true;
+				//保存所有渠道的信息
+				saveChoice();
+				callback(attributeObj[spid]);
+			});
+		}
+	}
+	/*单击SP列表*/
+	function clickSP(thisdiv) {
+		if( currentSelect>=0 ){
+			saveValue(currentSelect);
+		}
+		$(".listSP").removeClass("listSPSelected");
+		$(thisdiv).addClass("listSPSelected");
+		var idSP = $(thisdiv).attr("idSP");
+		currentSelect = idSP;
+		getConfig(idSP,function(data) {
+			var dataSG = data;
+			$("#listSPBoxLeft").html("");
+			$("#listSPBoxRight").html("");
+			for(key in dataSG){
+				var divSG0 = "<div class='LeftDiv'>" + dataSG[key]['name'] + "</div>";
+				var divSG1 =
+								"<div style='width:287px;height:44px;' >" +
+									"<div style='color:#303030;float:left;margin-top: 13px;' >*</div>" +
+									"<input type='text' class='configItem' name=" + key + " value=" + dataSG[key]['value'] + ">" +
+								"</div>";
+
+				if( dataSG[key].necessary ) {
+					divSG1 = 	"<div style='width:287px;height:44px;' >" +
+									"<div style='color:red;float:left;margin-top: 13px;' >*</div>" +
+									"<input type='text' class='configItem' name=" + key + " value=" + dataSG[key]['value'] + ">" +
+								"</div>";
+				}
+				$("#listSPBoxLeft").html($("#listSPBoxLeft").html() + divSG0);
+				$("#listSPBoxRight").html($("#listSPBoxRight").html() + divSG1);
+			}
+
+//			for(var i = 0; dataSG.length > i; i++) {
+//				for(key in dataSG[i]) {
+//					var divSG0 = "<div class='LeftDiv'>" + key + "</div>";
+//					var divSG1 = "<input type='text' name=" + key + " value=" + dataSG[i][key] + ">";
+//					$("#listSPBoxLeft").html($("#listSPBoxLeft").html() + divSG0);
+//					$("#listSPBoxRight").html($("#listSPBoxRight").html() + divSG1);
+//				}
+//			}
+		});
+	}
+	/*下一步*/
+	function nextDIV() {
+		if(!genApk) {
+			genApk = new window.parent.GenerateAndroidApk.GenerateAndroidApk();
+		}
+		var path = window.parent.xsdk_node_path;
+		saveSP();
+
+//		var choicePath = path.join(window.parent.__dirname, "./data/choiceSPData.json");
+
+		window.parent.canInPage3Param(function(status,sp,key) {
+			if (!status) {
+				window.parent.alert("请填写渠道:" + sp + " 中的必填信息:" + key);
+				return;
+			}
+			genApk.download_sdk_file(window.parent.configPath.all_sp_data, window.parent.configPath.choice_sp_data, function (spid, sdkpath, result) {
+				if (spid != -1) {
+					allspData[spid].sdk_path = sdkpath;
+					allspData[spid].version = allspData[spid].nextVersion;
+					allspData[spid].nextVersion = "";
+					allspData[spid].needUpdate = false;
+					var fs_extra = window.parent.xsdk_node_fs_extra;
+					var path = window.parent.xsdk_node_path;
+					fs_extra.outputFileSync(window.parent.configPath.all_sp_data, JSON.stringify(allspData));
+				}
+				if (result == 0) {
+					$(window.parent.document).find(".smallDiv").removeClass("orange");
+					$(window.parent.document).find(".smallRight").removeClass("orange");
+					$(window.parent.document).find(".smallDiv").eq(3).addClass("orange");
+					$(window.parent.document).find(".smallDiv").eq(3).prev().addClass("orange");
+					$(window.parent.document).find("#contentDiv").attr("src", "divClass3.html");
+				}
+			});
+		});
+
+	}
+	function saveValue(select){
+		getConfig(select,function(data) {
+			var dataSG = data;
+			for(key in dataSG){
+				var boxRight = $("input[name="+key+"]");
+				if(boxRight) {
+					var value = boxRight[0].value;
+					dataSG[key].value = value;
+				}
+			}
+		});
+	}
+	function saveChoice(){
+		var fs_extra = window.parent.xsdk_node_fs_extra;
+		var path = window.parent.xsdk_node_path;
+		//fs_extra.outputFileSync(path.join(window.parent.__dirname, window.parent.configPath.choice_sp_data), JSON.stringify(choicespData));
+		fs_extra.outputFileSync(window.parent.configPath.all_sp_data, JSON.stringify(allspData));
+	}
+	//保存
+	function saveSP(){
+		saveValue(currentSelect);
+		var fs_extra = window.parent.xsdk_node_fs_extra;
+		var path = window.parent.xsdk_node_path;
+		var result = JSON.stringify(attributeObj);
+		var outpath = window.parent.configPath.all_sp_attribute;
+		fs_extra.outputFileSync(outpath, result);
+	}
+	window.parent.leavePage = function(enterDiv){
+		saveSP();
+	};
+</script>

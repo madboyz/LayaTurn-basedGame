@@ -1,0 +1,4 @@
+<DoorEffect className="laya.effect.DoorEffect" defaultValue="var='panelEffect'">
+	<prop name="delay" tips="delay" type="number"/>
+	<prop name="var" tips="var" type="string"/>
+</DoorEffect>

@@ -1,0 +1,215 @@
+body {
+    background-color: #282828;
+}
+
+.boxSetup {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    font-family: "微软雅黑";
+    /*background-color: #000000;*/
+}
+.closebtn{
+    position: absolute;
+    right: 0px;
+    z-index: 30;
+    background:url("./../img/btn_close_01.png") center center no-repeat;
+    background-size: 100% 100%;
+    width: 30px;
+    height:30px;
+    margin-top: -23px;
+}
+.closebtn:hover{
+    background:url("./../img/btn_close_02.png") center center no-repeat;
+    background-size: 100% 100%;
+}
+.closebtn:active{
+    background:url("./../img/btn_close_03.png") center center no-repeat;
+    background-size: 100% 100%;
+}
+.boxSetup .boxTitle {
+    position: relative;
+    margin: 0 auto;
+    width: 800px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    color: #666666;
+    font-size: 14px;
+}
+
+.boxSetup .boxTitle img {
+    width: 100px;
+    height: 50px;
+    margin-top: 10px;
+    position: absolute;
+    left: 0;
+}
+
+.boxSetup .boxTitle p {
+    width: 100%;
+    height: 20px;
+}
+
+.boxSetup .boxClass {
+    width: 100%;
+    min-width: 800px;
+    height: 50px;
+}
+
+.boxSetup .boxClass .smallClass {
+    margin: 0 auto;
+    width: 800px;
+    height: 40px;
+    line-height: 40px;
+    border-top: 1px solid #353535;
+    margin-top: 10px;
+}
+
+.boxSetup .boxClass .smallClass .smallDiv {
+    float: left;
+    width: 22%;
+    height: 40px;
+    line-height: 45px;
+    text-align: center;
+    font-size: 16px;
+    color: #B2B3B4;
+    cursor: pointer;
+}
+
+.boxSetup .boxClass .smallClass .smallRight {
+    float: left;
+    margin-top: 15px;
+    line-height: 40px;
+    text-align: center;
+    /*border: 1px solid #E4E4E4;*/
+}
+
+.boxSetup .boxClass .smallClass .orange {
+    color: #235883;
+}
+
+.boxSetup .iframeBox {
+    width: 800px;
+    height: 500px;
+    margin: 0px auto;
+}
+
+.boxSetup .iframeBox .contentDiv {
+    width: 100%;
+    height: 100%;
+
+}
+
+.buttonBox .buttonDIV {
+    width: 120px;
+    height: 30px;
+    float: right;
+    margin-right: 20px;
+    color: #CCCCCC;
+    text-align: center;
+    border-radius: 10px;
+    /*border: 1px solid #E4E4E4;*/
+    padding: 0;
+    cursor: pointer;
+    background: #404040;
+}
+
+.buttonBox .buttonDIV:hover {
+    /*border: 1px solid #E77649;*/
+    background: #288edf;
+}
+
+.buttonBox .buttonDIV:active {
+    /*border: 1px solid #E77649;*/
+    background-color: #1c65a0;
+}
+
+.musicRotatr {
+    animation: music 1s infinite linear;
+    -webkit-animation: music 1s infinite linear;
+    -ms-animation: music 1s infinite linear;
+    -moz-animation: music 1s infinite linear;
+    -o-animation: music 1s infinite linear;
+    animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+    -ms-animation-fill-mode: forwards;
+    -moz-animation-fill-mode: forwards;
+    -o-animation-fill-mode: forwards;
+}
+
+@keyframes music {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+
+@-webkit-keyframes music {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+
+@-ms-keyframes music {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+
+@-moz-keyframes music {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+
+@-o-keyframes music {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+
+/*
+.buttonBox {
+	width: 800px;
+	height: 30px;
+	line-height: 30px;
+	margin-top: 45px;
+}
+
+.buttonBox .buttonDIV {
+	width: 120px;
+	height: 30px;
+	float: right;
+	margin-right: 20px;
+	color: #232022;
+	text-align: center;
+	border-radius: 10px;
+	border: 1px solid #E4E4E4;
+	background: white;
+	padding: 0;
+	cursor: pointer;
+}
+
+.buttonBox .buttonDIV:hover {
+	border: 1px solid #E77649;
+	background: #F8F8F8;
+}*/

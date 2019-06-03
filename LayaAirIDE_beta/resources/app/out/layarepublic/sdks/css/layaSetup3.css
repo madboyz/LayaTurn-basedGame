@@ -1,0 +1,122 @@
+body {
+	font-family: "微软雅黑";
+}
+
+.buttonBox {
+	width: 800px;
+	height: 30px;
+	float: left;
+	line-height: 30px;
+	margin-top:-18px;
+}
+
+.Divleft {
+	height: 425px;
+	margin: 20px 0;
+}
+
+.Divright {
+	height: 425px;
+	margin: 20px 0;
+}
+
+.DivBox {
+	width: 100%;
+	height: 100%;
+}
+
+.DivBox .title {
+	width: 100%;
+	height: 35px;
+	line-height: 37px;
+	padding: 0 20px;
+	color: #CCCCCC;
+	font-size: 14px;
+	font-weight:bold;
+	background-color: #4e4e4e
+	/*border-bottom: 2px solid #E0E0E0;*/
+}
+
+.DivBox .title .navbar-form {
+	margin: 0;
+	line-height: 35px;
+	padding: 0;
+	position: relative;
+	width: 280px;
+}
+
+.DivBox .title .navbar-form input {
+	width: 280px;
+	padding-right: 40px;
+	border-radius: 0;
+	border: 2px solid #E0E0E0;
+}
+
+.DivBox .title .navbar-form span {
+	position: absolute;
+	top: 15px;
+	right: 10px;
+}
+
+.DivBox .listSPBox {
+	width: 100%;
+	height: 89%;
+	overflow: auto;
+	color: #A5A5A5;
+}
+
+.DivBox .listSPBox .listSP {
+	width: 100%;
+	height: 35px;
+	line-height: 35px;
+	padding: 0 20px;
+	font-size: 14px;
+	color: #A5A5A5;
+	cursor: pointer;
+}
+
+.DivBox .listSPBox .listSP:hover {
+	background-color: #4e4e4e;
+}
+
+.DivBox .listSPBox .listSPSelected {
+	background-color: #2d3e4e;
+}
+
+.Divright .imgDivBox {
+	width: 100%;
+	height: 425px;
+}
+
+.Divright .imgDivBox .imgBox {
+	width: 100%;
+	height: 180px;
+	/*border: 2px solid #E0E0E0;*/
+	padding: 34px 30px;
+}
+
+.Divright .imgDivBox .imgBox div {
+	height: 100%;
+	padding: 5px;
+}
+
+.Divright .imgDivBox .imgBox div img {
+	width: 100%;
+	height: 100%;
+	border: 2px solid #E0E0E0;
+	cursor: pointer;
+}
+
+.Divright .imgDivBox .imgBox .imgdiv{
+	 width:90px;
+	 height:90px;
+	 margin-left:10px;
+	 border:none;
+ }
+
+.Divright .imgDivBox .imgBox .imgdiv .imgdivInner{
+	position:absolute;
+	left:0;
+	top:0;
+	border:none;
+}

@@ -1,0 +1,6 @@
+<ButtonEffect className="laya.effect.ButtonEffect">
+	<prop name="effectScale" tips="数字类型" type="number"/>
+	<prop name="tweenTime" tips="整数类型" type="int"/>
+	<prop name="effectEase" tips="整数类型" type="ease"/>
+	<prop name="backEase" tips="整数类型" type="ease"/>
+</ButtonEffect>

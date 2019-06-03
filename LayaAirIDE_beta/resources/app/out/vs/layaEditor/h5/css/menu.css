@@ -1,0 +1,401 @@
+.nav, .nav ul {
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif;
+}
+
+.nav {
+    /*background: url('menu_bg.png') no-repeat scroll 0 0 transparent width: auto;*/
+    background-color: #1e1e1e;
+    width: auto;
+    margin: 0 0 0;
+    clear: both;
+    font-size: 12px;
+    height: 34px;
+    padding: 0 0 0 0px;
+    position: relative;
+    -webkit-app-region: no-drag;
+}
+
+.nav ul {
+    background-color: #353535;
+    border: 1px solid #222;
+    border-radius: 0 5px 5px 5px;
+    border-width: 0 1px 1px;
+    /*box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);*/
+    left: -9999px;
+    overflow: hidden;
+    position: absolute;
+    top: -9999px;
+    z-index: 2;
+}
+
+.nav li {
+    /*background: url('menu_line.png') no-repeat scroll right 5px transparent;*/
+    float: left;
+    position: relative;
+
+    height: 30px;
+}
+
+.nav li a {
+    color: #c9caca;
+    display: block;
+    float: left;
+    font-weight: normal;
+    white-space: nowrap;
+    padding: 10px 10px 5px 10px;
+    position: relative;
+    text-decoration: none;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif;
+
+}
+
+.nav li:hover > a {
+    /*color: #00B4FF;*/
+}
+
+.nav li:hover, #nav a:hover, #nav a:active {
+    background: none repeat scroll 0 0 #3f3d3c;
+    outline: 0 none;
+}
+.toolLi {
+    width: auto;
+    margin: 0 0 0;
+    clear: both;
+    font-size: 12px;
+    height: 34px;
+    padding: 0 0 0 0px;
+    position: relative;
+    -webkit-app-region: no-drag;
+    /*top: -6px;*/
+    left: 20px;
+}
+.toolLi li{
+    float: left;
+    position: relative;
+    -webkit-app-region: no-drag;
+    height: 24px;
+    list-style-type:none;
+    /*border-right: solid 2px #222222;*/
+    /*border: solid 2px #222222*/
+}
+.toolLi li a {
+    color: #c9caca;
+    display: block;
+    float: left;
+    font-weight: normal;
+    white-space: nowrap;
+    padding: 5px 10px 5px 10px;
+    position: relative;
+    text-decoration: none;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif;
+
+    /*font-family: "-apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif";*/
+}
+.toolLi li:hover{
+    background: none repeat scroll 0 0 #3f3d3c;
+    outline: 0 none;
+}
+.nav li:hover ul.subs {
+    left: -1px;
+    top: 30px;
+    width: 180px;
+    -webkit-transform: scaleY(1);
+    transform: scaleY(1);
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif;
+
+    /*font-family: "-apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif";*/
+}
+
+.nav li > a > span {
+    float: right;
+}
+
+.subb li.a {
+    color: #ff0000;
+    height: 10px;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif;
+
+    /*font-family: "-apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif";*/
+}
+
+.nav ul li {
+    background: none;
+    width: 100%;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif;
+
+    /*font-family: "-apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif";*/
+}
+
+.nav ul li a {
+    float: none;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif;
+
+    /*font-family: "-apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif";*/
+}
+
+.nav ul li:hover > a {
+    background-color: #1e1e1e;
+    /*color: #00B4FF;*/
+}
+
+.file {
+    position: relative;
+    display: inline-block;
+
+    overflow: hidden;
+    text-decoration: none;
+    text-indent: 0;
+
+}
+
+.file input {
+    position: absolute;
+    right: 0;
+    opacity: 0;
+    top: -10px;
+    height: 100px;
+}
+
+.file:hover {
+    text-decoration: none;
+    height: 500px;
+}
+
+.selfBtn {
+    text-transform: uppercase;
+    font-weight: 300;
+    padding: 2px;
+    font-size: 1.1em;
+    background: url('menu_line.png') no-repeat scroll right 5px transparent;
+    color: #494949;
+    margin-top: 10px;
+    background-color: #000000;
+    border: none;
+    cursor: pointer;
+    -webkit-font-smoothing: antialiased;
+    outline: medium
+}
+
+select {
+    outline-color: #595757;
+    font-size: 14px;
+    border: #595757 1px solid;
+    height: 21px;
+    background: #212121 0px 0px;
+    color: #ccc;
+    outline: medium
+}
+
+.rightSideBar {
+    float: right;
+    margin-top: 7px;
+    margin-right: 10px;
+    padding-left: 10px;
+    -webkit-user-select: none
+}
+
+.rightSideBar span {
+    color: #bababa;
+}
+
+.rightSideBar input {
+    color: #FFF;
+    width: 40px;
+    height: 20px;
+    text-align: center;
+    background: #222;
+    color: #BABABA;
+    border: 1px solid #595757;
+}
+
+.element {
+    float: left;
+    color: #bababa;
+    font-size: 14px;
+    padding-left: 7px;
+    cursor: default;
+
+}
+
+.element img {
+    margin-top: 10px;
+}
+
+#backImgdiv {
+    display: none;
+}
+
+/* 打赏 */
+#rewardWrapper {
+    position: absolute;
+    right: 120px; 
+    height:34px;
+    z-index: 99999999;
+    background-color: #1e1e1e;
+    width: 40px;
+    height: 29px;
+    text-align: center;
+}
+
+#rewardWrapper:hover {
+    background: none repeat scroll 0 0 #3f3d3c;
+    outline: 0 none;
+}
+
+#rewardWrapper .reward-icon-btn {
+    width: 18px;
+    height: 18px;
+    padding-top: 5px;
+}
+
+.reward-show-area {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    user-select: none;
+    z-index: 9999999;
+}
+
+.show-area-container {
+    position: absolute; 
+    width: 382px;
+    z-index:10;
+    top: 40px;
+    right: 10px;
+}
+
+.qrcode-wrapper {
+    width: 382px;
+    position: relative;
+}
+
+.qrcode-bg {
+    width: 220px;
+    height: 186px;
+    margin-left: 81px;
+}
+
+.qrcode-hint-text {
+    position: relative;
+    top: -15px;
+    text-align: center;
+    font-size: 14px;
+    color: #2f3f51;
+    width: 100%;
+}
+
+#rewardQrcode {
+    position: absolute;
+    top: 40px;
+    left: 125px;
+}
+
+.reward-hint-text {
+    font-size: 18px;
+    color: #2f3f51;
+    background-color: #eeedf3;
+    width: 280px;
+    height: 40px;
+    line-height: 40px;
+    margin-left: 51px;
+    text-align: center;
+    border-radius: 20px;
+}
+
+.reward-show-area .title {
+    font-size: 14px;
+    color: #2f3f51;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.divide-area {
+    display: flex;
+    justify-content: space-between;
+}
+
+.divide-left-img {
+    width: 35px;
+    height: 35px;
+    margin-left: -14px;
+}
+
+.divide-middle-area {
+    display: flex;
+    flex: 1;
+    background-color: #fff;
+}
+
+.divide-middle-line {
+    border-top: 1px solid #eeedf3;
+    /* display: inline-block; */
+    display: flex;
+    flex: 1;
+    margin-top: 17.5px;
+}
+
+.divide-right-img {
+    width: 35px;
+    height: 35px;
+    margin-right: -14px;
+}
+
+.reward-list-wrapper {
+    height: 335px;
+}
+
+#rewardListArea {
+    display: flex;
+    flex-wrap: wrap;
+    overflow-y: hidden;
+    max-height: 300px;
+    cursor: pointer;
+}
+
+#rewardListArea::-webkit-scrollbar{
+    width: 0px;
+}
+
+.reward-item {
+    display: inline-block;
+    width: 191px;
+    box-sizing: border-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-bottom: 16px;
+    padding-left: 22px;
+}
+
+.ranking {
+    width: 14px;
+    height:14px;
+    line-height: 14px;
+    transform: translateY(2px);
+}
+
+.ranking-num {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border-radius: 7px;
+    line-height: 14px;
+    font-size: 14px;
+    color: #c1c1c1;
+    border: 1px solid #c1c1c1;
+    text-align: center;
+}
+
+.name {
+    font-size: 14px;
+    line-height: 14px;
+    color: #8d98af;
+    margin-left: 12px;
+}
+

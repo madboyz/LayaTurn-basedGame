@@ -1,0 +1,26 @@
+{
+    "x":0,
+    "type":"UIBase",
+    "selectedBox":1,
+    "selecteID":1,
+    "referenceLines":null,
+    "props":{"width":580,"sceneColor":"#000000","sceneBg":"laya/views/main/AlertPanel.png","height":930},
+    "nodeParent":-1,
+    "label":"UIBase",
+    "isOpen":true,
+    "isDirectory":false,
+    "isAniNode":true,
+    "hasChild":false,
+    "compId":1,
+    "child":[
+        ],
+    "animations":[
+        {
+            "nodes":[
+                ],
+            "name":"ani1",
+            "id":1,
+            "frameRate":24,
+            "action":0
+        }]
+}

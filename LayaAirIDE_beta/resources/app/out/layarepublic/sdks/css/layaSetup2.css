@@ -1,0 +1,138 @@
+body {
+	font-family: "微软雅黑";
+}
+
+.buttonBox {
+	width: 800px;
+	height: 30px;
+	float: left;
+	line-height: 30px;
+	margin-top:-18px;
+}
+
+
+.Divleft {
+	height: 425px;
+	margin: 20px 0;
+}
+
+.Divright {
+	height: 425px;
+	margin: 20px 0;
+}
+
+.DivBox {
+	width: 100%;
+	height: 100%;
+	/*border: 2px solid #E0E0E0;*/
+}
+
+.DivBox .title {
+	width: 100%;
+	height: 35px;
+	line-height: 37px;
+	padding: 0 20px;
+	color: #CCCCCC;
+	font-size: 14px;
+	font-weight:bold;
+	background-color: #4e4e4e
+	/*border-bottom: 2px solid #E0E0E0;*/
+}
+
+.DivBox .title .form-group {
+	margin: 0;
+	line-height: 35px;
+	padding: 0;
+	padding-top: 5px;
+	position: relative;
+	width: 280px;
+	float: right;
+}
+
+.DivBox .title .form-group input {
+	width: 280px;
+	padding-right: 40px;
+	border-radius: 0;
+	border: 2px solid #E0E0E0;
+}
+
+.DivBox .title .form-group span {
+	position: absolute;
+	top: 15px;
+	right: 10px;
+	cursor: pointer;
+}
+
+.DivBox .listSPBox {
+	width: 100%;
+	height: 89%;
+	overflow: auto;
+	color: #A5A5A5;
+}
+
+.DivBox .listSPBox .listSP {
+	width: 100%;
+	height: 35px;
+	line-height: 35px;
+	padding: 0 20px;
+	font-size: 14px;
+	color: #CCCCCC;
+	cursor: pointer;
+}
+
+.DivBox .listSPBox .listSP:hover {
+	background-color: #4e4e4e;
+}
+
+.DivBox .listSPBox .listSPSelected {
+	background-color: #2d3e4e;
+}
+
+.DivBox .listSPBox .listSPBoxLeft {
+	width: 151px;
+	height: 375px;
+	/*border-right: 2px solid #E0E0E0;*/
+	overflow: auto;
+	float: left;
+	padding-top: 5px;
+}
+
+.DivBox .listSPBox .listSPBoxLeft .LeftDiv {
+	width: 100%;
+	height: 44px;
+	line-height: 40px;
+	padding-left: 25px;
+}
+
+.DivBox .listSPBox .listSPBoxRight {
+	width: 298px;
+	height: 375px;
+	overflow: auto;
+	float: left;
+	padding-top: 5px;
+}
+
+.DivBox .listSPBox .listSPBoxRight input {
+	width: 96%;
+	height: 40px;
+	line-height: 40px;
+	margin: 0 2%;
+	border:2px solid #FFFFFF;
+	outline: none;
+	padding: 0 25px;
+}
+
+.DivBox .listSPBox .listSPBoxRight .configItem {
+	/*border:2px solid #FFFFFF;*/
+	float:left;
+	width: 90%;
+	background-color: #282828;
+	color: #999999;
+	height: 24px;
+	line-height: 0px;
+	border: none;
+	outline: none;
+	padding: 0 5px;
+	font-size: 14px;
+	margin: 8px 5px;
+}

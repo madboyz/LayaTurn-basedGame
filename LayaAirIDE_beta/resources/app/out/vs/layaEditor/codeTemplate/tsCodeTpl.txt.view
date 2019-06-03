@@ -1,0 +1,8 @@
+/**Created by the LayaAirIDE*/
+module {!pack!}{
+	export class {!className!} extends {!superFull!}{
+		constructor(){
+			super();
+		}
+	}
+}

@@ -1,0 +1,353 @@
+<!-- Copyright (C) Microsoft Corporation. All rights reserved. -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <link href="css/ouibounce.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/layout.css" rel="stylesheet" type="text/css" />
+    <link href="css/menu.css" rel="stylesheet" type="text/css" />
+    <link href="css/bottombanner.css" rel="stylesheet" type="text/css" />
+    <link href="css/idecss.css" rel="stylesheet" type="text/css">
+    <style type="text/css">
+    <!-- Theming (do not remove, we want to early load it to avoid flashing background) --> <style> .monaco-shell.vs-dark {
+        background-color: #1E1E1E;
+    }
+    </style>
+</head>
+
+<body class="monaco-shell vs-dark" aria-label="">
+    <script>
+    (function() {
+        try {
+            var theme = window.localStorage.getItem('storage://global/workbench.theme');
+            if (theme) {
+                var baseTheme = theme.split(' ')[0];
+                if (baseTheme !== 'vs-dark') {
+                    window.document.body.className = 'monaco-shell ' + baseTheme;
+                }
+            }
+        } catch (error) {
+            console.error(error);
+        }
+    })();
+    </script>
+    <div id="layabottomdiv" class="bottomIde"></div>
+    <div id="editeMenu" style="display:none;z-index: 100;position: absolute;width: 100%;top: 0px;left: 51px;height: 36px">
+        <ul class="nav">
+            <li onclick="b_block(event)" onmouseover="overHandler(event)"><a href="#">文件</a>
+                <ul class="subs" id="menuListEd">
+                    <li><a href="#" style="padding: 8px 10px 10px 10px;height: 12px" onclick='editeMenuhandler("newProEditeMenu")'>`${domt}`<span></span></a></li>
+                    <li style="border-bottom: solid 1px #222222"><a href="#" style="padding: 8px 10px 10px 10px;height: 12px" onclick='editeMenuhandler("newUntitledFile")'>新建文件<span>(Ctrl+N)</span></a></li>
+                    <li style="border-bottom: solid 1px #222222"><a href="#" style="padding: 8px 10px 10px 10px;height: 12px" onclick='editeMenuhandler("newDir")'>新建目录<span>(Ctrl+D)</span></a></li>
+                    <li><a href="#" style="padding: 8px 10px 10px 10px;height: 12px" onclick='editeMenuhandler("openProEditeMenu")'> 打开项目<span>(Ctrl+O)</span></a></li>
+                    <li><a href="#" style="padding: 8px 10px 10px 10px;height: 12px" onclick='editeMenuhandler("changeProEditeMenu")'>转换项目<span></span></a></li>
+                    <li style="border-top: solid 1px #222222"><a href="#" style="padding: 8px 10px 10px 10px;height: 12px" onclick='editeMenuhandler("setPro")'>设置项目<span>(F9)</span></a></li>
+                    <li style="border-bottom: solid 1px #222222"><a href="#" style="padding: 8px 10px 10px 10px;height: 12px" onclick='editeMenuhandler("setPage")'>设置页面<span>(Ctrl+P)</span></a></li>
+                    <li style="border-bottom: solid 1px #222222"><a href="#" style="padding: 8px 10px 10px 10px;height: 12px" onclick='oclick("reloadEdite")'>刷新编辑器</a></li>
+                </ul>
+            </li>
+            <li onclick="b_block(event)" onmouseover="overHandler(event)"><a href="#">编辑</a>
+                <ul class="subs">
+                    <li><a href="#" style="padding: 8px 10px 10px 10px;height: 12px" onclick='editeMenuhandler("undoEd")'>撤销<span>(Ctrl+Z)</span></a></li>
+                    <li><a href="#" style="padding: 8px 10px 10px 10px;height: 12px" onclick='editeMenuhandler("redoEd")'> 重做<span>(Ctrl+Y)</span></a></li>
+                    <li style="border-top: solid 1px #222222"><a href="#" style="padding: 8px 10px 10px 10px;height: 12px" onclick='editeMenuhandler("deleteEd")'>删除<span>(Delete)</span></a></li>
+                    <li><a href="#" style="padding: 8px 10px 10px 10px;height: 12px" onclick='editeMenuhandler("copyEd")'>复制<span>(Ctrl+C)</span></a></li>
+                    <li><a href="#" style="padding: 8px 10px 10px 10px;height: 12px" onclick='editeMenuhandler("pasteEd")'>粘贴<span>(Ctrl+V)</span></a></li>
+                    <li><a href="#" style="padding: 8px 10px 10px 10px;height: 12px" onclick='editeMenuhandler("paseteEdP")'>原位粘贴<span>(Ctrl+Shift+V)</span></a></li>
+                    <li><a href="#" style="padding: 8px 10px 10px 10px;height: 12px" onclick='editeMenuhandler("cutEd")'>剪切<span>(Ctrl+X)</span></a></li>
+                    <li><a href="#" style="padding: 8px 10px 10px 10px;height: 12px" onclick='editeMenuhandler("selectAllEd")'>全选<span>(Ctrl+A)</span></a></li>
+                    <li style="border-bottom: solid 1px #222222"><a href="#" style="padding: 8px 10px 10px 10px;height: 12px">快速移动<span>(Shift+方向键)</span></a></li>
+                    <li><a href="#" style="padding: 8px 10px 10px 10px;height: 12px" onclick='editeMenuhandler("coverConEd")'>转换为容器<span>(Ctrl+B)</span></a></li>
+                    <li><a href="#" style="padding: 8px 10px 10px 10px;height: 12px" onclick='editeMenuhandler("remodeConEd")'>移除容器<span>(Ctrl+U)</span></a></li>
+                    <li><a href="#" style="padding: 8px 10px 10px 10px;height: 12px" onclick='editeMenuhandler("reCopyEd")'>重复复制<span>(Ctrl+R)</span></a></li>
+                    <li style="border-bottom: solid 1px #222222"><a href="#" style="padding: 8px 10px 10px 10px;height: 12px" onclick='editeMenuhandler("fixResEd")'>定位资源<span>(Ctrl+K)</span></a></li>
+                    <li><a href="#" style="padding: 8px 10px 10px 10px;height: 12px" onclick='editeMenuhandler("findReplaceEd")'>查找替换<span>(Ctrl+F)</span></a></li>
+                    <li><a href="#" style="padding: 8px 10px 10px 10px;height: 12px" onclick='editeMenuhandler("saveEd")'>保存文件<span>(Ctrl+S)</span></a></li>
+                    <li><a href="#" style="padding: 8px 10px 10px 10px;height: 12px" onclick='editeMenuhandler("saveAllEd")'>保存所有文件<span>(Ctrl+Shift+S)</span></a></li>
+                </ul>
+            </li>
+            <li onclick="b_block(event)" onmouseover="overHandler(event)"><a href="#">视图</a>
+                <ul class="subs">
+                    <li><a href="#" style="padding: 8px 10px 10px 10px;height: 12px" onclick='editeMenuhandler("bigViewEd")'>放大视图<span>(Ctrl++)</span></a></li>
+                    <li><a href="#" style="padding: 8px 10px 10px 10px;height: 12px" onclick='editeMenuhandler("smallViewEd")'> 缩小视图<span>(Ctrl+-)</span></a></li>
+                    <li style="border-bottom: solid 1px #222222"><a href="#" style="padding: 8px 10px 10px 10px;height: 12px" onclick='editeMenuhandler("resetViewEd")'>恢复视图<span>(Ctrl+|)</span></a></li>
+                    <li><a href="#" style="padding: 8px 10px 10px 10px;height: 12px">拖动视图(鼠标右键)<span></span></a></li>
+                    <li><a href="#" style="padding: 8px 10px 10px 10px;height: 12px" onclick='editeMenuhandler("showViewEd")'>显示/隐藏参考视图<span>(F8)</span></a></li>
+                    <li style="border-bottom: solid 1px #222222"><a href="#" style="padding: 8px 10px 10px 10px;height: 12px" onclick='editeMenuhandler("shoeViewDeEd")'>显示/隐藏标尺<span>(Ctrl+Shift+R)</span></a></li>
+                    <li><a href="#" style="padding: 8px 10px 10px 10px;height: 12px" onclick='editeMenuhandler("upEd")'>节点向上<span>(Ctrl+↑)</span></a></li>
+                    <li><a href="#" style="padding: 8px 10px 10px 10px;height: 12px" onclick='editeMenuhandler("downEd")'>节点向下<span>(Ctrl+↓)</span></a></li>
+                </ul>
+            </li>
+            <li onclick="b_block(event)" onmouseover="overHandler(event)"><a href="#">工具</a>
+                <ul class="subs" id="layaToolsMenu">
+                    <li><a href="#" style="padding: 8px 10px 10px 10px;height: 12px" onclick='editeMenuhandler("lang")'>提取语言包<span></span></a></li>
+                    <li><a href="#" style="padding: 8px 10px 10px 10px;height: 12px" onclick='startToolLaya("jsCompress")'> SWF转换<span></span></a></li>
+                    <li><a href="#" style="padding: 8px 10px 10px 10px;height: 12px" onclick='jscompressTool("jsCompress")'> JS压缩工具<span></span></a></li>
+                    <li><a href="#" style="padding: 8px 10px 10px 10px;height: 12px" onclick='bonetools("龙骨",0)'> 龙骨动画转换<span></span></a></li>
+                    <li><a href="#" style="padding: 8px 10px 10px 10px;height: 12px" onclick='bonetools("Spine",1)'> Spine动画转换<span></span></a></li>
+                    <li><a href="#" style="padding: 8px 10px 10px 10px;height: 12px" onclick='picToolsLaya()'> 图集打包<span></span></a></li>
+                    <li><a href="#" style="padding: 8px 10px 10px 10px;height: 12px" onclick='phoneDown()'> 运行器下载<span></span></a></li>
+                    <li><a href="#" style="padding: 8px 10px 10px 10px;height: 12px" onclick='RuntimePanel("PackageToolLaya")'> 打包app(测试版)<span></span></a></li>
+                    <li><a href="#" style="padding: 8px 10px 10px 10px;height: 12px" onclick='buldAppSdk()'> 渠道打包工具(测试版)<span></span></a></li>
+                    <li><a href="#" style="padding: 8px 10px 10px 10px;height: 12px" onclick='RuntimePanel("buldApp")'> 构建<span></span></a></li>
+                    <li><a href="#" style="padding: 8px 10px 10px 10px;height: 12px" onclick='down3dzip("flashpublish")'>3D转换工具<span></span></a></li>
+                    <!--<li><a href="#"style="padding: 8px 10px 10px 10px;height: 12px" onclick='flashpublish("flashpublish")'> 发布flash版本<span></span></a></li>-->
+                </ul>
+            </li>
+            <li onclick="b_block(event)" onmouseover="overHandler(event)"><a href="#">窗口</a>
+                <ul class="subs">
+                    <li><a href="#" style="padding: 8px 10px 10px 10px;height: 12px" onclick='editeMenuhandler("movclipPanel")'>动画面板<span></span></a></li>
+                    <li><a href="#" style="padding: 8px 10px 10px 10px;height: 12px" onclick='editeMenuhandler("FramePropPanel")'>帧属性面板<span></span></a></li>
+                    <li><a href="#" style="padding: 8px 10px 10px 10px;height: 12px" onclick='editeMenuhandler("projPanelEd")'>项目面板<span></span></a></li>
+                    <li><a href="#" style="padding: 8px 10px 10px 10px;height: 12px" onclick='editeMenuhandler("resPanelEd")'> 资源面板<span></span></a></li>
+                    <li style="border-top: solid 1px #222222"><a href="#" style="padding: 8px 10px 10px 10px;height: 12px" onclick='editeMenuhandler("objPanelEd")'>属性面板<span></span></a></li>
+                    <li><a href="#" style="padding: 8px 10px 10px 10px;height: 12px" onclick='editeMenuhandler("displayTreePanel")'>层级面板<span></span></a></li>
+                    <li><a href="#" style="padding: 8px 10px 10px 10px;height: 12px" onclick='editeMenuhandler("CompPanel")'>模板面板<span></span></a></li>
+                    <li><a href="#" style="padding: 8px 10px 10px 10px;height: 12px" onclick='editeMenuhandler("compPanel")'>组件面板<span></span></a></li>
+                    <li style="border-top: solid 1px #222222"><a href="#" style="padding: 8px 10px 10px 10px;height: 12px" onclick='editeMenuhandler("resetPanel")'>恢复面板设置<span>(F3)</span></a></li>
+                </ul>
+            </li>
+            <li onclick="b_block(event)" onmouseover="overHandler(event)"><a href="#">导出</a>
+                <ul class="subs">
+                    <li><a href="#" style="padding: 8px 10px 10px 10px;height: 12px" onclick='editeMenuhandler("pushEd")'>导出<span>(F12)</span></a></li>
+                    <li><a href="#" style="padding: 8px 10px 10px 10px;height: 12px" onclick='editeMenuhandler("cleanPush")'> 清理并导出<span>(Ctrl+F12)</span></a></li>
+                    <li style="border-bottom: solid 1px #222222"><a href="#" style="padding: 8px 10px 10px 10px;height: 12px" onclick='editeMenuhandler("pushFinalEd")'>发布(不打包未使用资源)</a></li>
+                    <li><a href="#" style="padding: 8px 10px 10px 10px;height: 12px" onclick='editeMenuhandler("refreshPanelEd")'>刷新资源及页面<span>(F5)</span></a></li>
+                    <li><a href="#" style="padding: 8px 10px 10px 10px;height: 12px" onclick='editeMenuhandler("refreshPagePanelEd")'>刷新页面<span>(F6)</span></a></li>
+                    <li><a href="#" style="padding: 8px 10px 10px 10px;height: 12px" onclick='editeMenuhandler("refreshResPanelEd")'>刷新资源<span>(F7)</span></a></li>
+                    <li><a href="#" style="padding: 8px 10px 10px 10px;height: 12px" onclick='editeMenuhandler("findNoPageEd")'>查找未被使用的资源<span>(F4)</span></a></li>
+                </ul>
+            </li>
+            <li onclick="b_block(event)" onmouseover="overHandler(event)"><a href="#">设置</a>
+                <ul class="subs">
+                    <li style="border-bottom: solid 1px #222222"><a href="#" _fcksavedurl="#" style="padding: 8px 10px 10px 10px;height: 12px;" onclick='libsSelect("libs")'>类库管理</a></li>
+                    <li style="border-bottom: solid 1px #222222"><a href="#" _fcksavedurl="#" style="padding: 8px 10px 10px 10px;height: 12px;" onclick='editeMenuhandler("idesetting")'>编辑器设置</a></li>
+                </ul>
+            </li>
+            <!--<li onclick="b_block(event)" onmouseover="overHandler(event)"><a class="hsubs" href="#"> 插件</a>-->
+            <!--<li onclick="b_block(event)" onmouseover="overHandler(event)"><a class="hsubs" href="#">关于</a>-->
+            <li onclick="b_block(event)" onmouseover="overHandler(event)"><a href="#">帮助</a>
+                <ul class="subs">
+                    <li><a href="#" _fcksavedurl="#" style="padding: 8px 10px 10px 10px;height: 12px;" onclick='oclick("f12")'>开发人员工具</a></li>
+                    <li><a href="#" _fcksavedurl="#" style="padding: 8px 10px 10px 10px;height: 12px;" onclick='oclick("layaboxPublic")'>官网</a></li>
+                    <li><a href="#" _fcksavedurl="#" style="padding: 8px 10px 10px 10px;height: 12px;" onclick='oclick("layademo")'> 官网示例</a></li>
+                    <li style="border-bottom: solid 1px #222222"><a href="#" _fcksavedurl="#" style="padding: 8px 10px 10px 10px;height: 12px;" onclick='oclick("downLoad")'>开发者中心</a></li>
+                    <li style="border-bottom: solid 1px #222222"><a href="#" _fcksavedurl="#" style="padding: 8px 10px 10px 10px;height: 12px;" onclick='openUserPath()'>打开编辑器本地缓存目录</a></li>
+                    <li style="border-bottom: solid 1px #222222"><a href="#" _fcksavedurl="#" style="padding: 8px 10px 10px 10px;height: 12px;" onclick='popContributionPanel()'>layaAir贡献名单</a></li>
+                    <li style="border-bottom: solid 1px #222222"><a href="#" _fcksavedurl="#" style="padding: 8px 10px 10px 10px;height: 12px;" onclick='checkupdateVersions()'>检查更新</a></li>
+                    <li style="border-bottom: solid 1px #222222"><a href="#" _fcksavedurl="#" style="padding: 8px 10px 10px 10px;height: 12px;" onclick='changeList()'>更新日志</a></li>
+                    <li><a id="layaMenuVersion" href="#" _fcksavedurl="#" style="padding: 8px 10px 10px 10px;height: 12px;">当前版本 1.0.0rc1</a></li>
+                </ul>
+            </li>
+            <li id="qrcodeImage0" style="display: none" onclick='oclick("layaqrcodeshow")'>
+                <a href="#" title="">
+                    <img style="position: absolute;top: 11px;" src="res/ide/wifi.png" width="16px" height="16px">
+                    <span>&nbsp&nbsp&nbsp&nbsp&nbsp二维码</span></a>
+            </li>
+            <li style="float: right;position: absolute;right: 120px;display: none">
+                <a href="#" onclick='changeLayaIDECodeMode()' title="切换到代码模式(Alt+Q)">
+                    <img style="position: absolute;top: 11px;" src="res/img/1_09.png">
+                    <span>&nbsp&nbsp&nbsp&nbsp&nbsp代码模式</span></a>
+            </li>
+        </ul>
+    </div>
+    <div id="conList" style="display:none;z-index: 100;position: absolute;width: 100%;top: 0px;left: 51px;height: 36px">
+        <div>
+            <ul class="nav">
+                <li onclick="b_block(event)" onmouseover="overHandler(event)"><a href="#">文件</a>
+                    <ul class="subs" id="menuList">
+                        <li><a href="#" style="padding: 8px 10px 10px 10px;height: 12px" onclick='createProHandler("newAS")'>新建项目<span></span></a></li>
+                        <li><a href="#" style="padding: 8px 10px 10px 10px;height: 12px" onclick='sendMenuHandlerLaya("workbench.action.files.newUntitledFile")'>新建文件<span>(Ctrl+N)</span></a></li>
+                        <li style="border-bottom: solid 1px #222222"><a href="#" style="padding: 8px 10px 10px 10px;height: 12px" onclick='oclick("newwindow")'>新建窗口<span>(Ctrl+Shift+N)</span></a></li>
+                        <li><a href="#" style="padding: 8px 10px 10px 10px;height: 12px" onclick='openProHandler("openPro")'> 打开项目<span>(Ctrl+O)</span></a></li>
+                        <!-- 					<li><a href="#" style="padding: 8px 10px 10px 10px;height: 12px" onclick='oclick("newfile")'>打开文件<span></span></a></li> -->
+                        <li style="border-bottom: solid 1px #222222"><a href="#" style="padding: 8px 10px 10px 10px;height: 12px" onclick='oclick("openFolder")'>打开文件夹<span></span></a></li>
+                        <li><a href="#" style="padding: 8px 10px 10px 10px;height: 12px" onclick='sendMenuHandlerLaya("workbench.action.files.save")'>保存<span>(Ctrl+S)</span></a></li>
+                        <li><a href="#" style="padding: 8px 10px 10px 10px;height: 12px" onclick='sendMenuHandlerLaya("workbench.action.files.saveAs")'>另存<span>(Ctrl+Shift+S)</span></a></li>
+                        <li style="border-bottom: solid 1px #222222"><a href="#" style="padding: 8px 10px 10px 10px;height: 12px" onclick='sendMenuHandlerLaya("workbench.action.files.saveAll")'>保存所有</a></li>
+                        <li style="border-bottom: solid 1px #222222"><a href="#" style="padding: 8px 10px 10px 10px;height: 12px" onclick='oclick("reloadEdite")'>刷新编辑器</a></li>
+                    </ul>
+                </li>
+                <li onclick="b_block(event)" onmouseover="overHandler(event)"><a href="#" _fcksavedurl="#">编辑</a>
+                    <ul class="subs" id="compileList">
+                        <li><a href="#" style="padding: 8px 10px 10px 10px;height: 12px;" onclick='sendMenuHandlerLaya("undo")'>撤销<span>(Ctrl+Z)</span></a></li>
+                        <li style="border-bottom: solid 1px #222222"><a href="#" style="padding: 8px 10px 10px 10px;height: 12px" onclick='sendMenuHandlerLaya("redo")'>重做<span>(Ctrl+Y)</span></a></li>
+                        <li><a href="#" style="padding: 8px 10px 10px 10px;height: 12px;" onclick='sendMenuHandlerLaya("editor.action.clipboardCutAction")'>剪切<span>(Ctrl+X)</span></a></li>
+                        <li><a href="#" style="padding: 8px 10px 10px 10px;height: 12px;" onclick='sendMenuHandlerLaya("editor.action.clipboardPasteAction")'>粘贴<span>(Ctrl+V)</span></a></li>
+                        <li><a href="#" style="padding: 8px 10px 10px 10px;height: 12px;" onclick='sendMenuHandlerLaya("editor.action.clipboardCopyAction")'>复制<span>(Ctrl+C)</span></a></li>
+                        <li style="border-bottom: solid 1px #222222"><a href="#" style="padding: 8px 10px 10px 10px;height: 12px" onclick='sendMenuHandlerLaya("editor.action.selectAll")'>全选<span>(Ctrl+A)</span></a></li>
+                        <li><a href="#" style="padding: 8px 10px 10px 10px;height: 12px;" onclick='sendMenuHandlerLaya("actions.find")'>查找<span>(Ctrl+F)</span></a></li>
+                        <li><a href="#" style="padding: 8px 10px 10px 10px;height: 12px;" onclick='sendMenuHandlerLaya("editor.action.startFindReplaceAction")'>替换<span>(Ctrl+H)</span></a></li>
+                        <li><a href="#" style="padding: 8px 10px 10px 10px;height: 12px;" onclick='sendMenuHandlerLaya("workbench.view.search")'>全局搜索<span>(Ctrl+Shift+F)</span></a></li>
+                    </ul>
+                </li>
+                <li onclick="b_block(event)" onmouseover="overHandler(event)"><a href="#" _fcksavedurl="#">视图</a>
+                    <ul class="subs" id="compileList0">
+                        <li><a href="#" style="padding: 8px 10px 10px 10px;height: 12px;" onclick='sendMenuHandlerLaya("workbench.view.explorer")'>文件(E)<span>(Ctrl+Shift+E)</span></a></li>
+                        <li><a href="#" style="padding: 8px 10px 10px 10px;height: 12px;" onclick='sendMenuHandlerLaya("workbench.view.search")'>搜索(S)<span>(Ctrl+Shift+F)</span></a></li>
+                        <li><a href="#" style="padding: 8px 10px 10px 10px;height: 12px;" onclick='sendMenuHandlerLaya("workbench.view.git")'>Git(G)<span>(Ctrl+Shift+G)</span></a></li>
+                        <li style="border-bottom: solid 1px #222222"><a href="#" style="padding: 8px 10px 10px 10px;height: 12px" onclick='sendMenuHandlerLaya("workbench.view.debug")'>调试<span>(Ctrl+Shift+D)</span></a></li>
+                        <li><a href="#" style="padding: 8px 10px 10px 10px;height: 12px;" onclick='sendMenuHandlerLaya("workbench.action.showCommands")'>命令面板(C)<span>(Ctrl+Shift+P)</span></a></li>
+                        <li style="border-bottom: solid 1px #222222"><a href="#" style="padding: 8px 10px 10px 10px;height: 12px" onclick='sendMenuHandlerLaya("workbench.action.showErrorsWarnings")'>错误和警告<span>(Ctrl+Shift+M)</span></a></li>
+                        <li><a href="#" style="padding: 8px 10px 10px 10px;height: 12px;" onclick='sendMenuHandlerLaya("workbench.action.output.toggleOutput")'>输出面板<span>(Ctrl+Shift+U)</span></a></li>
+                        <li><a href="#" style="padding: 8px 10px 10px 10px;height: 12px;" onclick='sendMenuHandlerLaya("workbench.action.terminal.toggleTerminal")'>终端<span>(Ctrl+`)</span></a></li>
+                        <li style="border-bottom: solid 1px #222222"><a href="#" style="padding: 8px 10px 10px 10px;height: 12px" onclick='sendMenuHandlerLaya("workbench.debug.action.toggleRepl")'>调试面板<span>(Ctrl+Shift+Y)</span></a></li>
+                        <li style="border-bottom: solid 1px #222222"><a href="#" style="padding: 8px 10px 10px 10px;height: 12px" onclick='oclick("F11")'>全屏<span>(F11)</span></a></li>
+                        <li><a href="#" style="padding: 8px 10px 10px 10px;height: 12px;" onclick='sendMenuHandlerLaya("workbench.action.splitEditor")'>拆分编辑器<span>(Ctrl+\)</span></a></li>
+                        <li><a href="#" style="padding: 8px 10px 10px 10px;height: 12px;" onclick='sendMenuHandlerLaya("workbench.action.toggleSidebarVisibility")'>切换侧边栏<span>(Ctrl+B)</span></a></li>
+                        <!--<li style="border-bottom: solid 1px #222222"><a href="#" style="padding: 8px 10px 10px 10px;height: 12px" onclick='sendMenuHandlerLaya("workbench.action.toggleSidebarPosition")'>移动侧边栏<span>(Ctrl+Shift+F)</span></a></li>-->
+                        <li><a href="#" style="padding: 8px 10px 10px 10px;height: 12px;" onclick='sendMenuHandlerLaya("workbench.action.zoomIn")'>放大(Z)<span>(Ctrl++)</span></a></li>
+                        <li><a href="#" style="padding: 8px 10px 10px 10px;height: 12px;" onclick='sendMenuHandlerLaya("workbench.action.zoomOut")'>缩小(u)<span>(Ctrl+-)</span></a></li>
+                        <li><a href="#" style="padding: 8px 10px 10px 10px;height: 12px;" onclick='sendMenuHandlerLaya("workbench.action.zoomReset")'>重置缩放<span></span></a></li>
+                    </ul>
+                </li>
+                <li onclick="b_block(event)" onmouseover="overHandler(event)"><a href="#">工具</a>
+                    <ul class="subs">
+                        <li><a href="#" style="padding: 8px 10px 10px 10px;height: 12px" onclick='startToolLaya("jsCompress")'> SWF转换<span></span></a></li>
+                        <li><a href="#" style="padding: 8px 10px 10px 10px;height: 12px" onclick='jscompressTool("jsCompress")'> JS压缩工具<span></span></a></li>
+                        <li><a href="#" style="padding: 8px 10px 10px 10px;height: 12px" onclick='bonetools("龙骨",0)'> 龙骨动画转换<span></span></a></li>
+                        <li><a href="#" style="padding: 8px 10px 10px 10px;height: 12px" onclick='bonetools("Spine",1)'> Spine动画转换<span></span></a></li>
+                        <li><a href="#" style="padding: 8px 10px 10px 10px;height: 12px" onclick='picToolsLaya()'> 图集打包<span></span></a></li>
+                        <li><a href="#" style="padding: 8px 10px 10px 10px;height: 12px" onclick='phoneDown()'> 运行器下载<span></span></a></li>
+                        <li><a href="#" style="padding: 8px 10px 10px 10px;height: 12px" onclick='RuntimePanel("PackageToolLaya")'> 打包app(测试版)<span></span></a></li>
+                        <li><a href="#" style="padding: 8px 10px 10px 10px;height: 12px" onclick='buldAppSdk()'> 渠道打包工具(测试版)<span></span></a></li>
+                        <li><a href="#" style="padding: 8px 10px 10px 10px;height: 12px" onclick='RuntimePanel("buldApp")'> app构建<span></span></a></li>
+                        <li><a href="#" style="padding: 8px 10px 10px 10px;height: 12px" onclick='down3dzip("flashpublish")'>3D转换工具<span></span></a></li>
+                        <li><a href="#" style="padding: 8px 10px 10px 10px;height: 12px" onclick='flashpublish("flashpublish")'> 发布flash版本<span></span></a></li>
+                    </ul>
+                </li>
+                <li onclick="b_block(event)" onmouseover="overHandler(event)"><a href="#">项目</a>
+                    <ul class="subs">
+                        <li style="border-bottom: solid 1px #222222"><a href="#" _fcksavedurl="#" style="padding: 8px 10px 10px 10px;height: 12px;" onclick='libsSelect("libs")'>类库管理</a></li>
+                    </ul>
+                </li>
+                <li onclick="b_block(event)" onmouseover="overHandler(event)"><a href="#">帮助</a>
+                    <ul class="subs">
+                        <li><a href="#" _fcksavedurl="#" style="padding: 8px 10px 10px 10px;height: 12px;" onclick='oclick("f12")'>开发人员工具</a></li>
+                        <li><a href="#" _fcksavedurl="#" style="padding: 8px 10px 10px 10px;height: 12px;" onclick='oclick("layaboxPublic")'>官网</a></li>
+                        <li><a href="#" _fcksavedurl="#" style="padding: 8px 10px 10px 10px;height: 12px;" onclick='oclick("layademo")'> 官网示例</a></li>
+                        <li style="border-bottom: solid 1px #222222"><a href="#" _fcksavedurl="#" style="padding: 8px 10px 10px 10px;height: 12px;" onclick='oclick("downLoad")'>开发者中心</a></li>
+                        <li style="border-bottom: solid 1px #222222"><a href="#" _fcksavedurl="#" style="padding: 8px 10px 10px 10px;height: 12px;" onclick='openUserPath()'>打开编辑器本地缓存目录</a></li>
+                        <li style="border-bottom: solid 1px #222222"><a href="#" _fcksavedurl="#" style="padding: 8px 10px 10px 10px;height: 12px;" onclick='popContributionPanel()'>layaAir贡献名单</a></li>
+                        <!--<li style="border-bottom: solid 1px #222222"><a href="#" _fcksavedurl="#" style="padding: 8px 10px 10px 10px;height: 12px;" onclick='layaairAboutPanel()'>打开编辑器本地缓存目录</a></li>-->
+                        <li style="border-bottom: solid 1px #222222"><a href="#" _fcksavedurl="#" style="padding: 8px 10px 10px 10px;height: 12px;" onclick='checkupdateVersions()'>检查更新</a></li>
+                        <li style="border-bottom: solid 1px #222222"><a href="#" _fcksavedurl="#" style="padding: 8px 10px 10px 10px;height: 12px;" onclick='changeList()'>更新日志</a></li>
+                        <li><a id="layaMenuVersion0" href="#" _fcksavedurl="#" style="padding: 8px 10px 10px 10px;height: 12px;">当前版本 1.0.0rc1</a></li>
+                    </ul>
+                </li>
+                <li id="debugButton" style="display: none">
+                    <a href="#" _fcksavedurl="#" onclick='oclick("debugLaya",true)' title="F5运行调试">
+                        <img src="res/img/1_07.png" style="position: absolute;top: 12px"><span>&nbsp&nbsp&nbsp&nbsp调试</span>
+                    </a>
+                </li>
+                <li style="float: right;position: absolute;right: 120px;display: none">
+                    <a href="#" onclick='oclick("changeViewUi")' title="切换到编辑模式(Alt+Q)">
+                        <img style="position: absolute;top: 11px;" src="res/img/1_11.png">
+                        <span>&nbsp&nbsp&nbsp&nbsp&nbsp编辑模式</span></a>
+                </li>
+                <li id="qrcodeImage" style="display: none" onclick='oclick("layaqrcodeshow")'>
+                    <a href="#" title="">
+                        <img style="position: absolute;top: 11px;" src="res/ide/wifi.png" width="16px" height="16px">
+                        <span>&nbsp&nbsp&nbsp&nbsp&nbsp二维码</span></a>
+                </li>
+            </ul>
+        </div>
+        <div style="width: 1000px;position: relative">
+            <ul class="toolLi">
+                <li onclick='sendMenuHandlerLaya("workbench.action.files.newUntitledFile")' title="新建文件">
+                    <a href="#">
+                        <img src="res/ide/toolbar/file.png">
+                    </a>
+                </li>
+                <li onclick="createProHandler()" title="新建项目">
+                    <a href="#">
+                        <img src="res/ide/toolbar/pro.png">
+                    </a>
+                </li>
+                <li onclick='sendMenuHandlerLaya("workbench.action.files.saveAll")' title="全部保存">
+                    <a href="#">
+                        <img src="res/ide/toolbar/save.png">
+                    </a>
+                </li>
+                <li onclick='oclick("debugLaya",false)' title=" 编译">
+                    <a href="#">
+                        <img src="res/ide/toolbar/b.png">
+                    </a>
+                </li>
+                <li onclick='oclick("releaseLaya")' title="发布">
+                    <a href="#">
+                        <img src="res/ide/toolbar/f.png">
+                    </a>
+                </li>
+                <li onclick='oclick("debugLaya",true)' title="F5运行调试">
+                    <a href="#">
+                        <img src="res/img/1_07.png">
+                    </a>
+                </li>
+                <select id="layadebugSelect" class="layadebugSelect">
+                    <option value="layaAir">layaair调试</option>
+                    <option value="chrome调试">chrome调试</option>
+                </select>
+            </ul>
+        </div>
+    </div>
+    <div id="askmenuListEd" style="display:none;z-index: 999999;position: absolute;width: 100%;top: 0px;left: 51px;height: 36px">
+        <div>
+            <ul class="nav">
+                <li onclick="b_block(event)" onmouseover="overHandler(event)"><a href="#">文件</a>
+                    <ul class="subs">
+                        <li><a href="#" style="padding: 8px 10px 10px 10px;height: 12px" onclick='createProHandler("newAS")'>新建项目<span></span></a></li>
+                        <li><a href="#" style="padding: 8px 10px 10px 10px;height: 12px" onclick='openProHandler("openPro")'> 打开项目<span>(Ctrl+O)</span></a></li>
+                        <li style="border-bottom: solid 1px #222222"><a href="#" style="padding: 8px 10px 10px 10px;height: 12px" onclick='oclick("reloadEdite")'>刷新编辑器</a></li>
+                    </ul>
+                </li>
+                <li onclick="b_block(event)" onmouseover="overHandler(event)"><a href="#">工具</a>
+                    <ul class="subs">
+                        <li><a href="#" style="padding: 8px 10px 10px 10px;height: 12px" onclick='startToolLaya("jsCompress")'> SWF转换<span></span></a></li>
+                        <li><a href="#" style="padding: 8px 10px 10px 10px;height: 12px" onclick='jscompressTool("jsCompress")'> JS压缩工具<span></span></a></li>
+                        <li><a href="#" style="padding: 8px 10px 10px 10px;height: 12px" onclick='bonetools("龙骨",0)'> 龙骨动画转换<span></span></a></li>
+                        <li><a href="#" style="padding: 8px 10px 10px 10px;height: 12px" onclick='bonetools("Spine",1)'> Spine动画转换<span></span></a></li>
+                        <li><a href="#" style="padding: 8px 10px 10px 10px;height: 12px" onclick='picToolsLaya()'> 图集打包<span></span></a></li>
+                        <li><a href="#" style="padding: 8px 10px 10px 10px;height: 12px" onclick='phoneDown()'> 运行器下载<span></span></a></li>
+                        <li><a href="#" style="padding: 8px 10px 10px 10px;height: 12px" onclick='PackageToolLaya()'> 打包app(测试版)<span></span></a></li>
+                        <li><a href="#" style="padding: 8px 10px 10px 10px;height: 12px" onclick='buldApp()'> app构建<span></span></a></li>
+                        <li><a href="#" style="padding: 8px 10px 10px 10px;height: 12px" onclick='down3dzip("flashpublish")'>layaU3D工具<span></span></a></li>
+                        <li><a href="#" style="padding: 8px 10px 10px 10px;height: 12px" onclick='flashpublish("flashpublish")'> 发布flash版本<span></span></a></li>
+                    </ul>
+                </li>
+                <li onclick="b_block(event)" onmouseover="overHandler(event)"><a href="#">帮助</a>
+                    <ul class="subs">
+                        <li><a href="#" _fcksavedurl="#" style="padding: 8px 10px 10px 10px;height: 12px;" onclick='oclick("f12")'>开发人员工具</a></li>
+                        <li><a href="#" _fcksavedurl="#" style="padding: 8px 10px 10px 10px;height: 12px;" onclick='oclick("layaboxPublic")'>官网</a></li>
+                        <li><a href="#" _fcksavedurl="#" style="padding: 8px 10px 10px 10px;height: 12px;" onclick='oclick("layademo")'> 官网示例</a></li>
+                        <li style="border-bottom: solid 1px #222222"><a href="#" _fcksavedurl="#" style="padding: 8px 10px 10px 10px;height: 12px;" onclick='oclick("downLoad")'>开发者中心</a></li>
+                        <li style="border-bottom: solid 1px #222222"><a href="#" _fcksavedurl="#" style="padding: 8px 10px 10px 10px;height: 12px;" onclick='openUserPath()'>打开编辑器本地缓存目录</a></li>
+                        <li style="border-bottom: solid 1px #222222"><a href="#" _fcksavedurl="#" style="padding: 8px 10px 10px 10px;height: 12px;" onclick='popContributionPanel()'>layaAir贡献名单</a></li>
+                        <!--<li style="border-bottom: solid 1px #222222"><a href="#" _fcksavedurl="#" style="padding: 8px 10px 10px 10px;height: 12px;" onclick='layaairAboutPanel()'>打开编辑器本地缓存目录</a></li>-->
+                        <li><a id="layaMenuVersion00" href="#" _fcksavedurl="#" style="padding: 8px 10px 10px 10px;height: 12px;">当前版本 1.0.0rc1</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div id="layastoreask" style="display:none;z-index: 100;position: absolute;width: 100%;top: 0px;left: 190px;height: 36px;-webkit-app-region:drag">
+    </div>
+    <div style="position: absolute;right: 0px;;top:-2px;z-index: 9999999999999999">
+        <ul class="nav">
+            <li style="float: right;" onclick='oclick("close")'>
+                <a href="#" style="width: 20px"><img style="position: absolute;top: 6px;left: 9px" src="res/img/1.png"></a>
+            </li>
+            <li style="float: right;" onclick='oclick("restore")'>
+                <a href="#" style="width: 20px"><img style="position: absolute;top: 3px;left: 9px" src="res/img/2.png"></a>
+            </li>
+            <li style="float: right;" onclick='oclick("minimize")'>
+                <a href="#" style="width: 20px"><img style="position: absolute;top: 6px;left: 9px" src="res/img/3.png"></a>
+            </li>
+        </ul>
+    </div>
+</body>
+<!-- Startup via index.js -->
+<script src="index.js"></script>
+
+</html>

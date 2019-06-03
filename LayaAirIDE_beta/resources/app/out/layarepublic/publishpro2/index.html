@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link href="styles.css" rel="stylesheet" type="text/css" />
+	<title>发布项目</title>
+	<link rel="stylesheet" type="text/css" href="./explorertree/style.min.css"/>
+</head>
+
+<body id="publishpro2">
+<div class="wrapper">
+	<div class="list" style="margin-top:10px">
+		<span id="spanPf">发布平台</span>
+		<select id="selPf" class="select" style="width:200px;height:26px">
+			<option value="webnative">Web/Native</option>
+			<option value="wxnimigame">微信小游戏</option>
+			<option value="qqwanyiwan" style="display: none;">QQ玩一玩</option>
+			<option value="bdminigame">百度小游戏</option>
+			<!-- <option value="xmgame">小米快游戏</option> -->
+		</select>
+		<a href="javascript:void(0)" target="_blank" id="linkHelp"><img src="help.png" style="margin-left:20px" title="帮助" id="imgHelp" /></a>
+	</div>
+	<div class="list">
+		<span id="spanSrcDir">源根目录</span>
+		<input class="input" type="text" id="inputSrcDir" placeholder="设置游戏根目录，一般指index.html所在的目录">
+		<button class="btn" id="btnBrowseSrc">浏览</button>
+	</div>
+	<div class="list">
+		<span id="spanPubDir">发布目录</span>
+		<input class="input" type="text" id="inputPubDir" placeholder="设置发布目录">
+		<button class="btn" id="btnBrowsePub">浏览</button>
+	</div>
+	<div class="list">
+		<label>
+			<input type="checkbox" id="recompile"> <span id="spanrecompile">是否重新编译项目</span>
+		</label>
+	</div>
+	<!-- <div class="list">
+		<label>
+			<input type="checkbox" id="isWXOpenZone"> <span id="spanreWXOpenZone">是否为微信开放数据域项目</span>
+		</label>
+	</div> -->
+	<div class="list">
+		<label>
+			<input type="checkbox" id="cbMergeJs"> <span id="spanMergeJs">是否合并index.html内的所有js文件</span>
+		</label>
+	</div>
+	<div class="list">
+		<label>
+			<input type="checkbox" id="onlyIndexJS"> <span id="spanonlyIndexJS">是否只复制index.html内引用的js文件（其他js文件将忽略）</span>
+		</label>
+	</div>
+	<div id="compressingId" class="classification selected">压缩资源</div>
+	<div class="classification-wrapper">
+		<div class="list">
+			<span id="spanExDir">排除压缩</span>
+			<input class="input" type="text" id="inputExDir" placeholder="排除压缩图片或者js的目录，用分号隔开">
+			<button class="btn" id="btnBrowseEx">浏览</button>
+		</div>
+		<div class="list">
+			<label>
+				<input type="checkbox" id="cbCompressPng"> <span id="spanCompressPng">是否压缩 PNG (耗时)</span>
+			</label>
+			<div class="rightDiv"><span id="spanQualityPngLow">最小质量</span>
+				<input class="input" style="width:40px;" type="number" min="10" max="100" step="1" value="65" id="inputCompressPngLow">
+			</div>
+			<div class="rightDiv"><span id="spanQualityPngHigh">最大质量</span>
+				<input class="input" style="width:40px;" type="number" min="50" max="100" step="1" value="80" id="inputCompressPngHigh">
+			</div>
+		</div>
+		<div class="list">
+			<label>
+				<input type="checkbox" id="cbCompressJpg"> <span id="spanCompressJpg">是否压缩 JPG (非常耗时，但效果很好)</span>
+			</label>
+			<div class="rightDiv">&nbsp;&nbsp;&nbsp;<span id="spanQualityJpg">质量</span>
+				<input class="input" style="width:50px;" type="number" min="84" max="100" step="1" value="85" id="inputCompressJpg">
+			</div>
+		</div>
+		<div class="list">
+			<label>
+				<input type="checkbox" id="cbCompressJson"> <span id="spanCompressJson">是否压缩 JSON</span>
+			</label>
+			<div class="rightDiv"><span id="spanSuffix">后缀</span>
+				<input class="input" style="width:243px" type="text" id="inputJsonTypes" value="json,atlas,ls,lh,lmat,lav">
+			</div>
+		</div>
+		<div class="list">
+			<label>
+				<input type="checkbox" id="cbCompressJs"> <span id="spanCompressJs">是否压缩混淆 JS (耗时)</span>
+			</label>
+		</div>
+	</div>
+	<div id="versionId" class="classification selected">版本管理</div>
+	<div class="classification-wrapper">
+		<div class="list">
+			<label>
+				<input type="checkbox" id="cbEnableVer"> <span id="spanEnableVer">是否启用版本管理，启用后，会重命名变化的文件</span>（<a id="howToUse" href="javascript:void(0)" target="_blank">如何用</a>）
+			</label>
+		</div>
+		<div class="list">
+			<label>
+				<input type="checkbox" id="deleteOldVersionFile"> <span id="spandeleteOldVersionFile">是否删除旧的资源文件（启用资源版本管理后生效）</span>
+			</label>
+		</div>
+	</div>
+	<div id="extractId" class="classification selected">文件提取</div>
+	<div class="classification-wrapper bottom-list-wrapper">
+		<div class="list bottom-list">
+			<span id="spanCopyDir">复制文件列表</span>
+			<input class="input" type="text" id="inputExCopyDir" placeholder="需要复制的文件及文件夹，相对于源根目录">
+			<button class="btn" id="btnBrowseCopyDir">浏览</button>
+		</div>
+		<div class="list bottom-list">
+			<span id="spanCopyDirTo">复制文件到哪</span>
+			<input class="input" type="text" id="inputExCopyTo" placeholder="复制文件到某个文件夹，如果没有可以留空">
+			<button class="btn" id="btnBrowseCopyTo">浏览</button>
+		</div>
+		<div class="list bottom-list">
+			<span id="spanWxScript">后续执行脚本</span>
+			<input class="input" type="text" id="inputExScript" placeholder="自定义的命令行脚本路径">
+			<button class="btn" id="btnBrowseScript">浏览</button>
+		</div>
+	</div>
+	<div id="xm_quickgame" class="classification selected">小米快游戏配置</div>
+	<div id="xm_quickgame_wrapper" class="classification-wrapper xmgame-list-wrapper">
+		<div id="xm_name" class="xmgame-list bottom-list">
+			<span>应用名称</span>
+			<input class="input" onkeyup="checkXMName()" type="text" placeholder="应用名称，6 个汉字以内，与应用商店保存的名称一致，用于在桌面图标、弹窗等处显示应用名称">
+		</div>
+		<div id="xm_projName" class="xmgame-list bottom-list">
+			<span>项目名称</span>
+			<input class="input" onkeyup="checkXMProjName()" type="text" placeholder="项目名称，可以输入英文字母、数字或下划线，30个字符以内">
+		</div>
+		<div id="xm_package" class="xmgame-list bottom-list">
+			<span>包名</span>
+			<input class="input" onkeyup="checkXMPackage()" type="text" placeholder="应用包名，推荐采用 com.company.module 的格式">
+		</div>
+		<div id="xm_icon" class="xmgame-list bottom-list">
+			<span>icon</span>
+			<input class="input" onclick="selectIcon()" readonly="readonly" type="text" placeholder="应用图标，提供 192x192 大小的即可" style="width: 292px;">
+			<button class="btn" onclick="selectIcon()">浏览</button>
+		</div>
+		<div id="xm_versionName" class="xmgame-list bottom-list">
+			<span>版本名称</span>
+			<input class="input" onkeyup="checkXMVersionName()" type="text" placeholder='应用版本名称，如："1.0"'>
+		</div>
+		<div id="xm_versionCode" class="xmgame-list bottom-list">
+			<span>版本号</span>
+			<input class="input" onkeyup="checkXMVersionCode()" type="text" placeholder="应用版本号，从1自增，推荐每次重新上传包时versionCode+1">
+		</div>
+		<div id="xm_minPlatformVersion" class="xmgame-list bottom-list">
+			<span>最小平台号</span>
+			<input class="input" onkeyup="checkXMMinPFVer()" type="text" placeholder="支持的最小平台版本号，兼容性检查，避免上线后在低版本平台运行并导致不兼容；如果不填按照内测版本处理">
+		</div>
+		<div id="xm_useReleaseSign" class="xmgame-list bottom-list">
+			<label>
+				<input type="checkbox"> <span>是否使用正式版签名</span>
+			</label>
+			<span class="hint-text">1. 已经生成过签名，请将签名文件放到根目录 sign 文件夹中。</span>
+			<span class="hint-text">2. 如果还没有生成过签名，可以自己生成签名文件，并放置到项目根目录 sign 文件夹中。</span>
+			<span class="hint-text">3. 也可以选中下面的“生成release签名”选项，并填写对应信息，IDE将会生成签名文件并放置到项目根目录 sign 文件夹中。</span>
+		</div>
+		<div id="xm_useExistProj" class="xmgame-list bottom-list" style="display: none;">
+			<label>
+				<input type="checkbox" onchange="onChangeUseExistProj()"> <span>是否使用即存的小米快游戏项目</span>
+			</label>
+		</div>
+	</div>
+	<div id="xm_generateSign_title" class="classification selected">生成release签名</div>
+	<div id="xm_generateSign" class="xmgame-list bottom-list" style="display: none;">
+		<label>
+			<input type="checkbox" onchange="onchangeGenerateSign()"> <span>生成release签名</span>
+		</label>
+	</div>
+	<div id="xm_generateSign_wrapper" class="classification-wrapper bottom-list-wrapper xmgame-sign-wrapper">
+		<div id="xm_countryName" class="list bottom-list">
+			<span>Country Name (2 letter code) [AU]:</span>
+			<input class="input" onkeyup="checkXMCountry()" type="text" placeholder="Country Name (2 letter code) [AU]:">
+		</div>
+		<div id="xm_provinceName" class="list bottom-list">
+			<span>State or Province Name (full name) [Some-State]:</span>
+			<input class="input" onkeyup="removeErr()" type="text" placeholder="State or Province Name (full name) [Some-State]:">
+		</div>
+		<div id="xm_localityName" class="list bottom-list">
+			<span>Locality Name (eg, city) []:</span>
+			<input class="input" onkeyup="removeErr()" type="text" placeholder="Locality Name (eg, city) []:">
+		</div>
+		<div id="xm_orgName" class="list bottom-list">
+			<span>Organization Name (eg, company) [Internet Widgits Pty Ltd]:</span>
+			<input class="input" onkeyup="removeErr()" type="text" placeholder="Organization Name (eg, company) [Internet Widgits Pty Ltd]:">
+		</div>
+		<div id="xm_orgUnitName" class="list bottom-list">
+			<span>Organizational Unit Name (eg, section) []:</span>
+			<input class="input" onkeyup="removeErr()" type="text" placeholder="Organizational Unit Name (eg, section) []:">
+		</div>
+		<div id="xm_commonName" class="list bottom-list">
+			<span>Common Name (e.g. server FQDN or YOUR name) []:</span>
+			<input class="input" onkeyup="removeErr()" type="text" placeholder="Common Name (e.g. server FQDN or YOUR name) []:">
+		</div>
+		<div id="xm_emailAddr" class="list bottom-list">
+			<span>Email Address []:</span>
+			<input class="input" onkeyup="checkXMEmail()" type="text" placeholder="Email Address []:">
+		</div>
+	</div>
+</div>
+	<div class="list" style="margin-top: 25px;float: right;margin-right: 160px;">
+		<button class="subBtn big-btn" id="btnPub">发布</button>
+	</div>
+	<div id="divBgWait" style="display:none" class="waitbg">
+		<div id="divWaiting" class="waitting"><span id="spanWaiting">正在处理，请稍候...</span>
+			<br>
+			<progress id="progress" max="100"></progress>
+		</div>
+		<div id="divResult" style="display:none" class="result">
+			<span id="spanResult">发布成功</span><br><br><br><br><br>
+			<button class="subBtn big-btn" style="width:150px; position: relative;" id="btnOpen">打开发布文件夹</button>
+		</div>
+	</div>
+	<div class="jstree-wrapper">
+		<div class="jstree-container">
+			<div class="jstree-title"></div>
+			<div id="jstree"></div>
+			<div class="jstree-btn-list">
+				<div class="jstree-btn jstree-ok">确定</div>
+				<div class="jstree-btn jstree-cancel">取消</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="./explorertree/jstree.min.js"></script>
+	<script type="text/javascript" src="main.js"></script>
+	<script type="text/javascript">
+		// document.addEventListener("click", function(e) {
+		// 	let target = e.target;
+		// 	// 点击了classification-wrapper分类标题
+		// 	let needUnfold = target.className.indexOf("classification-wrapper") === -1 && target.className.indexOf("classification") !== -1 && target.className.indexOf("selected") === -1;
+		// 	if (needUnfold) {
+		// 		let selectedEle = document.getElementsByClassName("classification selected")[0];
+		// 		selectedEle.className = "classification";
+		// 		target.className = "classification selected";
+		// 	}
+		// }, false);
+	</script>
+</body>
+
+</html>

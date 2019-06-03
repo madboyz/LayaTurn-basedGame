@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>LayaNative</title>
+	<meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="../../vs/layaEditor/h5/codebase/fonts/font_roboto/roboto.css" />
+    <link rel="stylesheet" type="text/css" href="../../vs/layaEditor/h5/codebase/dhtmlx.css" />
+    <link rel="stylesheet" type="text/css" href="codebase/layaNative.css">
+    <script src="../../vs/layaEditor/h5/codebase/dhtmlx.js"></script>
+    <style type="text/css">
+        body{
+            background-color: #404040;
+            overflow-x: hidden;
+            overflow-y: hidden;
+            font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif
+        }
+    </style>
+</head>
+<body>
+<div style="-webkit-app-region: drag;width: 450px;height: 25px;top:0px"></div>    
+<div  class ="layanativecloseBar">
+<div id='btnClose'>X</div>
+</div>
+<div id='hihere' style="position:absolute;top:40px"></div>
+<div class="layanativetopbar" id="layanativetopbar">构建项目</div>
+<script type="text/javascript" src ="js/main.js"></script>
+<script >
+    btnClose.onmousedown=function(){
+        electron.remote.getCurrentWindow().close();
+    }
+</script>
+</body>
+</html>

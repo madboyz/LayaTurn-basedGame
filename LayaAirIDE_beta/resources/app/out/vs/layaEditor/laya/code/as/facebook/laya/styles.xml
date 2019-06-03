@@ -1,0 +1,4 @@
+<res>
+   <item name="comp/button.png" type="Button" compress="0" pack="0" quality="80" props="sizeGrid=6,12,6,12@@!@@labelSize=24" picType="0"/>
+   <item name="comp/label.png" type="Label" compress="0" pack="0" quality="80" props="fontSize=20" picType="0"/>
+</res>

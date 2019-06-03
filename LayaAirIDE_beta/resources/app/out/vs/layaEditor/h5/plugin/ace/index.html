@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		#editor {
+			position: absolute;
+			width: 500px;
+			height: 400px;
+		}
+		
+		::-webkit-scrollbar {
+			background-image: initial;
+			background-position-x: initial;
+			background-position-y: initial;
+			background-size: initial;
+			background-repeat-x: initial;
+			background-repeat-y: initial;
+			background-attachment: initial;
+			background-origin: initial;
+			background-clip: initial;
+			width: 8px;
+			height: 8px;
+			background-color: rgba(99, 99, 99, 0.4);
+			font-family: "Microsoft YaHei";
+		}
+		/* Track */		
+		::-webkit-scrollbar-track {
+			/*-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);*/
+			/*-webkit-border-radius: 10px;*/
+			/*border-radius: 10px;*/
+		}
+		/* Handle */		
+		::-webkit-scrollbar-thumb {
+			/*-webkit-border-radius: 10px;*/
+			/*border-radius: 10px;*/
+			background-color: #505050;
+		}
+	</style>
+	<script src="src/ace.js" type="text/javascript" charset="utf-8"></script>
+	<script src="src/mode-xml.js" type="text/javascript" charset="utf-8"></script>
+	<script src="src/theme-pastel_on_dark.js" type="text/javascript" charset="utf-8"></script>
+</head>
+
+<body style="overflow:none;overflow-x:hidden;overflow-y:hidden;width:100%;height:100%;margin:0px">
+	<div id="editor" style="width:100%;height:100%;"></div>
+	<script>
+        var editor = ace.edit("editor");
+        editor.setFontSize(18);
+        editor.getSession().setMode("ace/mode/xml");
+        editor.setTheme("ace/theme/pastel_on_dark");
+        editor.setShowPrintMargin(false);		
+    </script>
+</body>
+
+</html>
