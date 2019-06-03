@@ -105,8 +105,8 @@ export class LocalPlayerPanel extends ui.main.LocalPlayerPanelUI {
 
     private EnterTestAutoChess()
     {
-        //UIManager.instance.openUI(UIID.CATCH_PET_PANEL);
-        SceneManager.instance.EnterSpecialScene(SceneType.AutoChess);
+        UIManager.instance.openUI(UIID.CATCH_PET_PANEL);
+        //SceneManager.instance.EnterSpecialScene(SceneType.AutoChess);
         this.close();
     }
 
